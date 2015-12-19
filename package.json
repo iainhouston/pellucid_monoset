@@ -1,0 +1,36 @@
+{
+  "name": "pellucid_monoset",
+  "version": "1.0.3",
+  "description": "Drupal 8 Theme  for pellucid_build",
+  "author": "Iain Houston <mail@iainhouston.com>",
+  "homepage": "https://iainhouston.com",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:iainhouston/pellucid_monoset.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iainhouston/pellucid_monoset/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-beautify": "^2.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-load-plugins": "^1.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-shell": "^0.5.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.1.0"
+  }
+}

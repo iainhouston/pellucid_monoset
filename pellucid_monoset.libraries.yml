@@ -1,0 +1,35 @@
+#  Global library
+global:
+  version: 1.x
+  css:
+    theme:
+      styles/main.css: { weight: -1 }
+
+  js:
+    scripts/main.js: { scope: footer, weight: -6 }
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/modernizr
+
+#Vendor Library
+vendor:
+  version: 1.x
+  js:
+    scripts/vendor/pushy.js: { scope: footer, weight: -7 }
+    scripts/vendor/fastclick.js: { scope: footer , weight: -8 }
+    scripts/vendor/svg-injector.min.js: { scope: footer , weight: -9 }
+    scripts/vendor/prism.js: { scope: footer , weight: -10 }
+
+# Front Page Library
+front-page:
+  version: 1.x
+  css:
+    theme:
+      styles/vendor/animate.css: { weight: -2 }
+  js:
+    scripts/vendor/wow.min.js: { scope: footer, weight: -5 }
+    scripts/front.js: { scope: footer, weight: -4 }

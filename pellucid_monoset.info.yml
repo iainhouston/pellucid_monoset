@@ -1,0 +1,28 @@
+name: Monoset
+type: theme
+description: Drupal 8 Theme
+version: 1.0
+core: 8.x
+screenshot: images/screenshot.png
+libraries:
+ - pellucid_monoset/global
+ - pellucid_monoset/vendor
+
+stylesheets-remove:
+  - core/assets/vendor/normalize-css/normalize.css
+  - core/modules/system/css/system.theme.css
+
+regions:
+  content: Content
+  content_top: 'Content Top'
+  content_bottom: 'Content Bottom'
+  nav: Navigation
+  front_one: 'Front One'
+  front_two: 'Front Two'
+  front_three: 'Front Three'
+  front_four: 'Front Four'
+  front_five: 'Front Five'
+  front_six: 'Front Six'
+  front_seven: 'Front Seven'
+  front_eight: 'Front Eight'
+  footer: Footer

@@ -1,0 +1,7 @@
+node_modules/
+.sass-cache/
+!icons
+
+# IDE and editor metadata
+.idea/
+pelucid_monoset.sublime-*
