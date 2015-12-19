@@ -1,6 +1,6 @@
 # pellucid_monoset
 
-Drupal 8 Theme  after Andrei Zvonkov <zvonkov@gmail.com>
+Drupal 8 Theme  after [Andrei Zvonkov](https://github.com/zetagraph/monoset)
 
 ## Requirements
 - Node.js
