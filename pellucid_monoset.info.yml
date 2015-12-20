@@ -1,6 +1,6 @@
-name: Monoset
+name: Pellucid Monoset
 type: theme
-description: Drupal 8 Theme
+description: Drupal 8 Theme for pellucid_build
 version: 1.0
 core: 8.x
 screenshot: images/screenshot.png

@@ -4,7 +4,6 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-var styleguide = require('sc5-styleguide');
 var sass = require('gulp-sass');
 var outputPath = 'styleguide';
 var test_site_name = 'dev.bradford-abbas.uk:8888';
