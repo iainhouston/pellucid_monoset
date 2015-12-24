@@ -20,7 +20,7 @@
 
 .content {
   padding: 2rem 1rem;
-  min-height: 670px;
+  //min-height: 670px;
   @include breakpoint(md) {
     padding: 7rem 0 2rem 0;
     animation: fadeIn ease-in 1;
