@@ -67,3 +67,25 @@
   border-left: 1px solid #fff4f4;
   border-right: 1px solid #fff4f4;
 }
+.node--type-photo-gallery {
+
+  //#block-pellucid-monoset-page-title {
+  .region-content-top,
+  h1 {
+    display: none;
+  }
+  .container-main {
+    margin-top: -1rem;
+    @include breakpoint(md) {
+    }
+  }
+  .content {
+    padding: 0 1rem 2rem 1rem;
+    @include breakpoint(md) {
+      padding: 4rem 0 2rem 0;
+    }
+  }
+  .region-content {
+    margin:0;
+  }
+}

@@ -65,7 +65,6 @@
  *   in different view modes.
  */
 #}
-
 {%
   set classes = [
     'node',
@@ -78,32 +77,32 @@
 %}
 <article{{ attributes.addClass(classes) }}>
 
-  {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
+  {#{{ title_prefix }}#}
+  {#{% if not page %}#}
+    {#<h2{{ title_attributes }}>#}
+      {#<a href="{{ url }}" rel="bookmark">{{ label }}</a>#}
+    {#</h2>#}
+  {#{% endif %}#}
+  {#{{ title_suffix }}#}
 
   <div{{ content_attributes.addClass('node__content') }}>
     {{ content|without('links') }}
   </div>
 
-  {% if content.links %}
-    <div class="node__links">
-      {{ content.links }}
-    </div>
-  {% endif %}
+  {#{% if display_submitted %}#}
+    {#<footer class="node__meta">#}
+      {#{{ author_picture }}#}
+      {#<div{{ author_attributes.addClass('node__submitted') }}>#}
+        {#{% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}#}
+        {#{{ metadata }}#}
+      {#</div>#}
+    {#</footer>#}
+  {#{% endif %}#}
+
+  {#{% if content.links %}#}
+    {#<div class="node__links">#}
+      {#{{ content.links }}#}
+    {#</div>#}
+  {#{% endif %}#}
 
 </article>

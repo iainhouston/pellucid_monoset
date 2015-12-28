@@ -32,7 +32,7 @@
     @include font-size(40px);
     margin: 0 0 1rem 0;
     line-height: 1;
-    color: $grey-500;
+    color: $grey-900;
     @include breakpoint(md) {
       @include font-size(94px);
     }
@@ -63,7 +63,7 @@
     padding: 8px 12px 8px 25px;
     border-radius: 40px;
     background: rgba($black, 0.25);
-    color: $grey-50;
+    color: $grey-700;
     font-weight: $normal;
     letter-spacing: 1px;
     @include breakpoint(md) {
@@ -79,7 +79,7 @@
     margin: -14px 0 -11px -4px;
     width: 32px;
     height: 32px;
-    fill: $grey-100;
+    fill: $grey-900;
     display: inline-block;
     animation: pulsate 2s linear infinite;
     opacity: 1;

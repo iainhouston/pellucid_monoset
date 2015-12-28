@@ -33,9 +33,13 @@
 <html>
 <head>
     <style type="text/css">
-        table tr td {
+        table tr td, h2 {
             font-family: Arial;
-            font-size: 22px;
+            font-size: 14px;
+        }
+        .username,
+        .field--name-created {
+            display: none;
         }
     </style>
 </head>
@@ -45,7 +49,6 @@
         <tr>
             <td>
                 <div style="padding: 0px 0px 0px 0px;">
-                    <p><HELLO! Our template IS being used</p>
                     {{ body }}
                 </div>
             </td>

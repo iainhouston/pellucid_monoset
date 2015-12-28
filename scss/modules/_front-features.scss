@@ -10,6 +10,7 @@
   border-bottom: 1px solid $grey-200;
   padding: 3rem 0;
   @include breakpoint(md) {
+    vertical-align: top;
     padding: 5rem 0;
   }
 
@@ -44,6 +45,7 @@
       display: none;
       fill: $grey-400;
       @include breakpoint(md) {
+        vertical-align: top;
         margin: 0 5px 0 0;
         display: inline-block;
       }
