@@ -31,10 +31,12 @@ a:focus,
   color: $red;
 }
 ul.menu a {
-  padding: 0.5em 1em;
-}
-ul.menu a.is-active {
-  background-color: $grey-100;
+  @include breakpoint(md) {
+    padding: 0.5em 1em;
+    ul.menu a.is-active {
+      background-color: $grey-100;
+    }
+  }
 }
 
 .feed-icon {
