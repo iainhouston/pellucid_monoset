@@ -24,10 +24,17 @@ a:active,
 a:focus,
 .link:hover,
 .link:active,
-.link:focus {
+.link:focus,
+  ul.menu a.is-active{
   text-decoration: none;
   border-bottom-style: solid;
   color: $red;
+}
+ul.menu a {
+  padding: 0.5em 1em;
+}
+ul.menu a.is-active {
+  background-color: $grey-100;
 }
 
 .feed-icon {
