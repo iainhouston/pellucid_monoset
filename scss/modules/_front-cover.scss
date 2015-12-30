@@ -63,8 +63,8 @@
     padding: 8px 12px 8px 25px;
     border-radius: 40px;
     background: rgba($black, 0.175);
-    color: $grey-600;
-    font-weight: $normal;
+    color: $grey-900;
+    font-weight: $light;
     //letter-spacing: 1px;
     font-family: $fontDefault;
     @include breakpoint(md) {
