@@ -18,6 +18,7 @@ regions:
   content: Content
   content_top: 'Content Top'
   content_bottom: 'Content Bottom'
+  search: 'Search'
   nav: Navigation
   front_one: 'Front One'
   front_two: 'Front Two'

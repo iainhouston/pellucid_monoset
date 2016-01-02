@@ -8,6 +8,7 @@
 use Drupal\Component\Utility\Xss;
 use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
 
 /**
  * Implements hook_preprocess_page().
@@ -16,5 +17,17 @@ function pellucid_monoset_preprocess_page(&$variables) {
   // Load this library only on front page.
   if ($variables['is_front']) {
     $variables['#attached']['library'][] = 'pellucid_monoset/front-page';
+  }
+}
+/**
+ * Implements hook_form_alter() to add classes to the search form.
+ */
+function pellucid_monoset_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['search_block_form', 'search_form'])) {
+    $key = ($form_id == 'search_block_form') ? 'actions' : 'basic';
+    if (!isset($form[$key]['submit']['#attributes'])) {
+      $form[$key]['submit']['#attributes'] = new Attribute();
+    }
+    $form[$key]['submit']['#attributes']->addClass('search-form__submit');
   }
 }

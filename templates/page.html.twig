@@ -23,6 +23,9 @@
     {% if page.nav %}
       {{ page.nav }}
     {% endif %}
+    {% if page.search %}
+      {{ page.search }}
+    {% endif %}
   </div>
 </header>
 
@@ -30,6 +33,9 @@
   <div class="menu-btn close" aria-hidden="true">&#10005; Menu</div>
   {% if page.nav %}
     {{ page.nav }}
+  {% endif %}
+  {% if page.search %}
+    {{ page.search }}
   {% endif %}
 </div>
 
