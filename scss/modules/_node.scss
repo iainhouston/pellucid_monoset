@@ -95,7 +95,7 @@ article.node--type-minutes {
   font-weight: $normal;
 
   p {
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.1rem 0;
   }
   strong {
     font-weight: $medium;
@@ -111,7 +111,7 @@ article.node--type-minutes {
     padding-bottom: 1rem;
   }
   li {
-    padding-bottom: 0.25rem;
+    padding-bottom: 0.125rem;
   }
 }
 body.node--type-agenda,
@@ -124,5 +124,38 @@ body.node--type-minutes {
 body.path-taxonomy {
   .content {
     min-height: 0;
+  }
+}
+@media print {
+  @page {
+    size: A4;
+    @top-left {
+      content: "Hamlet";
+    }
+    @top-right {
+      content: "Page " counter(page);
+    }
+  }
+  .container-main {
+    border: $red solid 4px;
+    font-size: 10px;
+    //width: 90%;
+    padding: 5px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight:$normal;
+    h1.page-title {
+      font-size: 16px;
+      font-weight: $medium;
+    }
+  }
+  .header-main,
+  .offcanvas,
+  .footer-main,
+  .node__meta,
+  .field--name-field-agenda-meeting,
+  .field--name-field-agenda-status,
+  .block-local-tasks-block,
+  .messages {
+    display: none;
   }
 }
