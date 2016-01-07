@@ -89,6 +89,7 @@
     margin:0;
   }
 }
+article.node--type-meeting,
 article.node--type-document,
 article.node--type-agenda,
 article.node--type-minutes {
@@ -108,30 +109,53 @@ article.node--type-minutes {
   }
   .field__item,
   .node__meta {
-    padding-bottom: 1rem;
+    padding-bottom: 0.25rem;
   }
   li {
-    padding-bottom: 0.125rem;
+    padding: 0.25rem 0 0.5rem 0;
   }
 }
+body.node--type-meeting,
+body.node--type-agenda,
+body.node--type-document,
+body.node--type-minutes,
+body.path-taxonomy {
+  .content {
+    min-height:0;
+  }
+}
+
+body.node--type-meeting,
 body.node--type-agenda,
 body.node--type-document,
 body.node--type-minutes {
-  h1, h1.page-title {
+  h1, h1.page-title,
+  .taxonomy-term > h2 {
     //font-size: 2rem;
     font-weight: $light;
   }
-}
-body.path-taxonomy {
-  .content {
-    min-height: 0;
+  .taxonomy-term {
+    font-weight: $normal;
+  }
+  .taxonomy-term .content {
+    padding:0;
   }
 }
+article.node--type-meeting {
+  .field--name-field-meeting-date,
+  .field--name-field-meeting-date > .field__label {
+    @include font-size(40px);
+    line-height: 0.9;
+    font-weight: $light;
+  }
+}
+
+
 @media print {
   @page {
     size: A4;
     @top-left {
-      content: "Hamlet";
+      content: "Top left";
     }
     @top-right {
       content: "Page " counter(page);
@@ -139,18 +163,39 @@ body.path-taxonomy {
   }
   .container-main {
     font-size: 10px;
-    //width: 90%;
+    color: black;
     padding: 5px;
     font-family: Helvetica, Arial, sans-serif;
     font-weight:$normal;
-    h1.page-title {
+    h1.page-title, h2,
+    .field--name-field-meeting-date,
+    .field--name-field-meeting-date > .field__label {
+      font-family: Helvetica, Arial, sans-serif;
       font-size: 16px;
-      font-weight: $medium;
+      & > a {
+        color: black;
+        font-weight: $medium;
+      }
     }
+
   }
-  body.node--type-agenda {
+  body.node--type-meeting {
     .container-main {
       border: $red solid 4px;
+    }
+    article.node--type-agenda {
+      &::before {
+        content: 'Agenda:';
+      }
+      & > h2 {
+        display: none;
+      }
+    }
+    article.node--type-meeting {
+      .field--name-field-meeting-date,
+      .field--name-field-meeting-date > .field__label {
+        font-size: 16px;
+      }
     }
   }
   .header-main,
