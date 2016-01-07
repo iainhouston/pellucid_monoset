@@ -101,7 +101,7 @@ article.node--type-minutes {
     font-weight: $medium;
   }
   h1, h2, h3, h4 {
-    font-weight: $normal;
+    font-weight: $light;
   }
   ul {
     list-style-type: circle;
@@ -117,8 +117,9 @@ article.node--type-minutes {
 body.node--type-agenda,
 body.node--type-document,
 body.node--type-minutes {
-  h1 {
-    font-size: 2.5rem;
+  h1, h1.page-title {
+    //font-size: 2rem;
+    font-weight: $light;
   }
 }
 body.path-taxonomy {
@@ -137,7 +138,6 @@ body.path-taxonomy {
     }
   }
   .container-main {
-    border: $red solid 4px;
     font-size: 10px;
     //width: 90%;
     padding: 5px;
@@ -146,6 +146,11 @@ body.path-taxonomy {
     h1.page-title {
       font-size: 16px;
       font-weight: $medium;
+    }
+  }
+  body.node--type-agenda {
+    .container-main {
+      border: $red solid 4px;
     }
   }
   .header-main,
