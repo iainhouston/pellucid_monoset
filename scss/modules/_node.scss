@@ -131,7 +131,7 @@ body.node--type-document,
 body.node--type-minutes {
   h1, h1.page-title,
   .taxonomy-term > h2 {
-    //font-size: 2rem;
+    margin: 0 0 0 0;
     font-weight: $light;
   }
   .taxonomy-term {
@@ -147,6 +147,19 @@ article.node--type-meeting {
     @include font-size(40px);
     line-height: 0.9;
     font-weight: $light;
+  }
+  article.node--type-agenda {
+    &::before {
+      content: 'Agenda:';
+      @include font-size(40px);
+      line-height: 0.9;
+      font-weight: $light;
+      padding: 0.25rem 0;
+      display: block;
+    }
+    & > h2 {
+      display: none;
+    }
   }
 }
 
@@ -184,14 +197,7 @@ article.node--type-meeting {
     .container-main {
       border: $red solid 4px;
     }
-    article.node--type-agenda {
-      &::before {
-        content: 'Agenda:';
-      }
-      & > h2 {
-        display: none;
-      }
-    }
+
     article.node--type-meeting {
       .field--name-field-meeting-date,
       .field--name-field-meeting-date > .field__label {
@@ -199,6 +205,14 @@ article.node--type-meeting {
         font-weight: $medium;
       }
     }
+    #block-pellucid-monoset-page-title > h1 {
+      text-align: center;
+      & > span {
+        font-size: 20px;
+        font-weight: $bold;
+      }
+    }
+
   }
   .header-main,
   .offcanvas,
