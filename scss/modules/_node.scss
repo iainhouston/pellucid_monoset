@@ -96,7 +96,7 @@ article.node--type-minutes {
   font-weight: $normal;
 
   p {
-    margin: 0 0 0.1rem 0;
+    margin: 0 0 0.25rem 0;
   }
   strong {
     font-weight: $medium;
@@ -112,7 +112,7 @@ article.node--type-minutes {
     padding-bottom: 0.25rem;
   }
   li {
-    padding: 0.25rem 0 0.5rem 0;
+    padding: 0 0 0.25rem 0;
   }
 }
 body.node--type-meeting,
@@ -171,6 +171,7 @@ article.node--type-meeting {
     .field--name-field-meeting-date,
     .field--name-field-meeting-date > .field__label {
       font-family: Helvetica, Arial, sans-serif;
+      font-weight: $medium;
       font-size: 16px;
       & > a {
         color: black;
@@ -195,6 +196,7 @@ article.node--type-meeting {
       .field--name-field-meeting-date,
       .field--name-field-meeting-date > .field__label {
         font-size: 16px;
+        font-weight: $medium;
       }
     }
   }
