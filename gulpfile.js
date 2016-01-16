@@ -7,6 +7,7 @@ var reload = browserSync.reload;
 var sass = require('gulp-sass');
 var outputPath = 'styleguide';
 var test_site_name = 'dev.bradford-abbas.uk:8888';
+var test_site_alias = '@badev';
 
 // Error notifications
 var reportError = function (error) {
@@ -109,11 +110,12 @@ gulp.task('drush', function () {
       read: false
     })
     .pipe($.shell([
-      'drush cc css-js',
+      'drush ' + test_site_alias + ' cc css-js',
+      'drush ' + test_site_alias + ' cc theme-registry',
     ]))
     .pipe($.notify({
       title: "Caches cleared",
-      message: "Drupal CSS/JS caches cleared.",
+      message: "Drupal theme caches cleared.",
       onLast: true
     }));
 });
@@ -136,7 +138,8 @@ gulp.task('browser-sync', function () {
 });
 
 // Default task to be run with `gulp`
-gulp.task('default', ['sass', 'browser-sync'], function () {
+gulp.task('default', ['sass', 'drush', 'browser-sync'], function () {
   gulp.watch("scss/**/*.scss", ['sass']);
   gulp.watch("scripts/**/*.js", ['js']);
+  gulp.watch("templates/**/*.twig", ['drush']);
 });

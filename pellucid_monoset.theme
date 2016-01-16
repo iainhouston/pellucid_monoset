@@ -5,10 +5,10 @@
  * Functions to support theming in the Seven theme.
  */
 
-use Drupal\Component\Utility\Xss;
-use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
+
+//use Drupal\simplenews\Entity\Subscriber;
 
 /**
  * Implements hook_preprocess_page().
@@ -19,6 +19,7 @@ function pellucid_monoset_preprocess_page(&$variables) {
     $variables['#attached']['library'][] = 'pellucid_monoset/front-page';
   }
 }
+
 /**
  * Implements hook_form_alter() to add classes to the search form.
  */
@@ -31,3 +32,81 @@ function pellucid_monoset_form_alter(&$form, FormStateInterface $form_state, $fo
     $form[$key]['submit']['#attributes']->addClass('search-form__submit');
   }
 }
+
+function pellucid_monoset_preprocess_simplenews_newsletter_body__councillors__email_html(&$variables) {
+  // get reference to static var
+  $v_summons = &myvariable_function('summons_text');
+  // alter static var
+  $v_summons = 'You are summoned to the ';
+  // get reference to static var
+  $v_newsletter = &myvariable_function('newsletter_type');
+  // alter static var
+  $v_newsletter = 'simplenews_newsletter_email';
+}
+
+function pellucid_monoset_preprocess_simplenews_newsletter_body__email_html(&$variables) {
+  // get reference to static var
+  $var = &myvariable_function('newsletter_type');
+  // alter static var
+  $var = 'simplenews_newsletter_email';
+}
+
+function pellucid_monoset_preprocess_field__node__title__meeting(&$variables, $hook) {
+  $newsletter_type = myvariable_function('newsletter_type');
+  // $element is the render array for the field
+  $element = $variables['element'];
+  if ($element['#view_mode'] == 'email_html' and $newsletter_type == 'simplenews_newsletter_email') {
+    $summons = &myvariable_function('summons_text');
+    $summons_text = ($summons != 'initial_value') ? $summons : '';
+    $variables['news_title_prefix'] = $summons_text;
+  }
+}
+
+function pellucid_monoset_preprocess_field__node__uid__meeting(&$variables, $hook) {
+  $newsletter_type = myvariable_function('newsletter_type');
+  // $element is the render array for the field
+  $element = $variables['element'];
+  if ($element['#view_mode'] == 'email_html' and $newsletter_type == 'simplenews_newsletter_email') {
+    $variables['omit_uid_field'] = TRUE;
+  }
+}
+
+function pellucid_monoset_preprocess_field__node__created__meeting(&$variables, $hook) {
+  $newsletter_type = myvariable_function('newsletter_type');
+  // $element is the render array for the field
+  $element = $variables['element'];
+  if ($element['#view_mode'] == 'email_html' and $newsletter_type == 'simplenews_newsletter_email') {
+    $variables['include_created'] = FALSE;
+  }
+}
+
+function pellucid_monoset_preprocess_field__node__field_meeting_date__meeting(&$variables, $hook) {
+  $newsletter_type = myvariable_function('newsletter_type');
+  if ($newsletter_type == 'simplenews_newsletter_email') {
+    $variables['meeting_date_p'] = TRUE;
+  }
+}
+
+function pellucid_monoset_preprocess_taxonomy_term__meeting_place(&$variables, $hook) {
+  $newsletter_type = myvariable_function('newsletter_type');
+  // $element is the render array for the field
+  //$element = $variables['element'];
+  //if ($element['#view_mode'] == 'email_html' and $newsletter_type == 'simplenews_newsletter_email') {
+  if ($newsletter_type == 'simplenews_newsletter_email') {
+    $variables['meeting_place_h2'] = FALSE;
+  }
+}
+
+function &myvariable_function($item = 'default') {
+  $var = &drupal_static(__FUNCTION__);
+  if (!isset($var)) {
+    // generate contents of static variable
+    $var = array();
+  }
+  if (!isset($var[$item])) {
+    // generate initial contents of static variable to be overwritten
+    $var[$item] = 'initial_value';
+  }
+  return $var[$item];
+}
+
