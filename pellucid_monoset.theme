@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
+use Drupal\Core\Url;
 
 //use Drupal\simplenews\Entity\Subscriber;
 
@@ -38,10 +39,12 @@ function pellucid_monoset_preprocess_simplenews_newsletter_body__councillors__em
   $v_summons = &myvariable_function('summons_text');
   // alter static var
   $v_summons = 'You are summoned to the ';
-  // get reference to static var
   $v_newsletter = &myvariable_function('newsletter_type');
-  // alter static var
   $v_newsletter = 'simplenews_newsletter_email';
+  $v_url = &myvariable_function('absolute_url');
+  $v_url = _absolute_page_url();
+  //$DEBUG1 = $variables['build']['#node']->field_agenda; // Drupal\Core\Field\EntityReferenceFieldItem
+  //$DEBUG2 = $variables['build']['#node']->field_agenda->value; // null
 }
 
 function pellucid_monoset_preprocess_simplenews_newsletter_body__email_html(&$variables) {
@@ -49,6 +52,21 @@ function pellucid_monoset_preprocess_simplenews_newsletter_body__email_html(&$va
   $var = &myvariable_function('newsletter_type');
   // alter static var
   $var = 'simplenews_newsletter_email';
+}
+
+function pellucid_monoset_preprocess_node(&$variables, $hook) {
+  $newsletter_type = myvariable_function('newsletter_type');
+  if ($newsletter_type == 'simplenews_newsletter_email') {
+    $variables['absolute_url'] = myvariable_function('absolute_url');
+  }
+}
+function pellucid_monoset_preprocess_username(&$variables, $hook) {
+  $newsletter_type = myvariable_function('newsletter_type');
+  if ($newsletter_type == 'simplenews_newsletter_email') {
+    $variables['link_path'] = _absolute_page_url('<front>').$variables['link_path'];
+    $variables['attributes']['href'] = $variables['link_path'];
+    $variables['attributes']['about'] = $variables['link_path'];
+  }
 }
 
 function pellucid_monoset_preprocess_field__node__title__meeting(&$variables, $hook) {
@@ -94,6 +112,7 @@ function pellucid_monoset_preprocess_taxonomy_term__meeting_place(&$variables, $
   //if ($element['#view_mode'] == 'email_html' and $newsletter_type == 'simplenews_newsletter_email') {
   if ($newsletter_type == 'simplenews_newsletter_email') {
     $variables['meeting_place_h2'] = FALSE;
+    $variables['url'] = _absolute_page_url('<front>').$variables['url'];
   }
 }
 
@@ -108,5 +127,10 @@ function &myvariable_function($item = 'default') {
     $var[$item] = 'initial_value';
   }
   return $var[$item];
+}
+
+function _absolute_page_url($route = '<current>'){
+  $newsletter_url = Url::fromRoute($route, [], ['absolute' => TRUE])->toString();
+  return strpos($newsletter_url, '/simplenews') ?substr($newsletter_url, 0, strpos($newsletter_url, "/simplenews")):$newsletter_url;
 }
 

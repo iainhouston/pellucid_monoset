@@ -18,9 +18,9 @@
   margin-top: 0;
   padding-top: 0.5em;
 }
-.node--view-mode-teaser h2 a {
-  color: #181818;
-}
+//.node--view-mode-teaser h2 a {
+//  color: #181818;
+//}
 .node--view-mode-teaser.node--sticky {
   background: #f9f9f9;
   background: rgba(0, 0, 0, 0.024);
@@ -122,6 +122,8 @@ body.node--type-minutes,
 body.path-taxonomy {
   .content {
     min-height:0;
+    margin-top: 5rem;
+    padding:0;
   }
 }
 
@@ -154,17 +156,22 @@ article.node--type-meeting {
 @media print {
   @page {
     size: A4;
-    @top-left {
-      content: "Top left";
-    }
-    @top-right {
-      content: "Page " counter(page);
-    }
+    margin: 0 10mm 10mm 10mm;
+    padding: 0;
+    //@top-left {
+    //  content: "Top left";
+    //  height: 0;
+    //}
+    //@top-right {
+    //  content: "Page " counter(page);
+    //  height: 0;
+    //}
   }
   .container-main {
-    font-size: 10px;
+    height:100%;
+    font-size: 11px;
     color: black;
-    padding: 5px;
+    padding: 0 5px;
     font-family: Helvetica, Arial, sans-serif;
     font-weight:$normal;
     h1.page-title, h2,
@@ -184,12 +191,16 @@ article.node--type-meeting {
     .container-main {
       border: $red solid 4px;
     }
-
     article.node--type-meeting {
       .field--name-field-meeting-date,
       .field--name-field-meeting-date > .field__label {
         font-size: 16px;
         font-weight: $medium;
+      }
+      .field--name-description,
+      .field--name-field-meeting-minutes {
+        display: none;
+        height:0;
       }
     }
     #block-pellucid-monoset-page-title > h1 {

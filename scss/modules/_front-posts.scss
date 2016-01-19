@@ -7,10 +7,15 @@
 .posts {
   background: $white;
   border-bottom: 1px solid $grey-200;
+  text-align: center;
   display: table;
   table-layout: fixed;
   width: 100%;
   position: relative;
+  padding: 3rem 0;
+  @include breakpoint(md) {
+    padding: 5rem 0;
+  }
   .views-row {
     transition: all .3s;
     padding: 2rem 1rem;
@@ -43,14 +48,14 @@
     color: $black;
   }
   h2 {
-    @include font-size(30px);
+    @include font-size(40px);
     margin: 0 0 2rem 0;
     line-height: 1;
     a {
       color: $black;
     }
   }
-  p a {
-    color: $grey-700;
-  }
+  //p a {
+  //  color: $grey-700;
+  //}
 }

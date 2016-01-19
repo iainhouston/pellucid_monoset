@@ -23,12 +23,12 @@ body {
 
 h1, h2, h3, h4, h5, h6,
 ul, ol, dl,
-blockquote, p, address,
+p, address,
 table,
 form,
 pre,
 hr {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -82,9 +82,10 @@ blockquote {
   padding: 1rem 3rem 1rem 2.5rem;
   position: relative;
   font-family: $fontHighlight;
-  @include font-size(20px);
+  @include font-size(18px);
   line-height: 1.2;
   font-style: italic;
+  color: #666666;;
 }
 
 blockquote::before {
@@ -117,7 +118,12 @@ table, th, td {
   border: 1px solid $grey-500;
 }
 td, th {
-  padding: 0 0.25rem;
+  padding: 0.5rem;
+}
+.view-id-people_to_do_with_the_authority th {
+  @include breakpoint(md) {
+    width:15%;
+  }
 }
 td.money {
   text-align: right;
