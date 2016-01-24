@@ -39,25 +39,41 @@
  */
 #}
 
-<h2>{{ title }}</h2>
+
 {% if simplenews_newsletter_email == "YES" %}
+    <tr class="field">
+        <td class="field_label">&nbsp;</td>
+        <td class="field_item"><h2>{{ title }}</h2></td>
+    </tr>
     <tr class="field">
         <td class="field_label">Summons:</td>
         <td class="field_item">{{ summons_text }}</td>
     </tr>
+{% else %}
+    <h2>{{ title }}</h2>
 {% endif %}
     {{ build }}
 
 {% if not opt_out_hidden %}
     {% if format == 'html' %}
-        <p class="newsletter-footer"><a
-                    href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a>
-        </p>
+        <tr class="newsletter-footer field">
+            {% if key == 'test' %}
+                <td class="field_item">{{ test_message }}</td>
+            {% else %}
+                <td class="field_item">&nbsp;</td>
+            {% endif %}
+            {% if simplenews_newsletter_email == "YES" %}
+                <td  class="field_label"><a href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a></td>
+            {% else  %}
+                <td  class="field_label"><a href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a></td>
+            {% endif %}
+        </tr>
     {% else %}
         -- {{ unsubscribe_text }} : [simplenews-subscriber:unsubscribe-url]
+        {% if key == 'test' %}
+            - - - {{ test_message }} - - -
+        {% endif %}
     {% endif %}
 {% endif %}
 
-{% if key == 'test' %}
-    - - - {{ test_message }} - - -
-{% endif %}
+

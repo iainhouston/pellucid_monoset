@@ -76,6 +76,10 @@ view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 ] %}
 
 {% if simplenews_newsletter_email == "YES" %}
+    {# This agenda will be the single "field_item" cell in the parent row
+       The parent is the field - eg field--node--field-agenda--meeting.html.twig
+    #}
+
     <h2{{ title_attributes }}>
         <a href="{{ link_path }}" rel="bookmark">{{ label }}</a>
     </h2>
