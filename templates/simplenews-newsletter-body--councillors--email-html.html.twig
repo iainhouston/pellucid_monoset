@@ -40,7 +40,13 @@
 #}
 
 <h2>{{ title }}</h2>
-{{ build }}
+{% if simplenews_newsletter_email == "YES" %}
+    <tr class="field">
+        <td class="field_label">Summons:</td>
+        <td class="field_item">{{ summons_text }}</td>
+    </tr>
+{% endif %}
+    {{ build }}
 
 {% if not opt_out_hidden %}
     {% if format == 'html' %}

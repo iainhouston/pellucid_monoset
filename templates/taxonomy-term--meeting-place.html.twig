@@ -30,7 +30,10 @@ set classes = [
 ]
 %}
 {% if simplenews_newsletter_email == "YES" %}
-<p>Meeting location: <a href="{{ url }}">{{ name }}</a></p>
+    <tr class="field">
+        <td class="field_label">Meeting location:</td>
+        <td  class="field_item"><h2><a href="{{ url }}">{{ name }}</a></h2></td>
+    </tr>
 {% else %}
 <div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>
     {{ title_prefix }}

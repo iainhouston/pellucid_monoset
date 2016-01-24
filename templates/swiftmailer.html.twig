@@ -158,7 +158,8 @@
         #emailBody, #emailColumns{
             background-color:#FFFFFF;
         }
-       .bodyContent p,  {
+       .bodyContent p,
+       .bodyContent p.summons {
             color:#181818 !important;
             font-family:Georgia, 'Times New Roman', Times, serif;
             font-size:18px;
@@ -169,20 +170,29 @@
             margin-left:0;
             text-align:left;
         }
-        .bodyContent li, .bodyContent ol {
+        .bodyContent li, .bodyContent ol,
+        .bodyContent table.field tr td.field_label {
             color: #181818 !important;
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 18px;
             line-height: 30px;
         }
-        .bodyContent a{
+        .bodyContent table.field tr td.field_item {
+              color: #181818 !important;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+              font-size: 18px;
+              line-height: 30px;
+          }
+        .bodyContent a,
+        .bodyContent table.field tr td.field_item h2 a {
             color:#00C5CC;
             font-family:Georgia, 'Times New Roman', Times, serif;
             font-size:18px;
             line-height:30px;
             text-align:left;
         }
-        .bodyContent h2 a{
+        .bodyContent h2 a,
+        .bodyContent table.field tr td h2 a {
             font-size:22px;
         }
         .sidebarContent p{
@@ -386,11 +396,7 @@
 
 
                 <table align="center" cellpadding="0" cellspacing="0" width="100%" id="emailBody">
-                    <tr>
-                        <td valign="top" id="bodyContainer" class="bodyContent">
                             {{ body }}
-                        </td>
-                    </tr>
                 </table>
 
 
@@ -502,7 +508,7 @@
                                             </tr>
                                             <tr>
                                                 <td valign="top" class="footerContent">
-                                                    <p>145 AVENUE F, ATLANTA, GA 30308<br><a href="#" target="_blank">UNSUBSCRIBE</a></p>
+                                                    <p>Contact the Parish Clerk<br><a href="http://bradford-abbas.uk/contact" target="_blank">CONTACT</a></p>
                                                 </td>
                                             </tr>
                                         </table>

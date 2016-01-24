@@ -1,7 +1,14 @@
 {% if simplenews_newsletter_email == "YES" %}
-    {% for item in items %}
-        {{ item.content }}
-    {% endfor %}
+        <tr class="field">
+        {% if  label_hidden %}
+            <td class="field_label">&nbsp;</td>
+        {% else %}
+            <td class="field_label">{{ label }}</td>
+        {% endif %}
+        {% for item in items %}
+            <td  class="field_item">{{ item.content }}</td>
+        {% endfor %}
+        </tr>
 {% elseif label_hidden %}
     {% if multiple %}
         <div{{ attributes }}>
