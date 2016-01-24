@@ -29,17 +29,17 @@ set classes = [
 'vocabulary-' ~ term.bundle|clean_class,
 ]
 %}
+{% if simplenews_newsletter_email == "YES" %}
+<p>Meeting location: <a href="{{ url }}">{{ name }}</a></p>
+{% else %}
 <div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>
     {{ title_prefix }}
     {% if not page %}
-        {% if meeting_place_h2 is defined and meeting_place_h2 == FALSE %}
-            <p>Meeting location: <a href="{{ url }}">{{ name }}</a></p>
-        {% else %}
             <h2><a href="{{ url }}">{{ name }}</a></h2>
-        {% endif %}
     {% endif %}
     {{ title_suffix }}
     <div class="content">
         {{ content }}
     </div>
 </div>
+{% endif %}

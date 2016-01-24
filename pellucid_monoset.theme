@@ -38,13 +38,12 @@ function pellucid_monoset_preprocess_simplenews_newsletter_body__councillors__em
   // get reference to static var
   $v_summons = &myvariable_function('summons_text');
   // alter static var
-  $v_summons = 'You are summoned to the ';
+  $v_summons = 'You are summoned to this meeting. ';
   $v_newsletter = &myvariable_function('newsletter_type');
   $v_newsletter = 'simplenews_newsletter_email';
   $v_url = &myvariable_function('absolute_url');
   $v_url = _absolute_page_url();
-  //$DEBUG1 = $variables['build']['#node']->field_agenda; // Drupal\Core\Field\EntityReferenceFieldItem
-  //$DEBUG2 = $variables['build']['#node']->field_agenda->value; // null
+  $variables['simplenews_newsletter_email']  = TRUE;
 }
 
 function pellucid_monoset_preprocess_simplenews_newsletter_body__email_html(&$variables) {
@@ -58,6 +57,9 @@ function pellucid_monoset_preprocess_node(&$variables, $hook) {
   $newsletter_type = myvariable_function('newsletter_type');
   if ($newsletter_type == 'simplenews_newsletter_email') {
     $variables['absolute_url'] = myvariable_function('absolute_url');
+    $variables['simplenews_newsletter_email'] = "YES";
+  } else {
+    $variables['simplenews_newsletter_email'] = "NO";
   }
 }
 function pellucid_monoset_preprocess_username(&$variables, $hook) {
@@ -69,41 +71,90 @@ function pellucid_monoset_preprocess_username(&$variables, $hook) {
   }
 }
 
-function pellucid_monoset_preprocess_field__node__title__meeting(&$variables, $hook) {
+//function pellucid_monoset_preprocess_field__node__title__meeting(&$variables, $hook) {
+//  $newsletter_type = myvariable_function('newsletter_type');
+//  // $element is the render array for the field
+//  $element = $variables['element'];
+//  if ($element['#view_mode'] == 'email_html' and $newsletter_type == 'simplenews_newsletter_email') {
+//    $summons = &myvariable_function('summons_text');
+//    $summons_text = ($summons != 'initial_value') ? $summons : '';
+//    $variables['news_title_prefix'] = $summons_text;
+//  }
+//}
+
+function pellucid_monoset_preprocess_field__node__title__agenda(&$variables, $hook) {
   $newsletter_type = myvariable_function('newsletter_type');
-  // $element is the render array for the field
-  $element = $variables['element'];
-  if ($element['#view_mode'] == 'email_html' and $newsletter_type == 'simplenews_newsletter_email') {
-    $summons = &myvariable_function('summons_text');
-    $summons_text = ($summons != 'initial_value') ? $summons : '';
-    $variables['news_title_prefix'] = $summons_text;
+  if ($newsletter_type == 'simplenews_newsletter_email') {
+    $variables['simplenews_newsletter_email'] = "YES";
+  } else {
+    $variables['simplenews_newsletter_email'] = "NO";
   }
 }
 
-function pellucid_monoset_preprocess_field__node__uid__meeting(&$variables, $hook) {
+function pellucid_monoset_preprocess_node__agenda__email_html(&$variables, $hook) {
   $newsletter_type = myvariable_function('newsletter_type');
-  // $element is the render array for the field
-  $element = $variables['element'];
-  if ($element['#view_mode'] == 'email_html' and $newsletter_type == 'simplenews_newsletter_email') {
-    $variables['omit_uid_field'] = TRUE;
+  if ($variables['view_mode'] == 'email_html' and $newsletter_type == 'simplenews_newsletter_email') {
+    $variables['simplenews_newsletter_email'] = "YES";
+    $variables['link_path'] = _absolute_page_url('<front>').$variables['url'];
+  } else {
+    $variables['simplenews_newsletter_email'] = "NO";
   }
 }
+
+//function pellucid_monoset_preprocess_field__node__uid__meeting(&$variables, $hook) {
+//  $newsletter_type = myvariable_function('newsletter_type');
+//  // $element is the render array for the field
+//  $element = $variables['element'];
+//  if ($element['#view_mode'] == 'email_html' and $newsletter_type == 'simplenews_newsletter_email') {
+//    $variables['omit_uid_field'] = TRUE;
+//  }
+//}
 
 function pellucid_monoset_preprocess_field__node__created__meeting(&$variables, $hook) {
   $newsletter_type = myvariable_function('newsletter_type');
-  // $element is the render array for the field
-  $element = $variables['element'];
-  if ($element['#view_mode'] == 'email_html' and $newsletter_type == 'simplenews_newsletter_email') {
+  if ($variables['view_mode'] == 'email_html' and $newsletter_type == 'simplenews_newsletter_email') {
+    $variables['simplenews_newsletter_email'] = "YES";
+    $variables['link_path'] = _absolute_page_url('<front>').$variables['url'];
     $variables['include_created'] = FALSE;
+  } else {
+    $variables['simplenews_newsletter_email'] = "NO";
+  }
+}
+
+function pellucid_monoset_preprocess_field__node__field_agenda__meeting(&$variables, $hook) {
+  $newsletter_type = myvariable_function('newsletter_type');
+  if ($newsletter_type == 'simplenews_newsletter_email') {
+    $variables['meeting_date_p'] = TRUE;
+    $variables['simplenews_newsletter_email'] = "YES";
+    $summons = &myvariable_function('summons_text');
+    $summons_text = ($summons != 'initial_value') ? $summons : '';
+    $variables['summons_text'] = $summons_text;
+  }
+  else {
+    $variables['simplenews_newsletter_email'] = "NO";
+  }
+}
+
+function pellucid_monoset_preprocess_field__node__body__agenda(&$variables, $hook) {
+  $newsletter_type = myvariable_function('newsletter_type');
+  if ($newsletter_type == 'simplenews_newsletter_email') {
+    $variables['meeting_date_p'] = TRUE;
+    $variables['simplenews_newsletter_email'] = "YES";
+  }
+  else {
+    $variables['simplenews_newsletter_email'] = "NO";
   }
 }
 
 function pellucid_monoset_preprocess_field__node__field_meeting_date__meeting(&$variables, $hook) {
   $newsletter_type = myvariable_function('newsletter_type');
   if ($newsletter_type == 'simplenews_newsletter_email') {
-    $variables['meeting_date_p'] = TRUE;
+    $variables['simplenews_newsletter_email'] = "YES";
+  } else {
+    $variables['simplenews_newsletter_email'] = "NO";
   }
 }
+
 
 function pellucid_monoset_preprocess_field__node__field_meeting_minutes__meeting(&$variables, $hook){
   $newsletter_type = myvariable_function('newsletter_type');
@@ -111,6 +162,24 @@ function pellucid_monoset_preprocess_field__node__field_meeting_minutes__meeting
     $variables['minutes_title'] = $variables['items']['0']['content']['#title'];
     $given_url = $variables['items']['0']['content']['#url']->toString();
     $variables['absolute_url']  = _absolute_page_url('<front>').ltrim($given_url, '/');
+  }
+}
+
+function pellucid_monoset_preprocess_field__node__field_meeting_place__meeting(&$variables, $hook){
+  $newsletter_type = myvariable_function('newsletter_type');
+  if ($newsletter_type == 'simplenews_newsletter_email') {
+    $variables['simplenews_newsletter_email']  = TRUE;
+  } else {
+    $variables['simplenews_newsletter_email']  = FALSE;
+  }
+}
+
+function pellucid_monoset_preprocess_field__node__field_agenda_status__agenda(&$variables, $hook){
+  $newsletter_type = myvariable_function('newsletter_type');
+  if ($newsletter_type == 'simplenews_newsletter_email') {
+    $variables['simplenews_newsletter_email']  = TRUE;
+  } else {
+    $variables['simplenews_newsletter_email']  = FALSE;
   }
 }
 
