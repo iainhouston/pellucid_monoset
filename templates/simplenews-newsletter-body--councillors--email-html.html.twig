@@ -38,37 +38,45 @@
  * @see template_preprocess_simplenews_newsletter_body()
  */
 #}
-
-
 {% if simplenews_newsletter_email == "YES" %}
     <tr class="field">
-        <td class="field_label">&nbsp;</td>
-        <td class="field_item"><h2>{{ title }}</h2></td>
+        <td class="head_field" colspan="2"><h2 class="big_head">{{ title }}</h2></td>
     </tr>
-    <tr class="field">
-        <td class="field_label">Summons:</td>
-        <td class="field_item">{{ summons_text }}</td>
-    </tr>
+    {% if bundle == "meeting" %}
+        <tr class="field">
+            <td class="field_label">Summons</td>
+            <td class="field_item">{{ summons_text }}</td>
+        </tr>
+    {% endif %}
 {% else %}
     <h2>{{ title }}</h2>
 {% endif %}
     {{ build }}
 
 {% if not opt_out_hidden %}
+    <tr class="newsletter-footer field">
+        <td class="field_label">&nbsp;</td>
+        <td class="field_item">&nbsp;</td>
+    </tr>
+    <tr class="newsletter-footer field">
+        <td class="field_label">&nbsp;</td>
+        <td class="field_item">&nbsp;</td>
+        >
+    </tr>
     {% if format == 'html' %}
-        <tr class="newsletter-footer field">
-            {% if key == 'test' %}
+        {% if key == 'test' %}
+            <tr class="newsletter-footer field">
+                <td class="field_label">&nbsp;</td>
                 <td class="field_item">{{ test_message }}</td>
-            {% else %}
-                <td class="field_item">&nbsp;</td>
-            {% endif %}
-            {% if simplenews_newsletter_email == "YES" %}
-                <td  class="field_label"><a href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a></td>
-            {% else  %}
-                <td  class="field_label"><a href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a></td>
-            {% endif %}
-        </tr>
-    {% else %}
+            </tr>
+        {% endif %}
+        {% if bundle != "meeting" %} {#  Councillors' summonses don't offer unsubscribe #}
+            <tr class="newsletter-footer field">
+                <td class="field_label">&nbsp;</td>
+                <td class="field_item"><a href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a></td>
+            </tr>
+        {% endif %}
+    {% else %} {# It's a plain text email #}
         -- {{ unsubscribe_text }} : [simplenews-subscriber:unsubscribe-url]
         {% if key == 'test' %}
             - - - {{ test_message }} - - -
