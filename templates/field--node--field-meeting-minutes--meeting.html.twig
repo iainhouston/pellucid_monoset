@@ -1,0 +1,35 @@
+{% if simplenews_newsletter_email == "YES" %}
+        <tr class="field">
+        {% if  label_hidden %}
+            <td class="field_label">&nbsp;</td>
+        {% else %}
+            <td class="field_label">{{ label }}</td>
+        {% endif %}
+            <td  class="field_item"><h2><a href="{{ url }}">{{ minutes_title }}</a></h2></td>
+        </tr>
+{% elseif label_hidden %}
+    {% if multiple %}
+        <div{{ attributes }}>
+            {% for item in items %}
+                <div{{ item.attributes }}>{{ item.content }}</div>
+            {% endfor %}
+        </div>
+    {% else %}
+        {% for item in items %}
+            <div{{ attributes }}>{{ item.content }}</div>
+        {% endfor %}
+    {% endif %}
+{% else %}
+    <div{{ attributes }}>
+        <div{{ title_attributes }}>{{ label }}</div>
+        {% if multiple %}
+        <div>
+            {% endif %}
+            {% for item in items %}
+                <div{{ item.attributes }}>{{ item.content }}</div>
+            {% endfor %}
+            {% if multiple %}
+        </div>
+        {% endif %}
+    </div>
+{% endif %}

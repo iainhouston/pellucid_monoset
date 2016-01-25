@@ -55,12 +55,18 @@
             padding-top:40px;
             padding-bottom:40px;
         }
-        .bodyContent{
+        table.bodyContent{
             padding-top:20px;
             padding-right:10px;
             padding-bottom:20px;
             padding-left:10px;
         }
+        table.bodyContent tr.field td.field_item ol li {
+             padding-top:0px;
+             padding-right:0px;
+             padding-bottom:0px;
+             padding-left:0px;
+         }
         .sidebarContent{
             padding-top:20px;
             padding-right:10px;
@@ -158,8 +164,7 @@
         #emailBody, #emailColumns{
             background-color:#FFFFFF;
         }
-       .bodyContent p,
-       .bodyContent p.summons {
+       table.bodyContent p {
             color:#181818 !important;
             font-family:Georgia, 'Times New Roman', Times, serif;
             font-size:18px;
@@ -170,30 +175,30 @@
             margin-left:0;
             text-align:left;
         }
-        .bodyContent li, .bodyContent ol,
-        .bodyContent table.field tr td.field_label {
+        table.bodyContent tr.field td.field_label {
             color: #181818 !important;
             font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 18px;
+            font-weight:200;
             line-height: 30px;
         }
-        .bodyContent table.field tr td.field_item {
+        table.bodyContent tr.field td.field_item,
+        table.bodyContent tr.field td.field_item ol li {
               color: #181818 !important;
               font-family: Georgia, 'Times New Roman', Times, serif;
               font-size: 18px;
-              line-height: 30px;
+              line-height: 28px;
           }
-        .bodyContent a,
-        .bodyContent table.field tr td.field_item h2 a {
+        table.bodyContent a,
+        table.bodyContent tr.field td.field_item h2 a {
             color:#00C5CC;
             font-family:Georgia, 'Times New Roman', Times, serif;
-            font-size:18px;
+            font-size:20px;
             line-height:30px;
             text-align:left;
         }
-        .bodyContent h2 a,
-        .bodyContent table.field tr td h2 a {
-            font-size:22px;
+        .tablebodyContent tr.field td.field_item h2 {
+          margin-bottom:0px;
         }
         .sidebarContent p{
             color:#8B9798 !important;
@@ -272,7 +277,7 @@
                 padding-top:80px !important;
                 padding-bottom:80px !important;
             }
-            .bodyContent{
+            table.bodyContent{
                 padding-top:60px !important;
                 padding-bottom:60px !important;
             }
@@ -395,7 +400,7 @@
                 </table>
 
 
-                <table align="center" cellpadding="0" cellspacing="0" width="100%" id="emailBody">
+                <table align="center" cellpadding="0" cellspacing="0" width="100%" id="emailBody" class="bodyContent">
                             {{ body }}
                 </table>
 
