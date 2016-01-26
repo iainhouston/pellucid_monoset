@@ -83,13 +83,8 @@ view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     <h2{{ title_attributes }}>
         <a href="{{ link_path }}" rel="bookmark">{{ label }}</a>
     </h2>
-    <p>{{ content|without('links') }}</p>
-
-    {% if content.links %}
-        <div class="node__links">
-            {{ content.links }}
-        </div>
-    {% endif %}
+    <hr>
+    {{ content|without('links') }}
 
     {# end of newsletter code#}
 
