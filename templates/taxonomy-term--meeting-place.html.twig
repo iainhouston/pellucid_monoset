@@ -29,7 +29,7 @@ set classes = [
 'vocabulary-' ~ term.bundle|clean_class,
 ]
 %}
-{% if simplenews_newsletter_email == "YES" %}
+{% if simplenews_newsletter_email %}
     <h2 ><a href="{{ url }}">{{ name }}</a></h2>
 {% else %}
 <div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>

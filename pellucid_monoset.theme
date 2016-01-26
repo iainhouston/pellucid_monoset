@@ -62,9 +62,9 @@ function pellucid_monoset_preprocess_node(&$variables, $hook) {
   $newsletter_type = myvariable_function('newsletter_type');
   if ($newsletter_type == 'simplenews_newsletter_email') {
     $variables['absolute_url'] = myvariable_function('absolute_url');
-    $variables['simplenews_newsletter_email'] = "YES";
+    $variables['simplenews_newsletter_email'] = TRUE;
   } else {
-    $variables['simplenews_newsletter_email'] = "NO";
+    $variables['simplenews_newsletter_email'] = FALSE;
   }
 }
 function pellucid_monoset_preprocess_username(&$variables, $hook) {
@@ -79,7 +79,7 @@ function pellucid_monoset_preprocess_username(&$variables, $hook) {
 function pellucid_monoset_preprocess_field(&$variables, $hook) {
   $newsletter_type = myvariable_function('newsletter_type');
   if ($newsletter_type == 'simplenews_newsletter_email') {
-    $variables['simplenews_newsletter_email'] = "YES";
+    $variables['simplenews_newsletter_email'] = TRUE;
     $summons = &myvariable_function('summons_text');
     $summons_text = ($summons != 'initial_value') ? $summons : '';
     $variables['summons_text'] = $summons_text;
@@ -87,14 +87,14 @@ function pellucid_monoset_preprocess_field(&$variables, $hook) {
       $variables['url'] = _absolute_page_url('<front>').$variables['url'];
     }
   } else {
-    $variables['simplenews_newsletter_email'] = "NO";
+    $variables['simplenews_newsletter_email'] = FALSE;
   }
 }
 
 function pellucid_monoset_preprocess_field__node__field_meeting_minutes__meeting(&$variables, $hook) {
   $newsletter_type = myvariable_function('newsletter_type');
   if ($newsletter_type == 'simplenews_newsletter_email') {
-    $variables['simplenews_newsletter_email'] = "YES";
+    $variables['simplenews_newsletter_email'] = TRUE;
     $summons = &myvariable_function('summons_text');
     $summons_text = ($summons != 'initial_value') ? $summons : '';
     $variables['summons_text'] = $summons_text;
@@ -103,17 +103,17 @@ function pellucid_monoset_preprocess_field__node__field_meeting_minutes__meeting
     $url = $variables['items']['0']['content']['#url']->toString();
     $variables['url'] = _absolute_page_url('<front>').$url;
   } else {
-    $variables['simplenews_newsletter_email'] = "NO";
+    $variables['simplenews_newsletter_email'] = FALSE;
   }
 }
 
 function pellucid_monoset_preprocess_node__agenda__email_html(&$variables, $hook) {
   $newsletter_type = myvariable_function('newsletter_type');
   if ($variables['view_mode'] == 'email_html' and $newsletter_type == 'simplenews_newsletter_email') {
-    $variables['simplenews_newsletter_email'] = "YES";
+    $variables['simplenews_newsletter_email'] = TRUE;
     $variables['link_path'] = _absolute_page_url('<front>').$variables['url'];
   } else {
-    $variables['simplenews_newsletter_email'] = "NO";
+    $variables['simplenews_newsletter_email'] = FALSE;
   }
 }
 
@@ -121,10 +121,10 @@ function pellucid_monoset_preprocess_taxonomy_term__meeting_place(&$variables, $
   $newsletter_type = myvariable_function('newsletter_type');
   //if ($variables['view_mode'] == 'email_html' and $newsletter_type == 'simplenews_newsletter_email') {
   if ($newsletter_type == 'simplenews_newsletter_email') {
-    $variables['simplenews_newsletter_email'] = "YES";
+    $variables['simplenews_newsletter_email'] = TRUE;
     $variables['url'] = _absolute_page_url('<front>').$variables['url'];
   } else {
-    $variables['simplenews_newsletter_email'] = "NO";
+    $variables['simplenews_newsletter_email'] = FALSE;
   }
 }
 

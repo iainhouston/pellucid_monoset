@@ -19,7 +19,7 @@
  * @see field.html.twig
  */
 #}
-{% if simplenews_newsletter_email == "YES" %}
+{% if simplenews_newsletter_email  %}
   {%- for item in items -%}
     {{ item.content }}
   {%- endfor -%}

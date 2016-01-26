@@ -75,7 +75,7 @@ not node.isPublished() ? 'node--unpublished',
 view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 ] %}
 
-{% if simplenews_newsletter_email == "YES" %}
+{% if simplenews_newsletter_email %}
     {# This agenda will be the single "field_item" cell in the parent row
        The parent is the field - eg field--node--field-agenda--meeting.html.twig
     #}
