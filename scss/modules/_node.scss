@@ -125,6 +125,9 @@ body.path-taxonomy {
     margin-top: 5rem;
     padding:0;
   }
+  .taxonomy-term .content {
+    margin-top:1rem;
+  }
 }
 
 body.node--type-meeting,
@@ -145,13 +148,12 @@ body.node--type-minutes {
 }
 article.node--type-meeting {
   .field--name-field-meeting-date,
-  .field--name-field-meeting-date > .field__label {
-    @include font-size(40px);
+  .field--name-field-meeting-date > .field__label, h2 {
+    @include font-size(24px);
     line-height: 0.9;
     font-weight: $light;
   }
 }
-
 
 @media print {
   @page {

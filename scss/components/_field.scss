@@ -23,3 +23,24 @@
 .field--label-inline .field__label::after {
   content: ':';
 }
+
+.view-people-to-do-with-the-authority {
+  table {
+    margin-top:1.5rem;
+    border:none;
+  }
+  td, th {
+    border:none;
+  }
+  td.views-field-user-picture {
+    a {
+      max-width: 85px;
+      padding: 5px;
+      margin: 0 auto;
+      display: block;
+    }
+    img {
+      border:solid 1px $grey-300;
+    }
+  }
+}
