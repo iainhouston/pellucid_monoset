@@ -1,0 +1,14 @@
+article.profile {
+  .user_label, .user_item {
+    @include breakpoint(md) {
+      display: inline-block;
+    }
+  }
+  .user_label {
+    min-width:8rem;
+    font-weight:400;
+  }
+  //.user_item::before {
+  //  content: ":";
+  //}
+}

@@ -1,0 +1,8 @@
+<div class="user_profile_item">
+{% if label_hidden  %}
+    <div class="user_label">&nbsp;</div>
+{% else %}
+    <div class="user_label">{{ label }}</div>
+{% endif %}
+    <div class="user_item">{{ items.0.content }}</div>
+</div>
