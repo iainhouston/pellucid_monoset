@@ -120,11 +120,7 @@ table, th, td {
 td, th {
   padding: 0.5rem;
 }
-.view-id-councillors th {
-  @include breakpoint(md) {
-    width:15%;
-  }
-}
+
 td.money {
   text-align: right;
 }

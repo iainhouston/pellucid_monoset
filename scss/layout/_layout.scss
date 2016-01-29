@@ -46,3 +46,24 @@
   padding: 3rem 0;
   border-top: 1px solid $grey-200;
 }
+
+/**
+* Responsive tables.
+*/
+.view-id-councillors table {
+    width:100%;
+}
+@media screen and (max-width: 37.5em) { /* 600px */
+  th.priority-low,
+  td.priority-low,
+  th.priority-medium,
+  td.priority-medium {
+    display: none;
+  }
+}
+@media screen and (max-width: 60em) {
+  th.priority-low,
+  td.priority-low {
+    display: none;
+  }
+}

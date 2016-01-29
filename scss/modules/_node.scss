@@ -33,6 +33,18 @@
   line-height: 1.6;
 }
 
+.view-header p {
+  padding: 1rem 0;
+  //margin:1.5rem 0;
+}
+
+.view-footer p {
+  margin-top:2rem;
+  padding-top:1.5rem;
+  //margin:1.5rem 0;
+  font-size:80%;
+}
+
 /* Node metadata styles. */
 .node__meta {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -155,6 +167,7 @@ article.node--type-meeting {
   }
 }
 
+// Printing style
 @media print {
   @page {
     size: A4;

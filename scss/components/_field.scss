@@ -39,18 +39,20 @@
   td:nth-child(4), td:nth-child(5) {
     font-size: 80%;
   }
+
   td.is-active, td:first-child {
     background-color: $grey-100;
   }
   td.views-field-user-picture {
-    a {
-      max-width: 85px;
-      padding: 5px;
-      margin: 0 auto;
+      display: none;
+    @include breakpoint(md) {
       display: block;
+      a {
+        max-width: 85px;
+        padding: 5px;
+        margin: 0 auto;
+        display: block;
+      }
     }
-    //img {
-    //  border:solid 1px $grey-300;
-    //}
   }
 }
