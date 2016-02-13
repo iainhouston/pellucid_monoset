@@ -6,7 +6,7 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var sass = require('gulp-sass');
 var outputPath = 'styleguide';
-var test_site_name = 'staging.bradford-abbas.uk:443';
+var test_site_name = 'dev.bradford-abbas.uk';
 var test_site_alias = '@badev';
 
 // Error notifications
@@ -138,8 +138,9 @@ gulp.task('browser-sync', function () {
 });
 
 // Default task to be run with `gulp`
-gulp.task('default', ['sass', 'drush', 'browser-sync'], function () {
+gulp.task('default', ['sass'], function () {
+//  gulp.task('default', ['sass', 'drush', 'browser-sync'], function () {
   gulp.watch("scss/**/*.scss", ['sass']);
   gulp.watch("scripts/**/*.js", ['js']);
-  gulp.watch("templates/**/*.twig", ['drush']);
+//  gulp.watch("templates/**/*.twig", ['drush']);
 });
