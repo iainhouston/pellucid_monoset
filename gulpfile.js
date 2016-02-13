@@ -6,7 +6,7 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var sass = require('gulp-sass');
 var outputPath = 'styleguide';
-var test_site_name = 'dev.bradford-abbas.uk:8888';
+var test_site_name = 'staging.bradford-abbas.uk:443';
 var test_site_alias = '@badev';
 
 // Error notifications

@@ -45,11 +45,13 @@
   }
 }
 
-.logo-svg {
-  fill: $grey-500;
+.logo.logo-svg {
   transition: all .3s;
-  &:hover {
-    fill: $blue;
+  g#Icon circle {
+    stroke: $red;
+  }
+  &:hover g#Icon circle {
+    stroke: $blue;
   }
 }
 
