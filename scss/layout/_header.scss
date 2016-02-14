@@ -47,11 +47,11 @@
 
 .logo.logo-svg {
   transition: all .3s;
-  g#Icon circle {
-    stroke: $red;
-  }
+  //g#Icon circle {
+  //  stroke: $blue;
+  //}
   &:hover g#Icon circle {
-    stroke: $blue;
+    stroke: $red;
   }
 }
 
