@@ -1,4 +1,9 @@
 /*global -$ */
+
+/*
+ * This gulp file is designed to be used on the host OS
+ * on the development machine and not in the guest OS in a Vagrant setup
+ */
 'use strict';
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
@@ -132,15 +137,15 @@ gulp.task('browser-sync', function () {
   //initialize browsersync
   browserSync.init(files, {
     proxy: test_site_name,
-    reloadOnRestart: true,
-    browser: ['/Applications/Google Chrome.app']
+    // reloadOnRestart: true,
+     browser: ['/Applications/Google Chrome.app']
   });
 });
 
 // Default task to be run with `gulp`
-gulp.task('default', ['sass'], function () {
-//  gulp.task('default', ['sass', 'drush', 'browser-sync'], function () {
+//gulp.task('default', ['sass'], function () {
+  gulp.task('default', ['sass', 'drush', 'browser-sync'], function () {
   gulp.watch("scss/**/*.scss", ['sass']);
   gulp.watch("scripts/**/*.js", ['js']);
-//  gulp.watch("templates/**/*.twig", ['drush']);
+  gulp.watch("templates/**/*.twig", ['drush']);
 });
