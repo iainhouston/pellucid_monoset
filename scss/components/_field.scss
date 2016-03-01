@@ -33,20 +33,22 @@
     border:none;
     font-size: 80%;
   }
-  th:nth-child(1),
-  th:nth-child(3)  {
-    width:10%;
+  th:nth-child(1) {
+    width: 10%;
   }
   th:nth-child(2),
-  th:nth-child(4)  {
-    width:15%;
+  th:nth-child(3)  {
+    width:12%;
   }
-
-  th:nth-child(2), th:nth-child(3),
-  td:nth-child(2), td:nth-child(3) {
-    text-align: center;
+  th:nth-child(2)
+  td:nth-child(2) {
+    text-align: right;
   }
-  td.is-active, td:first-child {
+  th:nth-child(3),
+  td:nth-child(3) {
+    text-align: left;
+  }
+  td {
     background-color: $grey-100;
   }
   td.views-field-user-picture {
