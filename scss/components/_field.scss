@@ -6,53 +6,73 @@
 .field__label {
   font-weight: 400;
 }
+
 .field--label-inline .field__label,
 .field--label-inline .field__items {
   float: left; /*LTR*/
 }
+
 .field--label-inline .field__label,
 .field--label-inline > .field__item,
 .field--label-inline .field__items {
   padding-right: 0.5em;
 }
+
 [dir="rtl"] .field--label-inline .field__label,
 [dir="rtl"] .field--label-inline .field__items {
   padding-left: 0.5em;
   padding-right: 0;
 }
+
 .field--label-inline .field__label::after {
   content: ':';
 }
 
 .view-id-councillors {
   table {
-    margin-top:1.5rem;
-    border:none;
+    margin-top: 1.5rem;
+    border: none;
   }
   td, th {
-    border:none;
-    font-size: 80%;
+    border: none;
+    font-size: 85%;
   }
   th:nth-child(1) {
-    width: 10%;
+    width:15%;
   }
   th:nth-child(2),
-  th:nth-child(3)  {
-    width:12%;
+  th:nth-child(3),
+  th:nth-child(4) {
+    width: 10%;
   }
-  th:nth-child(2)
-  td:nth-child(2) {
+  //td:nth-child(1),
+  //td:nth-child(2),
+  //td:nth-child(3),
+  //td:nth-child(4) {
+  //  width: 10%;
+  //}
+  th:nth-child(5),
+  th:nth-child(6) {
+    width: 20%;
+  }
+  //td:nth-child(5),
+  //td:nth-child(6) {
+  //  width: 20%;
+  //}
+  th:nth-child(2) {
     text-align: right;
   }
-  th:nth-child(3),
-  td:nth-child(3) {
+  th:nth-child(3) {
     text-align: left;
   }
-  td {
+  th:nth-child(1),
+  th:nth-child(2),
+  th:nth-child(3),
+  th:nth-child(4) {
     background-color: $grey-100;
   }
   td.views-field-user-picture {
-      display: none;
+    //display: none;
     @include breakpoint(md) {
       display: block;
       a {

@@ -51,19 +51,14 @@
 * Responsive tables.
 */
 .view-id-councillors table {
-    width:100%;
+  width: 100%;
 }
-@media screen and (max-width: 37.5em) { /* 600px */
-  th.priority-low,
-  td.priority-low,
-  th.priority-medium,
-  td.priority-medium {
-    display: none;
+
+th.priority-low,
+td.priority-low {
+  display: none;
+  @include breakpoint(md) {
+    display: table-cell;
   }
 }
-@media screen and (max-width: 60em) {
-  th.priority-low,
-  td.priority-low {
-    display: none;
-  }
-}
+
