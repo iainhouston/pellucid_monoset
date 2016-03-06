@@ -25,10 +25,9 @@ textarea {
   box-shadow: none;
   border-radius: none;
   transition: border 0.3s;
-  @include font-size(14px);
-  color: $blue;
-  font-family: $fontDefault;
-  font-weight: $thin;
+  font-family: $fontInput;
+  color: $grey-600;
+  font-size: 85%;
 }
 
 input[type="submit"] {
