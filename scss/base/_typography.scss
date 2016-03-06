@@ -81,7 +81,7 @@ blockquote {
   padding: 1rem 3rem 1rem 2.5rem;
   position: relative;
   font-family: $fontHighlight;
-  @include font-size(18px);
+  //@include font-size(18px);
   line-height: 1.2;
   font-style: italic;
   color: #666666;;
@@ -130,7 +130,7 @@ thead {
 // Other Elements
 
 p {
-  margin: 0 0 1rem 0;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 strong {
