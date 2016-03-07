@@ -14,10 +14,12 @@
   margin-bottom: 30px;
   padding-bottom: 15px;
 }
+
 .node--view-mode-teaser h2 {
   margin-top: 0;
   padding-top: 0.5em;
 }
+
 //.node--view-mode-teaser h2 a {
 //  color: #181818;
 //}
@@ -27,6 +29,7 @@
   border: 1px solid #d3d7d9;
   padding: 0 15px 15px;
 }
+
 .node--view-mode-teaser .node__content {
   clear: none;
   font-size: 1em;
@@ -39,10 +42,10 @@
 }
 
 .view-footer p {
-  margin-top:2rem;
-  padding-top:1.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
   //margin:1.5rem 0;
-  font-size:80%;
+  font-size: 80%;
 }
 
 /* Node metadata styles. */
@@ -52,10 +55,12 @@
   color: #68696b;
   margin-bottom: -5px;
 }
+
 .node__meta .field--name-field-user-picture img {
   float: left; /* LTR */
   margin: 1px 20px 0 0; /* LTR */
 }
+
 [dir="rtl"] .node__meta .field--name-field-user-picture img {
   float: right;
   margin-left: 20px;
@@ -67,6 +72,7 @@
   text-align: right; /* LTR */
   font-size: 0.93em;
 }
+
 [dir="rtl"] .node__links {
   text-align: left;
 }
@@ -75,10 +81,12 @@
 .node--unpublished {
   padding: 20px 15px 0;
 }
+
 .node--unpublished .comment-text .comment-arrow {
   border-left: 1px solid #fff4f4;
   border-right: 1px solid #fff4f4;
 }
+
 .node--type-photo-gallery {
 
   //#block-pellucid-monoset-page-title {
@@ -98,9 +106,10 @@
     }
   }
   .region-content {
-    margin:0;
+    margin: 0;
   }
 }
+
 article.node--type-page,
 article.node--type-meeting,
 article.node--type-document,
@@ -128,6 +137,7 @@ article.node--type-minutes {
     padding: 0 0 0.25rem 0;
   }
 }
+
 body.node--type-page,
 body.node--type-meeting,
 body.node--type-agenda,
@@ -135,12 +145,12 @@ body.node--type-document,
 body.node--type-minutes,
 body.path-taxonomy {
   .content {
-    min-height:0;
+    min-height: 0;
     margin-top: 5rem;
     //padding:0;
   }
   .taxonomy-term .content {
-    margin-top:1rem;
+    margin-top: 1rem;
   }
 }
 
@@ -152,15 +162,16 @@ body.path-taxonomy {
   h1, h1.page-title,
   .taxonomy-term > h2 {
     margin: 0 0 0 0;
-    font-weight: $light;
+    //font-weight: $light;
   }
   .taxonomy-term {
     font-weight: $normal;
   }
   .taxonomy-term .content {
-    padding:0;
+    padding: 0;
   }
 }
+
 article.node--type-meeting {
   .field--name-field-meeting-date,
   .field--name-field-meeting-date > .field__label, h2 {
@@ -177,70 +188,65 @@ article.node--type-meeting {
     margin: 0 10mm 10mm 10mm;
     padding: 0;
     //@top-left {
-    //  content: "Top left";
-    //  height: 0;
+    //  display: none;
     //}
     //@top-right {
-    //  content: "Page " counter(page);
-    //  height: 0;
+    //  display: none;
     //}
   }
-  .container-main {
-    height:100%;
-    font-size: 11px;
-    color: black;
-    padding: 0 5px;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight:$normal;
-    h1.page-title, h2,
-    .field--name-field-meeting-date,
-    .field--name-field-meeting-date > .field__label {
+
+  body.node--type-meeting {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    .container-main {
+      border: $red solid 4pt;
+      padding: 0 5pt;
+      margin: 0;
+      height: auto;
+      font-size: 10pt;
+      color: black;
       font-family: Helvetica, Arial, sans-serif;
-      font-weight: $medium;
-      font-size: 16px;
-      & > a {
-        color: black;
-        font-weight: $medium;
+      font-weight: $normal;
+      .page-content {
+        //position: relative;
+        margin-top: -70pt;
+
+        h1 > span, h2 > a > div,
+        .field--name-field-meeting-date,
+        .field--name-field-meeting-date > .field__label {
+          font-family: Helvetica, Arial, sans-serif;
+          font-size: 16pt;
+          color: black;
+        }
+        h1 > span {
+          font-size: 18pt;
+          font-weight: $normal;
+        }
+        h2 > a > div {
+          font-weight: $medium;
+          font-size: 16pt;
+        }
       }
     }
 
-  }
-  body.node--type-meeting {
-    .container-main {
-      border: $red solid 4px;
-    }
-    article.node--type-meeting {
-      .field--name-field-meeting-date,
-      .field--name-field-meeting-date > .field__label {
-        font-size: 16px;
-        font-weight: $medium;
-      }
-      .field--name-description,
-      .field--name-field-meeting-minutes {
-        display: none;
-        height:0;
-      }
-    }
-    #block-pellucid-monoset-page-title > h1 {
-      text-align: center;
-      & > span {
-        font-size: 20px;
-        font-weight: $medium;
-      }
-    }
     p, ol li, ul li {
       padding: 0;
-      margin:0;
+      margin: 0;
     }
     article.node--type-agenda {
       &::before {
         content: 'Agenda:';
+        font-weight: $medium;
+        font-size: 16pt;
       }
       & > h2 {
         display: none;
       }
     }
   }
+  //  body.node--type-meeting
+
   .header-main,
   .offcanvas,
   .footer-main,
@@ -249,7 +255,9 @@ article.node--type-meeting {
   .field--name-field-agenda-status,
   .block-local-tasks-block,
   .messages {
-    height:0;
+    margin: 0;
+    padding: 0;
+    height: 0;
     display: none;
   }
 }
