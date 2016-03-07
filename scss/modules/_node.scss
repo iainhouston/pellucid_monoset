@@ -185,7 +185,7 @@ article.node--type-meeting {
 @media print {
   @page {
     size: A4;
-    margin: 0 10mm 10mm 10mm;
+    margin: 10mm;
     padding: 0;
     //@top-left {
     //  display: none;
@@ -204,13 +204,13 @@ article.node--type-meeting {
       padding: 0 5pt;
       margin: 0;
       height: auto;
-      font-size: 10pt;
+      font-size: 9pt;
       color: black;
       font-family: Helvetica, Arial, sans-serif;
       font-weight: $normal;
       .page-content {
         //position: relative;
-        margin-top: -70pt;
+        margin-top: -72pt;
 
         h1 > span, h2 > a > div,
         .field--name-field-meeting-date,
@@ -254,6 +254,7 @@ article.node--type-meeting {
   .field--name-field-agenda-meeting,
   .field--name-field-agenda-status,
   .block-local-tasks-block,
+  .region.region-content-bottom,
   .messages {
     margin: 0;
     padding: 0;
