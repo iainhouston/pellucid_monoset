@@ -50,15 +50,24 @@
 /**
 * Responsive tables.
 */
-.view-id-councillors table {
-  width: 100%;
-}
 
-th.priority-low,
-td.priority-low {
-  display: none;
-  @include breakpoint(md) {
-    display: table-cell;
+.region-front-four {
+  & table {
+    margin: 0 auto;
+  }
+  & .pager {
+    padding-top: 1rem;
   }
 }
+  .view-id-councillors table {
+    width: 100%;
+  }
+
+  th.priority-low,
+  td.priority-low {
+    display: none;
+    @include breakpoint(md) {
+      display: table-cell;
+    }
+  }
 
