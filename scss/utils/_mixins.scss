@@ -3,8 +3,13 @@
 // Breakpoints
 
 @mixin breakpoint($class) {
+  @if $class == sm {
+    @media (min-width: 376px) {
+      @content;
+    }
+  }
   @if $class == md {
-    @media (min-width: 767px) {
+    @media (min-width: 769px) {
       @content;
     }
   }

@@ -33,6 +33,12 @@
     margin-top: 1.5rem;
     border: none;
   }
+  th {
+    background-color: $grey-200;
+  }
+  td {
+    background-color: $grey-100;
+  }
   td, th {
     border: none;
     font-size: 85%;
@@ -49,21 +55,8 @@
   th:nth-child(6) {
     width: 20%;
   }
-  th:nth-child(2) {
-    text-align: right;
-  }
-  th:nth-child(3) {
-    text-align: left;
-  }
-  th:nth-child(1),
-  th:nth-child(2),
-  th:nth-child(3),
-  th:nth-child(4) {
-    background-color: $grey-100;
-  }
+
   td.views-field-user-picture {
-    //display: none;
-    @include breakpoint(md) {
       display: block;
       a {
         max-width: 85px;
@@ -71,6 +64,21 @@
         margin: 0 auto;
         display: block;
       }
+    }
+  }
+.view-supporting-documents {
+  @include breakpoint(md) {
+    th:nth-child(1) {
+      width: 40%;
+    }
+    th:nth-child(2) {
+      width: 27%;
+    }
+    th:nth-child(3) {
+      width: 13%;
+    }
+    th:nth-child(4) {
+      width: 20%;
     }
   }
 }

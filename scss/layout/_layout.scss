@@ -51,18 +51,40 @@
 * Responsive tables.
 */
 
-.region-front-four {
+.view-supporting-documents {
   & table {
-    margin: 0 auto;
+    //margin: 0 auto;
+
+    th.priority-medium,
+    td.priority-medium {
+      display: none;
+      @include breakpoint(sm) {
+        display: table-cell;
+      }
+    }
+    th.priority-low,
+    td.priority-low {
+      display: none;
+      @include breakpoint(md) {
+        display: table-cell;
+      }
+    }
   }
   & .pager {
     padding-top: 1rem;
   }
 }
-  .view-id-councillors table {
-    width: 100%;
-  }
 
+.view-id-councillors table {
+  width: 100%;
+
+  th.priority-medium,
+  td.priority-medium {
+    display: none;
+    @include breakpoint(sm) {
+      display: table-cell;
+    }
+  }
   th.priority-low,
   td.priority-low {
     display: none;
@@ -70,4 +92,5 @@
       display: table-cell;
     }
   }
+}
 
