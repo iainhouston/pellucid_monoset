@@ -8,7 +8,7 @@
       @content;
     }
   }
-  @if $class == md {
+  @else if $class == md {
     @media (min-width: 769px) {
       @content;
     }
@@ -19,7 +19,7 @@
     }
   }
   @else {
-    @warn "Breakpoint mixin supports: md, lg";
+    @warn "Breakpoint mixin supports: sm, md, lg";
   }
 }
 
