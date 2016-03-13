@@ -195,42 +195,49 @@ article.node--type-meeting {
     //}
   }
 
-  body.node--type-meeting {
+  body.node--type-meeting,
+  body.node--type-agenda {
     margin: 0;
     padding: 0;
     border: 0;
     .container-main {
-      border: $red solid 4pt;
       padding: 0 5pt;
       margin: 0;
       height: auto;
       font-size: 9pt;
-      line-height:12pt;
+      line-height: 11pt;
       color: black;
       font-family: Helvetica, Arial, sans-serif;
       font-weight: $normal;
       .page-content {
-        //position: relative;
-        margin-top: -76pt;
-
-        h1 > span, h2 > a > div,
-        .field--name-field-meeting-date,
-        .field--name-field-meeting-date > .field__label,
-        .field__label  {
+        h1, h1 > span {
           font-family: Helvetica, Arial, sans-serif;
           font-size: 14pt;
-          line-height:16pt;
+          line-height: 16pt;
           color: black;
+          font-weight: $medium;
+          text-align: center;
         }
-        h1 > span {
-          font-size: 18pt;
-          line-height:20pt;
-          font-weight: $normal;
+        h2 > a > span,
+        h2 > a > div,
+        .field--name-field-meeting-date,
+        .field--name-field-meeting-date .field__item,
+        .field--name-field-meeting-date .field__label {
+          font-size: 12pt;
+          line-height: 14pt;
+          color: black;
+          font-family: Helvetica, Arial, sans-serif;
+          font-weight: $medium;
+          text-align: center;
+        }
+        .field--name-field-meeting-date .field__item,
+        .field--name-field-meeting-date .field__label {
+          display: block;
+          float: left;
         }
         h2 > a > div {
-          font-weight: $medium;
-          font-size: 14pt;
-          line-height:16pt;
+          display: block;
+          float: left;
         }
       }
     }
@@ -239,28 +246,70 @@ article.node--type-meeting {
       padding: 0;
       margin: 0;
     }
+
+    #block-pellucid-monoset-page-title .field--name-title::after {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      content: 'The press and public are welcome.';
+      font-size: 9pt;
+      line-height: 11pt;
+      margin-top: 2pt;
+    }
+  }
+  //  body.node--type-meeting | body.node--type-agenda
+
+  body.node--type-meeting {
+    .container-main {
+      border: $red solid 4pt;
+    }
+    .page-content {
+      margin-top: -76pt;
+    }
+
     article.node--type-agenda {
+      display: block;
+      float: none;
+      clear: both;
       &::before {
         content: 'Agenda:';
         font-weight: $medium;
-        font-size: 14pt;
-        line-height:16pt;
-      }
-      & > h2 {
+        font-size: 9pt;
+        line-height: 11pt;
+        display: block;
+        float: none;
+        width:100%;
+     }
+      & > h2  { // Agenda title hidden
         display: none;
       }
-    }
-    #block-pellucid-monoset-page-title .field--name-title::after {
+      & > h2::after {
+        display: block;
+        content: ' ';
+        height:0;
+        font-size:0;
+        clear: both;
+        visibility: hidden;
+      }
+     .node__content {
+       width:100%;
       display: block;
-      margin:0 auto;
-      text-align: center;
-      content: 'The press and public are welcome.';
-      font-size: 14pt;
-      line-height:16pt;
-      margin-top:2pt;
+      float: none;
+      width:0 auto;
+       &::before {
+         display: table-cell;
+         content: ' ';
+         height:0;
+         font-size:0;
+         clear: both;
+         visibility: hidden;
+       }
+      }
     }
   }
-  //  body.node--type-meeting
+  body.node--type-agenda .page-content {
+    margin-top: -80pt;
+  }
 
   .header-main,
   .offcanvas,
