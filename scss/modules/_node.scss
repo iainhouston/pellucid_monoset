@@ -133,9 +133,11 @@ article.node--type-minutes {
   .node__meta {
     padding-bottom: 0.25rem;
   }
-  //li {
-  //  padding: 0 0 0.25rem 0;
-  //}
+  .field--name-field-meeting-minutes,
+  & > h2 {
+    border-top:solid 1px $grey-400;
+    padding-top: 0.5rem;
+  }
 }
 
 body.node--type-page,
@@ -174,7 +176,8 @@ body.path-taxonomy {
 
 article.node--type-meeting {
   .field--name-field-meeting-date,
-  .field--name-field-meeting-date > .field__label, h2 {
+  .field--name-field-meeting-date > .field__label,
+  h2 {
     @include font-size(24px);
     line-height: 0.9;
     font-weight: $light;
