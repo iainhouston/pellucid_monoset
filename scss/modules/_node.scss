@@ -135,6 +135,12 @@ article.node--type-minutes {
   }
   .field--name-field-meeting-minutes,
   & > h2 {
+  }
+}
+
+article.node--type-document {
+  .field--name-field-uploaded-files,
+  .field--name-field-document-type {
     border-top:solid 1px $grey-400;
     padding-top: 0.5rem;
   }
