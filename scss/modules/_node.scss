@@ -183,6 +183,13 @@ article.node--type-meeting {
     font-weight: $light;
   }
 }
+article.node--type-document {
+  .field--name-field-uploaded-files,
+  .field--name-field-document-type {
+    border-top: solid 1px $grey-400;
+    padding-top: 0.5rem;
+  }
+}
 
 // Printing style
 @media print {
