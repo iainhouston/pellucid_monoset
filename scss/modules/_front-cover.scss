@@ -48,17 +48,26 @@
       height: 113px;
     }
   }
-  //.drupal-logo path {
-  //  //fill: $grey-400;
-  //  transition: all .3s;
-  //}
-  .cover-title:hover .drupal-logo circle {
-    stroke: $blue;
+  .drupal-logo {
+    circle {
+      stroke: $white;
+    }
+    #Path-13 {
+      animation: pulsate 12s linear infinite;
+      opacity: 0.25;
+      fill: $blue;
+      //visibility: hidden;
+    }
+  }
+  .cover-title:hover .drupal-logo {
+    circle {
+      stroke: $blue;
+    }
   }
   .intro-title {
     @include font-size(20px);
     font-weight: $light;
-    color: $grey-700;
+    color: $white;
     margin: 0 0 2rem 0;
   }
   .cta-button {
@@ -67,7 +76,7 @@
     padding: 8px 12px 8px 25px;
     border-radius: 40px;
     background: rgba($black, 0.175);
-    color: $grey-900;
+    color: $white;
     font-weight: $light;
     //letter-spacing: 1px;
     font-family: $fontDefault;
@@ -84,7 +93,7 @@
     margin: -14px 0 -11px -4px;
     width: 32px;
     height: 32px;
-    fill: $grey-900;
+    fill: $white;
     display: inline-block;
     animation: pulsate 2s linear infinite;
     opacity: 1;

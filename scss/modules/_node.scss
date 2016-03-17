@@ -135,7 +135,7 @@ article.node--type-minutes {
   }
   .field--name-field-meeting-minutes,
   & > h2 {
-    border-top:solid 1px $grey-400;
+    border-top: solid 1px $grey-400;
     padding-top: 0.5rem;
   }
 }
@@ -183,6 +183,7 @@ article.node--type-meeting {
     font-weight: $light;
   }
 }
+
 article.node--type-document {
   .field--name-field-uploaded-files,
   .field--name-field-document-type {
@@ -288,32 +289,32 @@ article.node--type-document {
         line-height: 11pt;
         display: block;
         float: none;
-        width:100%;
-     }
-      & > h2  { // Agenda title hidden
+        width: 100%;
+      }
+      & > h2 { // Agenda title hidden
         display: none;
       }
       & > h2::after {
         display: block;
         content: ' ';
-        height:0;
-        font-size:0;
+        height: 0;
+        font-size: 0;
         clear: both;
         visibility: hidden;
       }
-     .node__content {
-       width:100%;
-      display: block;
-      float: none;
-      width:0 auto;
-       &::before {
-         display: table-cell;
-         content: ' ';
-         height:0;
-         font-size:0;
-         clear: both;
-         visibility: hidden;
-       }
+      .node__content {
+        max-width: 100%;
+        display: block;
+        float: none;
+        margin: 0 auto;
+        &::before {
+          display: table-cell;
+          content: ' ';
+          height: 0;
+          font-size: 0;
+          clear: both;
+          visibility: hidden;
+        }
       }
     }
   }
