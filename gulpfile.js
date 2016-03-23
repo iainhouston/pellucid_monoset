@@ -143,7 +143,6 @@ gulp.task('browser-sync', function () {
 });
 
 // Default task to be run with `gulp`
-//gulp.task('default', ['sass'], function () {
   gulp.task('default', ['sass', 'drush', 'browser-sync'], function () {
   gulp.watch("scss/**/*.scss", ['sass']);
   gulp.watch("scripts/**/*.js", ['js']);
