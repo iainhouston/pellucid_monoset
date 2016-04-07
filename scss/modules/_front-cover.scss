@@ -54,8 +54,8 @@
     }
     #Path-13 {
       animation: pulsate 12s linear infinite;
-      opacity: 0.25;
-      fill: $blue;
+      opacity: 0.5;
+      fill: rgb(221,229,186);
       //visibility: hidden;
     }
   }
@@ -93,7 +93,7 @@
     margin: -14px 0 -11px -4px;
     width: 32px;
     height: 32px;
-    fill: $white;
+    fill: $red;
     display: inline-block;
     animation: pulsate 2s linear infinite;
     opacity: 1;
