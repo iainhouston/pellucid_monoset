@@ -86,6 +86,9 @@ function pellucid_monoset_preprocess_field(&$variables, $hook) {
     if (isset($variables['url'])) {
       $variables['url'] = _absolute_page_url('<front>').$variables['url'];
     }
+    if (isset($variables['label']) and $variables['label'] == 'Meeting details') {
+      $variables['items']['0']['content']['#url']->setAbsolute();
+    }
   } else {
     $variables['simplenews_newsletter_email'] = FALSE;
   }
