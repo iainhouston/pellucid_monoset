@@ -4,5 +4,5 @@ node_modules/
 !icons
 
 # IDE and editor metadata
-.idea/
+#.idea/
 pelucid_monoset.sublime-*
