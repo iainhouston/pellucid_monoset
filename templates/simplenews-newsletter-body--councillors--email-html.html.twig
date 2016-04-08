@@ -42,11 +42,10 @@
 {# body #}
 {% if simplenews_newsletter_email %}
     <tr class="field">
-        <td class="head_field" colspan="2"><h2 class="big_head">{{ title }}</h2></td>
+        <td class="head_field"><h2 class="big_head">{{ title }}</h2></td>
     </tr>
     {% if bundle == "meeting" %}
         <tr class="field">
-            <td class="field_label">Summons</td>
             <td class="field_item">{{ summons_text }}</td>
         </tr>
     {% endif %}
@@ -58,23 +57,16 @@
 {# footer #}
 {% if not opt_out_hidden %}
     <tr class="newsletter-footer field">
-        <td class="field_label">&nbsp;</td>
-        <td class="field_item">&nbsp;</td>
-    </tr>
-    <tr class="newsletter-footer field">
-        <td class="field_label">&nbsp;</td>
         <td class="field_item">&nbsp;</td>
     </tr>
     {% if format == 'html' %}
         {% if key == 'test' %}
             <tr class="newsletter-footer field">
-                <td class="field_label">&nbsp;</td>
                 <td class="field_item">{{ test_message }}</td>
             </tr>
         {% endif %}
         {% if bundle != "meeting" %} {#  Councillors' summonses don't offer unsubscribe #}
             <tr class="newsletter-footer field">
-                <td class="field_label">&nbsp;</td>
                 <td class="field_item"><a href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a></td>
             </tr>
         {% endif %}

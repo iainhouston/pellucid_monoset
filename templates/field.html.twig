@@ -20,10 +20,12 @@ label_display == 'visually_hidden' ? 'visually-hidden',
         {% else %}
             <td class="field_label">{{ label }}</td>
         {% endif %}
-        {% for item in items %}
-            <td  class="field_item">{{ item.content }}</td>
-        {% endfor %}
         </tr>
+        {% for item in items %}
+            <tr class="field">
+            <td  class="field_item">{{ item.content }}</td>
+            </tr>
+        {% endfor %}
 {% elseif label_hidden %}
     {% if multiple %}
         <div{{ attributes.addClass(classes, 'field__items') }}>
