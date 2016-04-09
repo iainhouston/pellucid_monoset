@@ -103,11 +103,21 @@ blockquote::after {
   content: "";
 }
 
-// Lists
-
-//ul, ol {
-//  list-style-position: inside;
-//}
+ol {
+  counter-reset: item;
+}
+ol li {
+  display: block;
+  position: relative;
+  left: 1em;
+}
+ol li:before {
+  content: counters(item, ".")".";
+  counter-increment: item;
+  position: absolute;
+  margin-right: 100%;
+  right: 1em; /* space between number and text */
+}
 
 ul {
   list-style-type: none;

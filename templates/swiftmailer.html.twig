@@ -132,7 +132,7 @@
         }
 
         table {
-            border-spacing: 10px;
+            border-spacing: 5px;
             border-collapse: separate;
         }
 
@@ -154,10 +154,26 @@
             padding-left:0;
         }
 
+        ol {
+            counter-reset: item;
+        }
+        ol li {
+            display: block;
+            position: relative;
+            /*left: 1em;*/
+        }
+        ol li:before {
+            content: counters(item, ".")".";
+            counter-increment: item;
+            position: absolute;
+            margin-right: 100%;
+            right: 1em; /* space between number and text */
+        }
+
         table tr td ol li,
         table tr td ul li   {
-            font-size: 18px;
-            line-height: 24px;
+            font-size: 16px;
+            line-height: 18px;
         }
 
         table tr td.field_item h2,
