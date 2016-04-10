@@ -162,3 +162,9 @@ em {
   color: $grey-800;
 }
 
+.tabs > li {
+  display: inline-block;
+  margin-right: 0.3em;
+  border: solid 1px $grey-300;
+  margin-top: 0.5em;
+}
