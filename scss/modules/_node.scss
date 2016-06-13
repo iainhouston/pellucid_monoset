@@ -217,7 +217,8 @@ article.node--type-history-society-event {
   }
 
   body.node--type-meeting,
-  body.node--type-agenda {
+  body.node--type-agenda,
+  body.node--type-minutes {
     margin: 0;
     padding: 0;
     border: 0;
@@ -226,17 +227,18 @@ article.node--type-history-society-event {
       margin: 0;
       height: auto;
       font-size: 9pt;
-      line-height: 11pt;
+      line-height: 13pt;
       color: black;
       font-family: Helvetica, Arial, sans-serif;
-      font-weight: $normal;
+      font-weight: normal;
       .page-content {
+        margin-top: -66pt;
         h1, h1 > span {
           font-family: Helvetica, Arial, sans-serif;
           font-size: 14pt;
           line-height: 16pt;
           color: black;
-          font-weight: $medium;
+          font-weight: normal;
           text-align: center;
         }
         h2 > a > span,
@@ -248,7 +250,7 @@ article.node--type-history-society-event {
           line-height: 14pt;
           color: black;
           font-family: Helvetica, Arial, sans-serif;
-          font-weight: $medium;
+          font-weight: normal;
           text-align: center;
         }
         .field--name-field-meeting-date .field__item,
@@ -267,6 +269,13 @@ article.node--type-history-society-event {
       padding: 0;
       margin: 0;
     }
+    strong {
+      font-weight: bold;
+    }
+  }
+  //  body.node--type-meeting | body.node--type-agenda
+
+  body.node--type-meeting {
 
     #block-pellucid-monoset-page-title .field--name-title::after {
       display: block;
@@ -277,10 +286,6 @@ article.node--type-history-society-event {
       line-height: 11pt;
       margin-top: 2pt;
     }
-  }
-  //  body.node--type-meeting | body.node--type-agenda
-
-  body.node--type-meeting {
     .container-main {
       border: $red solid 4pt;
     }
@@ -294,7 +299,7 @@ article.node--type-history-society-event {
       clear: both;
       &::before {
         content: 'Agenda:';
-        font-weight: $medium;
+        font-weight: normal;
         font-size: 9pt;
         line-height: 11pt;
         display: block;
