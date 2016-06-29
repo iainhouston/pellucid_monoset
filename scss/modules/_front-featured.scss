@@ -29,6 +29,9 @@
       padding: 3rem;
       border-right: 1px solid $grey-600;
       border-bottom: none;
+      span.field-content a {
+        font-size: 110%;
+      }
     }
 
     &:before {
