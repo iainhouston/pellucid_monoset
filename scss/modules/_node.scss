@@ -148,8 +148,9 @@ body.node--type-minutes,
 body.path-taxonomy {
   .content {
     min-height: 0;
-    margin-top: 5rem;
-    //padding:0;
+    @include breakpoint(md) {
+      margin-top: 2rem;
+    }
   }
   .taxonomy-term .content {
     margin-top: 1rem;

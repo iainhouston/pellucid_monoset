@@ -11,7 +11,7 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var sass = require('gulp-sass');
 var outputPath = 'styleguide';
-var test_site_name = 'dev.bradford-abbas.uk';
+var test_site_name = 'bradford-abbas.drupal8vm.dev';
 var test_site_alias = '@badev';
 
 // Error notifications
