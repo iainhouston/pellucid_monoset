@@ -1,0 +1,17 @@
+.view-taxonomy-term {
+  .node--view-mode-teaser {
+    h2 {
+      border-top: solid 1px $grey-400;
+    }
+    h2:first-child {
+      border-top:0;
+    }
+    .field__label,
+    .field__items {
+      float: none;
+    }
+  }
+  article.node--type-document .field--name-field-uploaded-files {
+    border-top: 0;
+  }
+}
