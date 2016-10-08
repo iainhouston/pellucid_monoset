@@ -13,9 +13,10 @@
     padding: 0;
   }
 
-  @include breakpoint(lg) {
-    width: 70%;
-  }
+  //@include breakpoint(lg) {
+  //  width: 70%;
+    max-width: 1100px;
+  //}
 }
 
 .content {

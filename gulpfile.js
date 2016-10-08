@@ -12,6 +12,7 @@ var reload = browserSync.reload;
 var sass = require('gulp-sass');
 var outputPath = 'styleguide';
 var test_site_name = 'bradford-abbas.drupal8vm.dev';
+var drush = '/Users/iainhouston/Drupal8Platforms/pellucid_compose/web/drush '
 var test_site_alias = '@badev';
 
 // Error notifications
@@ -115,8 +116,8 @@ gulp.task('drush', function () {
       read: false
     })
     .pipe($.shell([
-      'drush ' + test_site_alias + ' cc css-js',
-      'drush ' + test_site_alias + ' cc theme-registry',
+      drush + test_site_alias + ' cc css-js',
+      drush + test_site_alias + ' cc theme-registry',
     ]))
     .pipe($.notify({
       title: "Caches cleared",

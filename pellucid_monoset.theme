@@ -94,14 +94,14 @@ function pellucid_monoset_preprocess_field(&$variables, $hook) {
   }
 }
 
-function pellucid_monoset_preprocess_field__text_with_summary(&$variables, $hook) {
-  $newsletter_type = myvariable_function('newsletter_type');
-  if ($newsletter_type == 'simplenews_newsletter_email') {
-    $variables['simplenews_newsletter_email'] = TRUE;
-    $temp = preg_replace_callback('%<img.*?\/>%', "_replace_url_within_img_tag", $variables['element']['0']['#text']);
-    $variables['items']['0']['content']['#text'] = $temp;
-  }
-}
+//function pellucid_monoset_preprocess_field__text_with_summary(&$variables, $hook) {
+//  $newsletter_type = myvariable_function('newsletter_type');
+//  if ($newsletter_type == 'simplenews_newsletter_email') {
+//    $variables['simplenews_newsletter_email'] = TRUE;
+//    $temp = preg_replace_callback('%<img.*?\/>%', "_replace_url_within_img_tag", $variables['element']['0']['#text']);
+//    $variables['items']['0']['content']['#text'] = $temp;
+//  }
+//}
 
 function pellucid_monoset_preprocess_field__node__field_meeting_minutes__meeting(&$variables, $hook) {
   $newsletter_type = myvariable_function('newsletter_type');
