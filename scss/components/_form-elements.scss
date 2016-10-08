@@ -83,3 +83,11 @@ select {
 .form-item {
   margin: 0 0 1rem;
 }
+
+// Special
+ #edit-submit-expense-items {
+   width: 100%;
+   max-width: 285px;
+   background: $grey-400;
+   color: $red;
+ }
