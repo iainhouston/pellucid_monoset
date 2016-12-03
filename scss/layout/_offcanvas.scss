@@ -128,3 +128,8 @@
   font-weight: normal;
   font-style: normal;
 }
+
+// Avoid conflict with admin toolbar
+.toolbar .toolbar-tray-horizontal .toolbar-toggle-orientation {
+  display: none !important;
+}
