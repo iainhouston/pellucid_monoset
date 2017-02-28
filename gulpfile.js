@@ -110,18 +110,19 @@ gulp.task('compress', function () {
     }));
 });
 
-// Run drush to clear the theme registry
+// Run drush to clear the theme registry; render; css; and js caches
 gulp.task('drush', function () {
   return gulp.src('', {
       read: false
     })
     .pipe($.shell([
-      drush + test_site_alias + ' cc css-js',
-      drush + test_site_alias + ' cc theme-registry',
+        drush + test_site_alias + ' cc css-js',
+        drush + test_site_alias + ' cc theme-registry',
+        drush + test_site_alias + ' cc render',
     ]))
     .pipe($.notify({
       title: "Caches cleared",
-      message: "Drupal theme caches cleared.",
+      message: "Selected Drupal caches cleared.",
       onLast: true
     }));
 });

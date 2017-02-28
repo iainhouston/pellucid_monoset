@@ -5,7 +5,7 @@
  */
  #}
 
- <header class="header-main">
+<header class="header-main">
   <div class="menu-btn open" aria-hidden="true">&#9776; Menu</div>
   <div class="contain">
     <a  class ="logo logo-svg" href="{{ front_page }}" title="To home page">
@@ -34,23 +34,23 @@
         </g>
       </svg>
     </a>
-    {% if page.nav %}
-      {{ page.nav }}
-    {% endif %}
-    {% if page.search %}
-      {{ page.search }}
-    {% endif %}
+      {% if page.nav %}
+          {{ page.nav }}
+      {% endif %}
+      {% if page.search %}
+          {{ page.search }}
+      {% endif %}
   </div>
 </header>
 
 <div class="offcanvas pushy pushy-left">
   <div class="menu-btn close" aria-hidden="true">&#10005; Menu</div>
-  {% if page.nav %}
-    {{ page.nav }}
-  {% endif %}
-  {% if page.search %}
-    {{ page.search }}
-  {% endif %}
+    {% if page.nav %}
+        {{ page.nav }}
+    {% endif %}
+    {% if page.search %}
+        {{ page.search }}
+    {% endif %}
 </div>
 
 <!-- Site Overlay -->
@@ -59,85 +59,98 @@
 <div id="container" class="container-main">
   <!-- Front Page -->
 
-  {% if is_front %}
-    <div class="front">
+    {% if is_front %}
+  <div class="front">
 
-      <section class="cover">
-        <div class="contain">
+    <section class="cover">
+      <div class="contain">
           {% if page.front_one %}
-            {{ page.front_one }}
+          {{ page.front_one }}
           {% endif %}
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="features" class="front-section features">
-        <div class="contain">
+    <section id="features" class="front-section features">
+      <div class="contain">
           {% if page.front_two %}
-            {{ page.front_two }}
+          {{ page.front_two }}
           {% endif %}
+        <div class="next-section">
+          <a class="cta-button" href="#icons">Next section <svg class="injected-svg arrow inject-svg" data-src="themes/monoset/icons/chevron-down.svg" height="24" version="1.1" viewbox="0 0 24 24" width="24" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg></a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="front-section icons">
-        <div class="contain">
+    <section id="icons" class="front-section icons">
+      <div class="contain">
           {% if page.front_three %}
-            {{ page.front_three }}
+          {{ page.front_three }}
           {% endif %}
+        <div class="next-section">
+          <a class="cta-button" href="#posts">Next section <svg class="injected-svg arrow inject-svg" data-src="themes/monoset/icons/chevron-down.svg" height="24" version="1.1" viewbox="0 0 24 24" width="24" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg></a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="front-section posts">
+    <section id="posts" class="front-section posts">
         {% if page.front_four %}
-          {{ page.front_four }}
+            {{ page.front_four }}
         {% endif %}
-      </section>
+      <div class="next-section">
+        <a class="cta-button" href="#news">Next section <svg class="injected-svg arrow inject-svg" data-src="themes/monoset/icons/chevron-down.svg" height="24" version="1.1" viewbox="0 0 24 24" width="24" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg></a>
+      </div>
+    </section>
 
-      <section class="front-section news">
-        <div class="contain">
+    <section class="front-section news" id="news">
+      <div class="contain">
           {% if page.front_five %}
-            {{ page.front_five }}
+              {{ page.front_five }}
           {% endif %}
+        <div class="next-section">
+          <a class="cta-button" href="#featured">Next section <svg class="injected-svg arrow inject-svg" data-src="themes/monoset/icons/chevron-down.svg" height="24" version="1.1" viewbox="0 0 24 24" width="24" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg></a>
         </div>
-      </section>
+    </section>
+      </div>
+    </section>
 
-      <section id="featured" class="front-section featured">
-        <div class="featured-box">
+    <section id="featured" class="front-section featured">
+      <div class="featured-box">
           {% if page.front_six %}
-            {{ page.front_six }}
+              {{ page.front_six }}
           {% endif %}
-        </div>
-        <div class="featured-box">
+      </div>
+      <div class="featured-box">
           {% if page.front_seven %}
-            {{ page.front_seven }}
+              {{ page.front_seven }}
           {% endif %}
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="front-section source">
-        <div class="contain">
+    <section class="front-section source">
+      <div class="contain">
           {% if page.front_eight %}
-            {{ page.front_eight }}
+              {{ page.front_eight }}
           {% endif %}
-        </div>
-      </section>
+      </div>
+    </section>
 
-    </div>
+  </div>
 
     {% else %}
 
-    <!-- Main Content -->
-    <div class="content contain">
-      <div class="page-content">
-        <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
+  <!-- Main Content -->
+  <div class="content contain">
+    <div class="page-content">
+      <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
         {{ messages }}
         {% if page.help %}
           <div class="help">
-            {{ page.help }}
+              {{ page.help }}
           </div>
         {% endif %}
         {% if action_links %}
           <ul class="action-links">
-            {{ action_links }}
+              {{ action_links }}
           </ul>
         {% endif %}
 
@@ -155,29 +168,29 @@
         {% endif %}
         {{ title_suffix }}
         {% if primary_local_tasks %}
-          {{ primary_local_tasks }}
+            {{ primary_local_tasks }}
         {% endif %}
 
         {% if page.content_top %}
-          {{ page.content_top }}
+            {{ page.content_top }}
         {% endif %}
 
         {{ page.content }}
 
         {% if page.content_bottom %}
-          {{ page.content_bottom }}
+            {{ page.content_bottom }}
         {% endif %}
 
-      {% endif %}
+        {% endif %}
 
     </div>
   </div>
 </div>
 <footer class="footer-main">
   <div class="contain">
-    {% if page.footer %}
-      {{ page.footer }}
-    {% endif %}
+      {% if page.footer %}
+          {{ page.footer }}
+      {% endif %}
     <a class="twitter" href="https://twitter.com/trismegister"><img class="twitter-icon inject-svg" data-src="/themes/contrib/pellucid_monoset/icons/twitter.svg" alt="twitter"></a>
     <a class="top-link" href="#top"><img class="arrow-up inject-svg" data-src="/themes/contrib/pellucid_monoset/icons/chevron-up.svg" alt="chevron-up"></a>
   </div>

@@ -18,6 +18,12 @@
     padding:0.5rem 0;
   }
 
+  .more-link {
+    text-align: center;
+    border-top: 1px solid $grey-200;
+    padding-top: 1rem;
+  }
+
   .pager__items {
     border-top: 1px solid $grey-300;
     padding: 0.5rem 0;
@@ -36,6 +42,10 @@
       //margin: 0 0 1rem 0;
     }
   }
+  h3 {
+     @include font-size(22px);
+     margin: 0;
+   }
   .icon-container {
     margin: 0 0 2rem 0;
   }
