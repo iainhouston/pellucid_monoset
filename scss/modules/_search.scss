@@ -32,6 +32,8 @@
   text-indent: -9999px;
   direction: ltr;
   width: 34px;
+  min-width: 34px;
+  border: none;
 }
 .button.search-form__submit:hover,
 .search-form__submit:hover,

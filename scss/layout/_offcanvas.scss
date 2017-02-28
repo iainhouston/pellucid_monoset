@@ -56,7 +56,8 @@
 * https://github.com/christophery/pushy/
 * by Christopher Yee */
 
-$menu_width: 200px !default;
+//$menu_width: 200px !default;
+$menu_width: 250px;
 
 /* Menu Appearance */
 
@@ -66,7 +67,7 @@ $menu_width: 200px !default;
   height: 100%;
   top: 0;
   z-index: 9999;
-  background: #191918;
+  background: $grey-500;
   overflow: auto;
   -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
 
@@ -282,8 +283,8 @@ $menu_width: 200px !default;
   a {
     display: block;
     padding: 1rem;
-    border-bottom: 1px solid $grey-900;
-    color: $grey-400;
+    border-bottom: 1px solid $grey-400;
+    color: $grey-50;
     &:hover {
       color: $white;
     }
