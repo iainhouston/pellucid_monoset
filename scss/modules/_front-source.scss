@@ -23,6 +23,11 @@
   p {
     @include font-size(20px);
   }
+  
+  .menu li > a {
+    padding-top: 1rem;
+    text-align: center;
+  }
   .source-code {
     width: 64px;
     height: 64px;

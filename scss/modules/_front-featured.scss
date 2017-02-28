@@ -12,7 +12,7 @@
     display: table;
     width: 100%;
     table-layout: fixed;
-    min-height: 500px;
+    //min-height: 500px;
   }
 
   .featured-box {
@@ -27,6 +27,7 @@
       border: none;
     }
     @include breakpoint(md) {
+      min-height: 100vh;
       display: table-cell;
       width: 50%;
       padding-top: 5rem;

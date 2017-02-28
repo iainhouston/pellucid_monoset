@@ -1,15 +1,11 @@
- // Forms
- //
-// Form Elements Styles
-//
-// Styleguide 4.0
-//
-// markup:
-// <div class="form-item"><input type="text" name="" value="" placeholder="text"></div>
-// <div class="form-item"><input type="text" name="" value="" placeholder="text"></div>
-// <div class="form-item"><textarea rows="4" cols="50"></textarea></div>
-// <input type="submit" name="" value="Submit">
-
+.button:first-child, .image-button:first-child,
+.button:nth-child(2), .image-button:nth-child(2)
+{
+  margin:0 auto;
+  width: 30%;
+  min-width: 150px;
+  padding-bottom: 10px;
+}
 
 input[type="text"],
 input[type="email"],
@@ -32,7 +28,7 @@ textarea {
 
 input[type="submit"] {
   display: block;
-  border: none;
+  border: 1px solid $red;
   background: $grey-500;
   width: 100%;
   padding: 1rem;
