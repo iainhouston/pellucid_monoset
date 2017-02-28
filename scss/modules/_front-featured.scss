@@ -5,7 +5,7 @@
 **/
 
 .featured {
-  height: 100vh;
+  min-height: 100vh;
   background: $white url(../images/featured-bg.jpg) no-repeat 50% 0;
   background-size: cover;
   @include breakpoint(md) {
@@ -16,7 +16,8 @@
   }
 
   .featured-box {
-    height: 50vh;
+    min-height: 50vh;
+    overflow: hidden;
     color: grey;
     position: relative;
     padding: 2rem 1rem;
@@ -31,7 +32,7 @@
       padding-top: 5rem;
       padding-right: 15px;
       padding-bottom: 15px;
-      padding-left: 20px;
+      padding-left: 15px;
       border-right: 1px solid $grey-600;
       border-bottom: none;
       span.field-content a {

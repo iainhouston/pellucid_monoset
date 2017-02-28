@@ -1,4 +1,4 @@
-.front {
+.front, .source {
   .cta-button {
     display: inline-block;
     vertical-align: top;
@@ -10,7 +10,7 @@
     //letter-spacing: 1px;
     font-family: $fontDefault;
     @include breakpoint(md) {
-      border: 2px solid $grey-600;
+      border: 2px solid $grey-400;
       background: none;
     }
 
