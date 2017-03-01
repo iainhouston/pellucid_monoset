@@ -140,7 +140,7 @@ gulp.task('browser-sync', function () {
   browserSync.init(files, {
     proxy: test_site_name,
     // reloadOnRestart: true,
-     browser: ['/Applications/Google Chrome.app']
+     browser: ['/Applications/FirefoxDeveloperEdition.app']
   });
 });
 
