@@ -1,12 +1,22 @@
 .button:first-child, .image-button:first-child,
-.button:nth-child(2), .image-button:nth-child(2)
+.button:nth-child(2), .image-button:nth-child(2),
+.form-actions  .dropbutton-wrapper
 {
-  margin:0 auto;
+  margin: 1rem auto;
   width: 30%;
   min-width: 150px;
-  padding-bottom: 10px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
-
+.form-actions .dropbutton-wrapper {
+  float: none;
+}
+.dropbutton-multiple .dropbutton .dropbutton-action > * {
+  margin:0;
+  height:40px;
+  width:100%;
+}
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -29,12 +39,12 @@ textarea {
 input[type="submit"] {
   display: block;
   border: 1px solid $red;
-  background: $grey-500;
+  background: $grey-200;
   width: 100%;
   padding: 1rem;
   margin: 0 0 1rem;
   cursor: pointer;
-  color: $white;
+  color: $grey-900;
   @include font-size(14px);
   font-weight: $thin;
   letter-spacing: 1px;
