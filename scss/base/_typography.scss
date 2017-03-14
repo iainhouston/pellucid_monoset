@@ -38,24 +38,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @include font-size(45px);
+  @include font-size(20px);
   line-height: 1;
   margin: 0 0 1rem 0;
-  //@include breakpoint(md) {
-  //  @include font-size(60px);
-  //  margin: 0 0 2rem 0;
-  //}
+  font-weight: $normal;
+  @include breakpoint(md) {
+    @include font-size(45px);
+    font-weight: $thin;
+  }
 }
 
 h2 {
-  @include font-size(40px);
-  line-height: 0.9;
-  margin: 1rem 0 1rem 0;
+  @include font-size(24px);
+  line-height: 1;
+  margin: 0 0 1rem 0;
+  font-weight: $normal;
+  @include breakpoint(md) {
+    @include font-size(40px);
+    line-height: 0.9;
+    margin: 1rem 0 1rem 0;
+    font-weight: $thin;
+  }
 }
 
 h3 {
-  @include font-size(36px);
-
+  @include font-size(24px);
+  font-weight: $normal;
+  @include breakpoint(md) {
+    @include font-size(36px);
+    font-weight: $thin;
+  }
 }
 
 h4 {

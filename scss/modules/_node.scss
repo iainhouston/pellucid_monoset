@@ -179,9 +179,14 @@ article.node--type-meeting {
   .field--name-field-meeting-date,
   .field--name-field-meeting-date > .field__label,
   h2 {
-    @include font-size(24px);
-    line-height: 0.9;
-    font-weight: $light;
+    @include font-size(20px);
+    line-height: 1;
+    font-weight: $normal;
+    @include breakpoint(md) {
+      @include font-size(24px);
+      //margin: 1rem 0 1rem 0;
+      font-weight: $light;
+    }
   }
 }
 
