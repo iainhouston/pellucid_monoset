@@ -4,6 +4,12 @@
 *
 **/
 
+// Workaround bug in Configuration Read-only module
+// https://www.drupal.org/node/2860969
+body.path-search .messages {
+  display: none;
+}
+
 .contain {
   @include clearfix;
   margin: 0 auto;
