@@ -16,7 +16,7 @@
     width:40rem;
   }
 }
-         .search-block-form {
+.search-block-form {
   margin-left: 1em;
   padding: 1rem;
   @include breakpoint(md) {
@@ -57,7 +57,7 @@
       background: url(../icons/loupe2.svg) no-repeat center;
     }
   }
-.search-form .form-item-keys label {
-  display: block;
-}
+  .search-form .form-item-keys label {
+    display: block;
+  }
 }

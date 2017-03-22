@@ -50,14 +50,18 @@
     }
   }
   .drupal-logo {
-    circle {
-      stroke: $white;
-    }
-    #Path-13 {
-      animation: pulsate 12s linear infinite;
-      opacity: 0.5;
-      fill: rgb(221,229,186);
-      //visibility: hidden;
+    display: none;
+    @include breakpoint(md) {
+      display: inline;
+      circle {
+        stroke: $white;
+      }
+      #Path-13 {
+        animation: pulsate 12s linear infinite;
+        opacity: 0.5;
+        fill: rgb(221,229,186);
+        //visibility: hidden;
+      }
     }
   }
   .cover-title:hover .drupal-logo {

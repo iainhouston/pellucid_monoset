@@ -35,6 +35,12 @@
   }
 }
 
+.logo, .region-nav, .region-search {
+    display: block;
+    float: left;
+    margin-left: 1rem;
+}
+
 .logo {
   display: none;
   @include breakpoint(md) {
@@ -56,7 +62,7 @@
 }
 
 .header-main .menu,
-.header-main .search-block-form {
+.header-main #search-block-form {
   display: none;
   @include breakpoint(md) {
     display: block;
@@ -64,7 +70,7 @@
     float: right;
   }
 }
-.header-main .search-block-form input[type="search"],
+.header-main #search-block-form input[type="search"],
 .form-type-search input[type="search"] {
   appearance: none;
   font-family: $fontInput;
@@ -77,6 +83,11 @@
 }
 .search-page-form .form-type-search input[type="search"] {
   width:40rem;
+}
+div.offcanvas.pushy.pushy-left #block-pellucid-monoset-search,
+div.offcanvas.pushy.pushy-left #block-pellucid-monoset-search.container-inline {
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
 .header-main .menu li {
