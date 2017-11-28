@@ -12,7 +12,7 @@ var reload = browserSync.reload;
 var sass = require('gulp-sass');
 var outputPath = 'styleguide';
 var test_site_name = 'bradford-abbas.drupal8vm.dev';
-var drush = '/Users/iainhouston/Drupal8Platforms/pellucid_compose/web/drush '
+var drush = '$HOME/Drupal8Platforms/pellucid_compose/web/drush '
 var test_site_alias = '@badev';
 
 // Error notifications
