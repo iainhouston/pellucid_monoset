@@ -10,9 +10,10 @@ var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var sass = require('gulp-sass');
+var shell = require('gulp-shell');
 var outputPath = 'styleguide';
-var test_site_name = 'bradford-abbas.drupal8vm.dev';
-var drush = '$HOME/Drupal8Platforms/pellucid_compose/web/drush '
+var test_site_name = 'vagrant.bradford-abbas.uk';
+var drush = 'drush '
 var test_site_alias = '@badev';
 
 // Error notifications
@@ -111,21 +112,8 @@ gulp.task('compress', function () {
 });
 
 // Run drush to clear the theme registry; render; css; and js caches
-gulp.task('drush', function () {
-  return gulp.src('', {
-      read: false
-    })
-    .pipe($.shell([
-        drush + test_site_alias + ' cc css-js',
-        drush + test_site_alias + ' cc theme-registry',
-        drush + test_site_alias + ' cc render',
-    ]))
-    .pipe($.notify({
-      title: "Caches cleared",
-      message: "Selected Drupal caches cleared.",
-      onLast: true
-    }));
-});
+gulp.task('drushPHP', shell.task(["drush " + test_site_alias + " cr"],  { ignoreErrors: true }));
+
 
 // BrowserSync
 gulp.task('browser-sync', function () {
@@ -140,13 +128,13 @@ gulp.task('browser-sync', function () {
   browserSync.init(files, {
     proxy: test_site_name,
     // reloadOnRestart: true,
-     browser: ['/Applications/FirefoxDeveloperEdition.app']
+     browser: ['/Applications/Firefox Developer Edition.app']
   });
 });
 
 // Default task to be run with `gulp`
-  gulp.task('default', ['sass', 'drush', 'browser-sync'], function () {
+  gulp.task('default', ['sass', 'drushPHP', 'browser-sync'], function () {
   gulp.watch("scss/**/*.scss", ['sass']);
   gulp.watch("scripts/**/*.js", ['js']);
-  gulp.watch("templates/**/*.twig", ['drush']);
+  gulp.watch("templates/**/*.twig", ['drushPHP']);
 });
