@@ -6,10 +6,11 @@
 
 .posts {
   background: $white;
+  min-height: 100vh;
   border-bottom: 1px solid $grey-200;
   text-align: center;
-  display: table;
-  table-layout: fixed;
+  // display: table;
+  // table-layout: fixed;
   width: 100%;
   position: relative;
   padding: 3rem 0;

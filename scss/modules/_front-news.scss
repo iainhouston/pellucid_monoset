@@ -4,50 +4,88 @@
 *
 **/
 
-.news {
+section.news {
+  padding-top: 4rem;
   min-height: 100vh;
   background: $grey-50;
-  border-bottom: 1px solid $grey-200;
-  text-align: center;
-  padding: 3rem 0;
-  @include breakpoint(md) {
-    padding: 5rem 0;
+  .contain {
+    width: 100%;
   }
-
-  article {
-    h2  {
-      @include font-size(24px);
-      line-height  : 1;
-      padding-top:0;
-      @include breakpoint(md) {
-        @include font-size(50px);
-        margin: 0 0 2rem 0;
+  h2 {
+    text-align: center;
+  }
+  div.view-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    h2 {
+      text-align: center;
+    }
+    div.views-row {
+      width: 300px;
+      h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        height: 100px;
+      }
+      article {
+        height: 350px;
+        border: 4px solid $grey-200;
+        padding: 0.5rem;
+        margin: 0.5rem;
+        .node__content {
+          line-height: 1.1;
+          height: 192px;
+        }
       }
     }
   }
-
-  h2 {
-    @include font-size(40px);
-    margin: 0 0 1rem 0;
-    @include breakpoint(md) {
-      @include font-size(50px);
-      margin: 0 0 2rem 0;
-    }
-  }
-
-  p {
-    @include breakpoint(md) {
-      padding: 0 8rem;
-    }
-
-    //@include font-size(20px);
-    margin: 0 0 2rem 0;
-  }
-  .drupal-logo path {
-    fill: $grey-400;
-    transition: all .3s;
-  }
-  .contain:hover .drupal-logo path {
-    fill: $blue;
-  }
 }
+
+// .news {
+//   min-height: 100vh;
+//   background: $grey-50;
+//   border-bottom: 1px solid $grey-200;
+//   text-align: center;
+//   padding: 3rem 0;
+//   @include breakpoint(md) {
+//     padding: 5rem 0;
+//   }
+//
+//   article {
+//     h2  {
+//       @include font-size(24px);
+//       line-height  : 1;
+//       padding-top:0;
+//       @include breakpoint(md) {
+//         @include font-size(50px);
+//         margin: 0 0 2rem 0;
+//       }
+//     }
+//   }
+//
+//   h2 {
+//     @include font-size(40px);
+//     margin: 0 0 1rem 0;
+//     @include breakpoint(md) {
+//       @include font-size(50px);
+//       margin: 0 0 2rem 0;
+//     }
+//   }
+//
+//   p {
+//     @include breakpoint(md) {
+//       padding: 0 8rem;
+//     }
+//
+//     //@include font-size(20px);
+//     margin: 0 0 2rem 0;
+//   }
+//   .drupal-logo path {
+//     fill: $grey-400;
+//     transition: all .3s;
+//   }
+//   .contain:hover .drupal-logo path {
+//     fill: $blue;
+//   }
+// }
