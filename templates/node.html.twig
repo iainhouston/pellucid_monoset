@@ -90,7 +90,8 @@
   {% endif %}
   {{ title_suffix }}
 
-  {% if display_submitted and not node--view-mode-teaser%}
+  {% if display_submitted  %}
+    {% if view_mode == "full" %}
     <footer class="node__meta">
       {{ author_picture }}
       <div{{ author_attributes.addClass('node__submitted') }}>
@@ -99,6 +100,7 @@
       </div>
     </footer>
   {% endif %}
+{% endif %}
 
   <div{{ content_attributes.addClass('node__content') }}>
     {{ content|without('links') }}
