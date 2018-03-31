@@ -5,7 +5,7 @@
 **/
 
 .source {
-  background: $white;
+  background: $grey-50;
   text-align: center;
   padding: 3rem 0;
   @include breakpoint(md) {
@@ -23,7 +23,7 @@
   p {
     @include font-size(20px);
   }
-  
+
   .menu li > a {
     padding-top: 1rem;
     text-align: center;

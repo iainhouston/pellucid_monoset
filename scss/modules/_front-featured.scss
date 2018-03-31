@@ -10,24 +10,22 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background: $white url(../images/featured-bg.jpg) no-repeat 50% 0;
-  background-size: cover;
+  background: $white;
+  // background: $white url(../images/featured-bg.jpg) no-repeat 50% 0;
+  // background-size: cover;
 
   .featured-box {
     padding-top: 3rem;
     flex-grow:1;
-    //min-height: 100vh;
     overflow: hidden;
-    //color: grey;
-    //position: relative;
     padding: 2rem 1rem;
     min-width: 50%;
     border-bottom: 1px solid $grey-600;
-    &:last-child {
-      border: none;
-    }
+    // &:last-child {
+    //   border: none;
+    // }
     .next-section, .next-section a, .view-header {
-      color: $grey-50;
+      color: $grey-400;
     }
     .views-field-title {
       padding-top: 0.5rem;
@@ -45,7 +43,7 @@
       z-index: -1;
       top: 0;
       left: 0;
-      background: rgba($black, 0.35);
+      background: $white;
       transition: all .3s;
     }
     //&:hover:before {
@@ -56,7 +54,7 @@
     @include font-size(34px);
     margin: 0 0 2rem 0;
     line-height: 1;
-    color: $white;
+    color: $black;
   }
   p {
     color: $white;
