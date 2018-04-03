@@ -29,7 +29,7 @@ body.path-search .messages {
   padding: 2rem 1rem;
   min-height: 670px;
   @include breakpoint(md) {
-    padding: 4rem 0 2rem 0;
+    padding: 4rem 0.5rem 2rem 0.5rem;
     animation: fadeIn ease-in 1;
     animation-fill-mode: forwards;
     animation-duration: .3s;
@@ -41,7 +41,7 @@ body.path-search .messages {
 }
 
 .region-content {
-  margin: 0 0 2rem 0;
+  margin: 0 0.5rem;
   min-height: 150px;
   @include breakpoint(md) {
     min-height: 300px;
@@ -98,5 +98,10 @@ body.path-search .messages {
     @include breakpoint(md) {
       display: table-cell;
     }
+  }
+}
+.view-id-village_plan_index {
+  .field-content a {
+    font-size: 1.25rem;
   }
 }
