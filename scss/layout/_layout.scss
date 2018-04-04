@@ -10,6 +10,15 @@ body.path-search .messages {
   display: none;
 }
 
+body.path-councillors-responsibilities,
+body.path-node.node--type-photo-gallery {
+  .contain {
+    @include breakpoint(lg) {
+      max-width: 1024px;
+    }
+  }
+}
+
 .contain {
   @include clearfix;
   margin: 0 auto;
