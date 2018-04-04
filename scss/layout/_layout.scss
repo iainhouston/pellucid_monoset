@@ -21,7 +21,7 @@ body.path-search .messages {
 
   @include breakpoint(lg) {
     width: 70%;
-    max-width: 1100px;
+    max-width: 40rem;
   }
 }
 
@@ -37,7 +37,7 @@ body.path-search .messages {
 }
 
 .region-content-top {
-  margin: 0 0 2rem 0;
+  margin: 0 0.5rem;
 }
 
 .region-content {
