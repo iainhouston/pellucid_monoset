@@ -1,4 +1,7 @@
 .front, .source, .featured {
+  .contain {
+    max-width: 1000px;
+  }
   .cta-button {
     display: inline-block;
     vertical-align: top;
