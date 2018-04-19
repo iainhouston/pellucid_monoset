@@ -11,6 +11,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   background: $white;
+  border-bottom: 1px solid $grey-600;
   // background: $white url(../images/featured-bg.jpg) no-repeat 50% 0;
   // background-size: cover;
 
@@ -20,7 +21,6 @@
     overflow: hidden;
     padding: 2rem 1rem;
     min-width: 50%;
-    border-bottom: 1px solid $grey-600;
     // &:last-child {
     //   border: none;
     // }

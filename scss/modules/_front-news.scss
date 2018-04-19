@@ -31,6 +31,7 @@ section.news {
       width: 300px;
       h2 {
         font-size: 1.5rem;
+        line-height: 1;
         text-align: center;
         height: 100px;
       }
@@ -47,51 +48,3 @@ section.news {
     }
   }
 }
-
-// .news {
-//   min-height: 100vh;
-//   background: $grey-50;
-//   border-bottom: 1px solid $grey-200;
-//   text-align: center;
-//   padding: 3rem 0;
-//   @include breakpoint(md) {
-//     padding: 5rem 0;
-//   }
-//
-//   article {
-//     h2  {
-//       @include font-size(24px);
-//       line-height  : 1;
-//       padding-top:0;
-//       @include breakpoint(md) {
-//         @include font-size(50px);
-//         margin: 0 0 2rem 0;
-//       }
-//     }
-//   }
-//
-//   h2 {
-//     @include font-size(40px);
-//     margin: 0 0 1rem 0;
-//     @include breakpoint(md) {
-//       @include font-size(50px);
-//       margin: 0 0 2rem 0;
-//     }
-//   }
-//
-//   p {
-//     @include breakpoint(md) {
-//       padding: 0 8rem;
-//     }
-//
-//     //@include font-size(20px);
-//     margin: 0 0 2rem 0;
-//   }
-//   .drupal-logo path {
-//     fill: $grey-400;
-//     transition: all .3s;
-//   }
-//   .contain:hover .drupal-logo path {
-//     fill: $blue;
-//   }
-// }
