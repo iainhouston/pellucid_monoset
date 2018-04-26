@@ -122,8 +122,3 @@ function _absolute_page_url($route = '<current>'){
   $newsletter_url = Url::fromRoute($route, [], ['absolute' => TRUE])->toString();
   return strpos($newsletter_url, '/simplenews') ?substr($newsletter_url, 0, strpos($newsletter_url, "/simplenews")):$newsletter_url;
 }
-
-function _replace_url_within_img_tag($groups) {
-  $source_path = 'src="'.$GLOBALS['base_url'];
-  return preg_replace('/src="/', $source_path, $groups[0]);
-}
