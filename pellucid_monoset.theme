@@ -56,16 +56,6 @@ function pellucid_monoset_preprocess_simplenews_newsletter_body__email_html(&$va
   $var = 'simplenews_newsletter_email';
 }
 
-function pellucid_monoset_preprocess_node(&$variables, $hook) {
-  $newsletter_type = myvariable_function('newsletter_type');
-  if ($newsletter_type == 'simplenews_newsletter_email') {
-    $variables['absolute_url'] = myvariable_function('absolute_url');
-    $variables['simplenews_newsletter_email'] = TRUE;
-  } else {
-    $variables['simplenews_newsletter_email'] = FALSE;
-  }
-}
-
 function pellucid_monoset_preprocess_username(&$variables, $hook) {
   $newsletter_type = myvariable_function('newsletter_type');
   if ($newsletter_type == 'simplenews_newsletter_email') {
