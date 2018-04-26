@@ -105,16 +105,6 @@ function pellucid_monoset_preprocess_node__agenda__email_html(&$variables, $hook
   }
 }
 
-function pellucid_monoset_preprocess_taxonomy_term__meeting_place(&$variables, $hook) {
-  $newsletter_type = myvariable_function('newsletter_type');
-  if ($newsletter_type == 'simplenews_newsletter_email') {
-    $variables['simplenews_newsletter_email'] = TRUE;
-    $variables['url'] = _absolute_page_url('<front>').$variables['url'];
-  } else {
-    $variables['simplenews_newsletter_email'] = FALSE;
-  }
-}
-
 function pellucid_monoset_preprocess_field__node__field_agenda__meeting(&$variables, $hook) {
   $newsletter_type = myvariable_function('newsletter_type');
   if ($newsletter_type == 'simplenews_newsletter_email') {
