@@ -149,7 +149,7 @@ function pellucid_monoset_preprocess_field__node__field_agenda__meeting(&$variab
     }
     if (isset($variables['items']['0']['content']['#url']) && $variables['items']['0']['content']['#url']) {
       $url = $variables['items']['0']['content']['#url']->toString();
-      $variables['url'] = _absolute_page_url('<front>').$url;
+      $variables['url'] = $url;
     }
   } else {
     $variables['simplenews_newsletter_email'] = FALSE;
@@ -183,4 +183,3 @@ function _replace_url_within_img_tag($groups) {
   $source_path = 'src="'.$GLOBALS['base_url'];
   return preg_replace('/src="/', $source_path, $groups[0]);
 }
-
