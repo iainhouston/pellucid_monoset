@@ -42,12 +42,10 @@ function pellucid_monoset_preprocess_simplenews_newsletter_body__councillors__em
   $variables['summons_text']  = $v_summons;
   $v_newsletter = &myvariable_function('newsletter_type');
   $v_newsletter = 'simplenews_newsletter_email';
+  // Councillors don't unsubscribe from Meeting summonses
   $v_bundle = &myvariable_function('bundle');
   $v_bundle = $variables['node']->getType();
   $variables['bundle'] = $v_bundle;
-  $v_url = &myvariable_function('absolute_url');
-  $v_url = _absolute_page_url();
-  $variables['url'] = $v_url;
   $variables['simplenews_newsletter_email']  = TRUE;
 }
 
