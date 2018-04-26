@@ -94,30 +94,6 @@ function pellucid_monoset_preprocess_field(&$variables, $hook) {
   }
 }
 
-//function pellucid_monoset_preprocess_field__text_with_summary(&$variables, $hook) {
-//  $newsletter_type = myvariable_function('newsletter_type');
-//  if ($newsletter_type == 'simplenews_newsletter_email') {
-//    $variables['simplenews_newsletter_email'] = TRUE;
-//    $temp = preg_replace_callback('%<img.*?\/>%', "_replace_url_within_img_tag", $variables['element']['0']['#text']);
-//    $variables['items']['0']['content']['#text'] = $temp;
-//  }
-//}
-
-function pellucid_monoset_preprocess_field__node__field_meeting_minutes__meeting(&$variables, $hook) {
-  $newsletter_type = myvariable_function('newsletter_type');
-  if ($newsletter_type == 'simplenews_newsletter_email') {
-    $variables['simplenews_newsletter_email'] = TRUE;
-    $summons = &myvariable_function('summons_text');
-    $summons_text = ($summons != 'initial_value') ? $summons : '';
-    $variables['summons_text'] = $summons_text;
-    $title = $variables['items']['0']['content']['#title'];
-    $variables['minutes_title'] = $title;
-    $url = $variables['items']['0']['content']['#url']->toString();
-    $variables['url'] = _absolute_page_url('<front>').$url;
-  } else {
-    $variables['simplenews_newsletter_email'] = FALSE;
-  }
-}
 
 function pellucid_monoset_preprocess_node__agenda__email_html(&$variables, $hook) {
   $newsletter_type = myvariable_function('newsletter_type');
