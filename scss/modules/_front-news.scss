@@ -40,6 +40,9 @@ section.news {
         border: 4px solid $grey-200;
         padding: 0.5rem;
         margin: 0.5rem;
+        footer.node__meta {
+          display: none;
+        }
         .node__content {
           line-height: 1.1;
           height: 192px;
