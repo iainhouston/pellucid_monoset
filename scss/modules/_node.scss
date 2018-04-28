@@ -211,7 +211,7 @@ article.node--type-history-society-event {
 @media print {
   @page {
     size: A4;
-    margin: 10mm;
+    // margin: 10mm;
     padding: 0;
     //@top-left {
     //  display: none;
@@ -237,7 +237,7 @@ article.node--type-history-society-event {
       font-family: Helvetica, Arial, sans-serif;
       font-weight: normal;
       .page-content {
-        margin-top: -66pt;
+        // margin-top: -66pt;
         h1, h1 > span {
           font-family: Helvetica, Arial, sans-serif;
           font-size: 14pt;
@@ -291,11 +291,11 @@ article.node--type-history-society-event {
       line-height: 11pt;
       margin-top: 2pt;
     }
-    .container-main {
-      border: $red solid 4pt;
-    }
+    // .container-main {
+    // }
     .page-content {
-      margin-top: -76pt;
+      border: $red solid 4pt;
+      padding-top: 5pt;
     }
 
     article.node--type-agenda {
