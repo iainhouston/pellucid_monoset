@@ -213,7 +213,7 @@ article.node--type-history-society-event {
 @media print {
   @page {
     size: A4;
-    margin: 0;
+    margin: 1cm;
     padding: 0;
     border: 0;
   }
@@ -226,7 +226,7 @@ article.node--type-history-society-event {
     padding: 0;
     border: 0;
     .container-main {
-      padding: 5pt;
+      // padding: 5pt;
       margin: 0;
       height: auto;
       font-size: 9pt;
@@ -243,6 +243,7 @@ article.node--type-history-society-event {
           color: black;
           font-weight: normal;
           text-align: center;
+          padding-bottom: 0.5cm;
         }
         h2 > a > span,
         h2 > a > div,
@@ -277,6 +278,15 @@ article.node--type-history-society-event {
     }
   }
 
+  body.node--type-minutes {
+    .page-content, .container-main {
+      display: block;
+      border: 0;
+      // padding: 0 5pt 10pt 5pt;
+      margin: 0;
+    }
+  }
+
   body.node--type-meeting {
 
     #block-pellucid-monoset-page-title .field--name-title::after {
@@ -286,12 +296,14 @@ article.node--type-history-society-event {
       content: 'The press and public are welcome.';
       font-size: 9pt;
       line-height: 11pt;
-      margin-top: 2pt;
     }
     .page-content {
       border: $red solid 4pt;
-      padding: 10pt;
-      margin: 10pt;
+      padding-top: 0.5cm;
+      padding-right: 0.5cm;
+      padding-bottom: 0.25cm;
+      padding-left:  0.5cm;
+      // margin: 10pt;
     }
 
     article.node--type-agenda {
