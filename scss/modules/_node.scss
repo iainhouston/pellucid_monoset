@@ -207,28 +207,26 @@ article.node--type-history-society-event {
   }
 }
 
-// Printing style
+// ************** //////////////////////
+// Printing style //////////////////////
+// ************** //////////////////////
 @media print {
   @page {
     size: A4;
-    // margin: 10mm;
+    margin: 0;
     padding: 0;
-    //@top-left {
-    //  display: none;
-    //}
-    //@top-right {
-    //  display: none;
-    //}
+    border: 0;
   }
 
   body.node--type-meeting,
   body.node--type-agenda,
   body.node--type-minutes {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     border: 0;
     .container-main {
-      padding: 0 5pt;
+      padding: 5pt;
       margin: 0;
       height: auto;
       font-size: 9pt;
@@ -278,7 +276,6 @@ article.node--type-history-society-event {
       font-weight: bold;
     }
   }
-  //  body.node--type-meeting | body.node--type-agenda
 
   body.node--type-meeting {
 
@@ -291,11 +288,10 @@ article.node--type-history-society-event {
       line-height: 11pt;
       margin-top: 2pt;
     }
-    // .container-main {
-    // }
     .page-content {
       border: $red solid 4pt;
-      padding-top: 5pt;
+      padding: 10pt;
+      margin: 10pt;
     }
 
     article.node--type-agenda {
@@ -337,9 +333,6 @@ article.node--type-history-society-event {
         }
       }
     }
-  }
-  body.node--type-agenda .page-content {
-    margin-top: -80pt;
   }
 
   .header-main,
