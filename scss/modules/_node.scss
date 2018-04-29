@@ -109,7 +109,9 @@ article.node--type-page,
 article.node--type-meeting,
 article.node--type-document,
 article.node--type-agenda,
-article.node--type-minutes {
+article.node--type-minutes,
+article.node--type-village-plan-page,
+article.node--type-history-society-event {
   font-weight: $light;
   color: $grey-700;
   //p {
