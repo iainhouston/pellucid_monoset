@@ -161,6 +161,10 @@ body.node--type-agenda,
 body.node--type-document,
 body.node--type-minutes,
 body.path-taxonomy {
+  .container-main {
+    max-width: 90%;
+    padding-left: 1rem;
+  }
   h1, h1.page-title,
   .taxonomy-term > h2 {
     margin: 0 0 0 0;
