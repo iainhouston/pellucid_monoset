@@ -16,9 +16,12 @@ body {
   font-family: $fontDefault;
   font-weight: $light;
   color: #333333;
-  line-height: 1.25;
+  line-height: 1.33;
   font-smoothing: antialiased;
   @include font-size(16px);
+  @include breakpoint(md) {
+    @include font-size(18px);
+  }
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -63,7 +66,7 @@ h2  {
 
 h3 {
   @include font-size(24px);
-  font-weight: $normal;
+  font-weight: $thin;
   @include breakpoint(md) {
     @include font-size(36px);
     font-weight: $thin;

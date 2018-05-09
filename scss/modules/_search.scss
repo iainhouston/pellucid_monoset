@@ -1,14 +1,32 @@
 /**
  * @file
- * The visual styles for Bartik's search form(s).
+ * The visual styles based loosely on Bartik's search form(s).
  */
 
-//.search-form {
-//  font-size: 0.875rem;
-//}
+// The search results page
+.path-search {
+  h3 {
+    font-size: 1.25rem;
+    @include breakpoint(md) {
+      font-size: 1.5rem;
+    }
+  }
+  ol {
+    padding-left: 0;
+  }
+  .item-list li {
+    margin: 0 0 0.25rem 0.25rem;
+  }
+  .item-list .search-result__snippet-info {
+    max-width: 95%;
+  }
+  .region-content {
+    margin: 0;
+  }
+}
+
 .search-form .form-search {
-  //float: left; /* LTR */
-  margin-right: 5px; /* LTR */
+  margin-right: 5px;
   padding: 4px;
   max-width:100%;
   width:10rem;
