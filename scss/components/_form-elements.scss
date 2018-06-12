@@ -97,3 +97,9 @@ select {
    background: $grey-400;
    color: $red;
  }
+
+ .webform-submission-form {
+   .description {
+     clear: both;
+   }
+ }
