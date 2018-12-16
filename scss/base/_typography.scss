@@ -1,8 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 @import url(https://fonts.googleapis.com/css?family=Special+Elite);
 
 // Fonts
-$fontDefault: "Roboto", Helvetica, Arial, sans-serif;
+$fontDefault: "Source Sans Pro", Helvetica, Arial, sans-serif;
 $fontHighlight: Georgia, Times, "Times New Roman", serif;
 $fontInput: 'Special Elite', cursive;
 
@@ -14,13 +15,12 @@ $medium: 500;
 
 body {
   font-family: $fontDefault;
-  font-weight: $light;
+  // font-weight: $light;
   color: #333333;
-  line-height: 1.33;
+  @include font-size(20px);
+  line-height: 30px;
   font-smoothing: antialiased;
-  @include font-size(16px);
   @include breakpoint(md) {
-    @include font-size(18px);
   }
 }
 
