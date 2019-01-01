@@ -33,6 +33,7 @@
   h1 {
     @include font-size(40px);
     font-weight: $light;
+    text-shadow: 3px 3px 4px Grey;
     margin: 0 0 1rem 0;
     line-height: 1;
     color: $grey-900;
