@@ -18,12 +18,18 @@
   width:100%;
 }
 input[type="text"],
+input[type="text"],
+input[type="tel"],
+input[type="text"],
+input[type="date"],
+input[type="time"],
 input[type="email"],
 input[type="password"],
 textarea {
   display: block;
   background: none;
   border: 1px solid $grey-300;
+  margin-bottom: 0.5rem;
   background-color: $white;
   width: 100%;
   padding: 1rem;
@@ -34,6 +40,10 @@ textarea {
   font-family: $fontInput;
   color: $grey-600;
   font-size: 85%;
+}
+input[type="date"],
+input[type="time"] {
+  max-width: 10em;
 }
 
 input[type="submit"] {
@@ -88,6 +98,9 @@ select {
 
 .form-item {
   margin: 0 0 1rem;
+  label {
+    display: inline-block;
+  }
 }
 
 // Special
