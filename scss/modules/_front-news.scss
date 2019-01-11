@@ -7,7 +7,7 @@
 section.news {
   padding-top: 4rem;
   min-height: 100vh;
-  background: $grey-50;
+  background: $grey-200;
   .contain {
     width: 100%;
   }
@@ -33,11 +33,12 @@ section.news {
         font-size: 1.5rem;
         line-height: 1;
         text-align: center;
-        height: 100px;
+        height: 4.5rem;
       }
       article {
-        height: 380px;
-        border: 4px solid $grey-200;
+        height: 345px;
+        // border: 4px solid $grey-300;
+        box-shadow: 0 4px 8px rgba(0,0,0,.5);
         padding: 0.5rem;
         margin: 0.5rem;
         footer.node__meta {
