@@ -14,16 +14,16 @@ label_display == 'visually_hidden' ? 'visually-hidden',
 %}
 
 {% if simplenews_newsletter_email  %}
+  {% if  not label_hidden %}
     <tr class="field">
-        {% if  label_hidden %}
-            <td class="field_label">&nbsp;</td>
-        {% else %}
-            <td class="field_label">{{ label }}</td>
-        {% endif %}
+        <td class="field_label">{{ label }}</td>
     </tr>
-    <tr class="field">
-        <td  class="field_item"><h2><a href="{{ url }}">{{ agenda_title }}</a></h2></td>
-    </tr>
+  {% endif %}
+  <tr class="field">
+    <td  class="field_item">
+      <h2><a href="{{ url }}">{{ agenda_title }}</a></h2>
+    </td>
+  </tr>
 {% elseif label_hidden %}
     {% if multiple %}
         <div{{ attributes.addClass(classes, 'field__items') }}>

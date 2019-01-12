@@ -50,7 +50,7 @@
         </tr>
     {% endif %}
 {% else %}
-    <h2>{{ title }}</h2>
+    <h2 class="title">{{ title }}</h2>
 {% endif %}
 {{ build }}
 
@@ -60,14 +60,13 @@
         <td class="field_item">&nbsp;</td>
     </tr>
     {% if format == 'html' %}
-        {% if key == 'test' %}
-            <tr class="newsletter-footer field">
-                <td class="field_item">{{ test_message }}</td>
-            </tr>
-        {% endif %}
         {% if bundle != "meeting" %} {#  Councillors' summonses don't offer unsubscribe #}
             <tr class="newsletter-footer field">
-                <td class="field_item"><a href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a></td>
+                <td class="field_item">
+                  <p class="newsletter-footer"><a
+                            href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a>
+                </p>
+              </td>
             </tr>
         {% endif %}
     {% else %} {# It's a plain text email #}
@@ -76,4 +75,10 @@
             - - - {{ test_message }} - - -
         {% endif %}
     {% endif %}
+{% endif %}
+
+{% if key == 'test' %}
+    <tr class="newsletter-footer field">
+        <td class="field_item">- - - {{ test_message }} - - -</td>
+    </tr>
 {% endif %}
