@@ -13,10 +13,10 @@
         }
       });
 
-      //  Animations
-      $(function () {
-        new WOW().init();
-      });
+      // //  Animations
+      // $(function () {
+      //   new WOW().init();
+      // });
 
     }
   };
