@@ -54,28 +54,30 @@
 {% endif %}
 {{ build }}
 
+
 {# footer #}
-{% if not opt_out_hidden %}
-    <tr class="newsletter-footer field">
-        <td class="field_item">&nbsp;</td>
-    </tr>
-    {% if format == 'html' %}
-        {% if bundle != "meeting" %} {#  Councillors' summonses don't offer unsubscribe #}
-            <tr class="newsletter-footer field">
-                <td class="field_item">
-                  <p class="newsletter-footer"><a
-                            href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a>
-                </p>
-              </td>
-            </tr>
-        {% endif %}
-    {% else %} {# It's a plain text email #}
-        -- {{ unsubscribe_text }} : [simplenews-subscriber:unsubscribe-url]
-        {% if key == 'test' %}
-            - - - {{ test_message }} - - -
-        {% endif %}
-    {% endif %}
-{% endif %}
+<tr class="newsletter-footer field">
+  <td class="field_item">
+  <p class="newsletter-legal first-para">
+    This email and any documents sent with it are intended solely for the named recipient and may be legally privileged and/or confidential.
+  </br>
+    If you have received this email in error please destroy it and contact the sender <a href="mailto:webmaster@bradford-abbas.uk">here</a>.
+  {% if bundle != "meeting" %}
+  {#  Councillors' summonses don't offer unsubscribe #}
+  </br>
+    If you wish: 
+    <a class="newsletter-unsubscribe" href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a>
+  {% endif %}
+  </p>
+  <p class="newsletter-legal">
+    You should not copy, or use the contents, attachments or information in
+    any way or pass them to a third party without prior permission from the
+    author. Any unauthorised use or disclosure may be unlawful. The Parish Council cannot guarantee the accuracy or completeness of this
+    email after it is sent from the originator over the Internet and accepts
+    no responsibility for changes made after it was sent.
+  </p>
+  </td>
+</tr>
 
 {% if key == 'test' %}
     <tr class="newsletter-footer field">
