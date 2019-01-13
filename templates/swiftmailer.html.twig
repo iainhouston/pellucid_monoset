@@ -53,10 +53,11 @@
         }
 
         img, a img {
-            border: 0;
-            height: auto;
-            outline: none;
-            text-decoration: none;
+          max-width: 100%;
+          border: 0;
+          height: auto;
+          outline: none;
+          text-decoration: none;
         }
 
         body, #bodyTable, #bodyCell {
@@ -128,7 +129,8 @@
         /*////// STRUCTURAL STYLES //////*/
 
         .flexibleContainer {
-            max-width: 740px;
+            max-width: 650px;
+            width: 100%;
         }
         div.centred_box,
         span.centred_box {
@@ -245,7 +247,9 @@
           font-weight: 600;
         }
         p.newsletter-legal {
-          margin: 1em 0;
+          max-width: 95%;
+          display: block;
+          margin: 0  auto;
           font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
           font-weight: 200;
           font-size: 12px;
@@ -253,18 +257,18 @@
           padding-bottom: 5px;
         }
         p.newsletter-legal.first-para {
-          border-top: 1px solid #eeeeee;
           padding-top: 12px;
+          border-top: 1px solid #eeeeee;
         }
-        a.newsletter-unsubscribe {
+        p.newsletter-legal a {
           text-decoration: none;
           color:  #2ba9e0;
         }
     </style>
 </head>
 <body>
-<div class="flexibleContainer">
-  <table>
+<div class="flexibleContainer centred_box">
+  <table class="centred_box">
   <tr>
     <td>
       <div class="centred_box">

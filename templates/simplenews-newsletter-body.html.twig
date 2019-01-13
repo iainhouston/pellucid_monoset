@@ -60,12 +60,13 @@
   <td class="field_item">
   <p class="newsletter-legal first-para">
     This email and any documents sent with it are intended solely for the named recipient and may be legally privileged and/or confidential.
-  </br>
-    If you have received this email in error please destroy it and contact the sender <a href="mailto:webmaster@bradford-abbas.uk">here</a>.
+  </p>
+  <p class="newsletter-legal"> If you have received this email in error please destroy it and contact the sender <a href="mailto:webmaster@bradford-abbas.uk">here</a>.
   {% if bundle != "meeting" %}
   {#  Councillors' summonses don't offer unsubscribe #}
-  </br>
-    If you wish: 
+  </p>
+  <p class="newsletter-legal">
+    If you wish:
     <a class="newsletter-unsubscribe" href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a>
   {% endif %}
   </p>
