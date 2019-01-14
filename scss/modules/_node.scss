@@ -1,8 +1,3 @@
-/**
- * @file
- * Visual styles for Bartik's node component.
- */
-
 .node__content {
   font-size: 1.071em;
   margin-top: 10px;
@@ -388,4 +383,13 @@ article.node--type-history-society-event {
     font-size: 70%;
     text-align: center;
   }
+}
+.node--type-article .field--name-field-news-teaser {
+  font-style: italic;
+  border: 1px solid #eeeeee;
+  @include font-size(16px);
+  line-height: 20px;
+  padding: 2rem;
+  background-color: #F5F5F5;
+  margin: 2rem;
 }

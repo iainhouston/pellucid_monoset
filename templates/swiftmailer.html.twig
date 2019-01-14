@@ -129,7 +129,7 @@
         /*////// STRUCTURAL STYLES //////*/
 
         .flexibleContainer {
-            max-width: 650px;
+            max-width: 725px;
             width: 100%;
         }
         div.centred_box,
@@ -157,7 +157,7 @@
             padding-left: 10px;
         }
 
-        table tr td.field_item, table tr td.field_item p {
+        table tr td.field__item, table tr td.field__item p {
             /* font-family: Georgia, 'Times New Roman', Times, serif; */
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
@@ -184,7 +184,7 @@
             line-height: 18px;
         }
 
-        table tr td.field_item h2 a {
+        table tr td.field__item h2 a {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-weight: 400;
             font-size: 18px;
@@ -192,33 +192,33 @@
         }
 
 
-        table tr td.field_item {
+        table tr td.field__item {
             padding-bottom: 15px;
         }
 
 
-        table tr td.field_item img {
+        table tr td.field__item img {
             display: block;
             margin: 0 auto;
             padding:0;
             box-shadow: 0 3px 6px rgba(0,0,0,.25);
         }
 
-      table tr td.field_item figure.align-right  {
+      table tr td.field__item figure.align-right  {
           display: block;
           padding 0;
           margin: 0 0 0 5px;;
           float: right;
         }
 
-        table tr td.field_item figure.align-left  {
+        table tr td.field__item figure.align-left  {
           display: block;
           padding 0;
           margin: 0 10px 0 0;
           float: left;
         }
 
-        table tr td.field_item figure.align-center, {
+        table tr td.field__item figure.align-center, {
           display: block;
           margin: 0 auto;
           padding: 0 5px;
@@ -226,13 +226,13 @@
         }
 
 
-        table tr td.field_item figcaption {
+        table tr td.field__item figcaption {
           text-align: center;
           font-size: 70%;
         }
 
         table tr td h2,
-        table tr td.field_item h2,
+        table tr td.field__item h2,
         table tr td.field_label,
         table tr.field td.head_field h2.big_head {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -240,11 +240,21 @@
             font-size: 24px;
             line-height: 30px;
         }
+        table tr td.field__item.field--name-field-news-teaser p {
+          font-style: italic;
+          border: 1px solid #eeeeee;
+          font-size: 16px;
+          line-height: 20px;
+          padding: 10px;
+          background-color: #F5F5F5;
+          margin: 0;
+        }
         table tr td h2.title {
           text-align: center;
           font-size: 30px;
           line-height: 34px;
           font-weight: 600;
+          color: red;
         }
         p.newsletter-legal {
           max-width: 95%;
@@ -252,7 +262,8 @@
           margin: 0  auto;
           font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
           font-weight: 200;
-          font-size: 12px;
+          font-size: 14px;
+          letter-spacing: 1px;
           line-height: 18px;
           padding-bottom: 5px;
         }

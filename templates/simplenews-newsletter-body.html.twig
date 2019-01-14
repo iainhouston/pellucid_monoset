@@ -46,7 +46,7 @@
     </tr>
     {% if bundle == "meeting" %}
         <tr class="field">
-            <td class="field_item">{{ summons_text }}</td>
+            <td class="field__item">{{ summons_text }}</td>
         </tr>
     {% endif %}
 {% else %}
@@ -57,7 +57,7 @@
 
 {# footer #}
 <tr class="newsletter-footer field">
-  <td class="field_item">
+  <td class="field__item">
   <p class="newsletter-legal first-para">
     This email and any documents sent with it are intended solely for the named recipient and may be legally privileged and/or confidential.
   </p>
@@ -82,6 +82,6 @@
 
 {% if key == 'test' %}
     <tr class="newsletter-footer field">
-        <td class="field_item">- - - {{ test_message }} - - -</td>
+        <td class="field__item">- - - {{ test_message }} - - -</td>
     </tr>
 {% endif %}
