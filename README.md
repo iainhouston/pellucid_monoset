@@ -1,6 +1,8 @@
 # pellucid_monoset
 
-Drupal 8 Theme  after [Andrei Zvonkov](https://github.com/zetagraph/monoset)
+Drupal 8 Theme  
+
+(with thanks to [Andrei Zvonkov](https://github.com/zetagraph/monoset))
 
 ## Requirements
 - Node.js
@@ -11,4 +13,4 @@ Drupal 8 Theme  after [Andrei Zvonkov](https://github.com/zetagraph/monoset)
 - Install jshint ($ npm install jshint -g)
 - CD into the theme directory and run $ npm install to fetch all dependencies.
 - For BrowserSync update proxy server in gulpfile.js to match your local environment.
-- CD into the theme directory and run “gulp” to start  gulp watching, compiling and Browser Syncing.
+- CD into the theme directory and run “npx gulp” to use locally installed to start watching changed file; compiling; and Browser Syncing.

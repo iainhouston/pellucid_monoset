@@ -1,140 +1,65 @@
-/*global -$ */
+var test_site_name = 'vagrant.bradford-abbas.uk';
+var test_site_alias = '@badev'
+var sassSources = ['./scss/**/*.scss'];
+var drupalPHPSources = ['**/*.{php,inc,theme}'];
+var drupalTemplateSources = ['**/*.html.twig'];
+var drush = 'drush '
 
-/*
- * This gulp file is designed to be used on the host OS
- * on the development machine and not in the guest OS in a Vagrant setup
- */
-'use strict';
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var browserSync = require('browser-sync');
+var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 var sass = require('gulp-sass');
 var shell = require('gulp-shell');
-var outputPath = 'styleguide';
-var test_site_name = 'vagrant.bradford-abbas.uk';
-var drush = 'drush '
-var test_site_alias = '@badev';
+var notify = require('gulp-notify');
+var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps = require('gulp-sourcemaps');
 
-// Error notifications
-var reportError = function (error) {
-  $.notify({
-    title: 'Gulp Task Error',
-    message: 'Check the console.'
-  }).write(error);
-  console.log(error.toString());
-  this.emit('end');
-}
+sass.compiler = require('node-sass');
+
+
+// // Error notifications
+// var reportError = function (error) {
+//   notify({
+//     title: 'Gulp Task Error',
+//     message: 'Check the console.'
+//   }).write(error);
+//   console.log(error.toString());
+//   this.emit('end');
+// }
 
 // Sass processing
-gulp.task('sass', function () {
-  return gulp.src('scss/**/*.scss')
-    .pipe($.sourcemaps.init())
+gulp.task('sass', (done) => {
+  return gulp.src(sassSources)
+    .pipe(sourcemaps.init())
     // Convert sass into css
-    .pipe($.sass({
-      outputStyle: 'nested', // libsass doesn't support expanded yet
-      precision: 10
-    }))
-    // Show errors
-    .on('error', reportError)
+    .pipe(sass().on('error', sass.logError))
     // Autoprefix properties
-    .pipe($.autoprefixer({
-      browsers: ['last 2 versions']
-    }))
+    .pipe(autoprefixer({ overrideBrowserslist: ['last 2 versions'] }))
     // Write sourcemaps
-    .pipe($.sourcemaps.write())
+    .pipe(sourcemaps.write())
     // Save css
-    .pipe(gulp.dest('styles'))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
-});
-
-// process JS files and return the stream.
-gulp.task('js', function () {
-  return gulp.src('scripts/**/*.js')
-    .pipe(gulp.dest('scripts'));
-});
-
-// Optimize Images
-gulp.task('images', function () {
-  return gulp.src('images/**/*')
-    .pipe($.imagemin({
-      progressive: true,
-      interlaced: true,
-      svgoPlugins: [{
-        cleanupIDs: false
-      }]
-    }))
-    .pipe(gulp.dest('images'));
-});
-
-// JS hint
-gulp.task('jshint', function () {
-  return gulp.src('scripts/*.js')
-    .pipe(reload({
-      stream: true,
-      once: true
-    }))
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.notify({
-      title: "JS Hint",
-      message: "JS Hint says all is good.",
-      onLast: true
-    }));
-});
-
-// Beautify JS
-gulp.task('beautify', function () {
-  gulp.src('scripts/*.js')
-    .pipe($.beautify({indentSize: 2}))
-    .pipe(gulp.dest('scripts'))
-    .pipe($.notify({
-      title: "JS Beautified",
-      message: "JS files in the theme have been beautified.",
-      onLast: true
-    }));
-});
-
-// Compress JS
-gulp.task('compress', function () {
-  return gulp.src('scripts/*.js')
-    .pipe($.sourcemaps.init())
-    .pipe($.uglify())
-    .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('scripts'))
-    .pipe($.notify({
-      title: "JS Minified",
-      message: "JS files in the theme have been minified.",
-      onLast: true
-    }));
+    .pipe(gulp.dest('./styles'))
+    .pipe(browserSync.stream());
+    done();
 });
 
 // Run drush to clear the theme registry; render; css; and js caches
 gulp.task('drushPHP', shell.task(["drush " + test_site_alias + " cr"],  { ignoreErrors: true }));
 
 
-// BrowserSync
-gulp.task('browser-sync', function () {
-  //watch files
-  var files = [
-    'styles/main.css',
-    'scripts/**/*.js',
-    'images/**/*',
-    'templates/**/*.twig'
-  ];
-  //initialize browsersync
-  browserSync.init(files, {
-    proxy: test_site_name,
-    // reloadOnRestart: true,
-     browser: ['/Applications/Firefox Developer Edition.app']
-  });
-});
+gulp.task('watch-server', 
+  gulp.series('sass', 'drushPHP', (done) => {
+    browserSync.init({
+      proxy: test_site_name,
+      // reloadOnRestart: true,
+      browser: '/Applications/Firefox Developer Edition.app'
+    });
+  gulp.watch(sassSources, gulp.series('sass'));
+  gulp.watch(drupalPHPSources, gulp.series('drushPHP', reload));
+  gulp.watch(drupalTemplateSources, gulp.series('drushPHP', reload));
+  done();
+}));
 
 // Default task to be run with `gulp`
-  gulp.task('default', ['sass', 'drushPHP', 'browser-sync'], function () {
-  gulp.watch("scss/**/*.scss", ['sass']);
-  gulp.watch("scripts/**/*.js", ['js']);
-  gulp.watch("templates/**/*.twig", ['drushPHP']);
-});
+gulp.task('default', gulp.series('watch-server'));
+
