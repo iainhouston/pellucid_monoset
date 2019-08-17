@@ -44,8 +44,8 @@ section.news {
         font-size: 1.25rem;
         line-height: 1;
         text-align: center;
-        padding-top: 1.25rem
-        height: 56px;
+        padding-top: 1.25rem;
+        height: 60px;
       }
       article {
         height: 345px;
@@ -63,6 +63,7 @@ section.news {
           .field__item {
             height: 100%;
             min-height: 240px;
+            overflow: hidden;
           }
           .node__links {
             display: block;

@@ -44,16 +44,16 @@ function sass2css() {
         .pipe(autoprefixer({ overrideBrowserslist: ['last 2 versions'] }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./styles'));
-//       .pipe(browserSync.stream());
 }
 
-// Run drush to clear the theme registry; render; css; and js caches
-// function drushPHP(done) {
-//     shell.task(["drush " + test_site_alias + " cr"],  { ignoreErrors: true });
-//     done();
-// }
+function drushPHP(done) {
+    shell.task(["drush " + test_site_alias + " cr"],  { ignoreErrors: true });
+    done();
+}
 
+function watch() {
+  gulp.watch(sassSources, gulp.series(sass2css, reload));
+  gulp.watch(drupalPHPSources, gulp.series(drushPHP, reload));
+}
 
-const watch = () => gulp.watch(sassSources, gulp.series(sass2css, reload));
-
-exports.default = gulp.series(sass2css, serve, watch);
+exports.default = gulp.series(sass2css, serve, drushPHP, watch);
