@@ -1,13 +1,14 @@
 var test_site_name = 'vagrant.bradford-abbas.uk';
-var test_site_alias = '@badev'
+var test_site_alias = '@badev';
+
 var sassSources = ['./scss/**/*.scss'];
 var drupalPHPSources = ['**/*.{php,inc,theme}'];
 var drupalTemplateSources = ['**/*.html.twig'];
 var drush = 'drush '
 
 var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
-var reload = browserSync.reload;
+var browserSync = require('browser-sync');
+
 var sass = require('gulp-sass');
 var shell = require('gulp-shell');
 var notify = require('gulp-notify');
@@ -16,50 +17,43 @@ var sourcemaps = require('gulp-sourcemaps');
 
 sass.compiler = require('node-sass');
 
+var browserSyncConfig = {
+    proxy: test_site_name,
+    browser: '/Applications/Firefox Developer Edition.app',
+    notify: false
+};
 
-// // Error notifications
-// var reportError = function (error) {
-//   notify({
-//     title: 'Gulp Task Error',
-//     message: 'Check the console.'
-//   }).write(error);
-//   console.log(error.toString());
-//   this.emit('end');
-// }
+const server = browserSync.create();
+
+function reload(done) {
+  server.reload();
+  done();
+}
+
+function serve(done) {
+  server.init(browserSyncConfig);
+  done();
+}
+
 
 // Sass processing
-gulp.task('sass', (done) => {
-  return gulp.src(sassSources)
-    .pipe(sourcemaps.init())
-    // Convert sass into css
-    .pipe(sass().on('error', sass.logError))
-    // Autoprefix properties
-    .pipe(autoprefixer({ overrideBrowserslist: ['last 2 versions'] }))
-    // Write sourcemaps
-    .pipe(sourcemaps.write())
-    // Save css
-    .pipe(gulp.dest('./styles'))
-    .pipe(browserSync.stream());
-    done();
-});
+function sass2css() {
+    return gulp.src(sassSources)
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({ overrideBrowserslist: ['last 2 versions'] }))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./styles'));
+//       .pipe(browserSync.stream());
+}
 
 // Run drush to clear the theme registry; render; css; and js caches
-gulp.task('drushPHP', shell.task(["drush " + test_site_alias + " cr"],  { ignoreErrors: true }));
+// function drushPHP(done) {
+//     shell.task(["drush " + test_site_alias + " cr"],  { ignoreErrors: true });
+//     done();
+// }
 
 
-gulp.task('watch-server', 
-  gulp.series('sass', 'drushPHP', (done) => {
-    browserSync.init({
-      proxy: test_site_name,
-      // reloadOnRestart: true,
-      browser: '/Applications/Firefox Developer Edition.app'
-    });
-  gulp.watch(sassSources, gulp.series('sass'));
-  gulp.watch(drupalPHPSources, gulp.series('drushPHP', reload));
-  gulp.watch(drupalTemplateSources, gulp.series('drushPHP', reload));
-  done();
-}));
+const watch = () => gulp.watch(sassSources, gulp.series(sass2css, reload));
 
-// Default task to be run with `gulp`
-gulp.task('default', gulp.series('watch-server'));
-
+exports.default = gulp.series(sass2css, serve, watch);

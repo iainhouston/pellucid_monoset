@@ -17,7 +17,7 @@ $bold: 600;
 body {
   font-family: $fontDefault;
   // font-weight: $light;
-  color: #333333;
+  color: $grey-900;
   @include font-size(20px);
   line-height: 30px;
   font-smoothing: antialiased;
