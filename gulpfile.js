@@ -1,23 +1,23 @@
-var test_site_name = 'vagrant.bradford-abbas.uk';
-var test_site_alias = '@badev';
+const test_site_name = 'vagrant.bradford-abbas.uk';
+const test_site_alias = '@badev';
 
-var sassSources = ['./scss/**/*.scss'];
-var drupalPHPSources = ['**/*.{php,inc,theme}'];
-var drupalTemplateSources = ['**/*.html.twig'];
-var drush = 'drush '
+const sassSources = ['./scss/**/*.scss'];
+const drupalPHPSources = ['**/*.{php,inc,theme}'];
+const drupalTemplateSources = ['**/*.html.twig'];
+const drush = 'drush '
 
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
+const gulp = require('gulp');
+const browserSync = require('browser-sync');
 
-var sass = require('gulp-sass');
-var shell = require('gulp-shell');
-var notify = require('gulp-notify');
-var autoprefixer = require('gulp-autoprefixer');
-var sourcemaps = require('gulp-sourcemaps');
+const sass = require('gulp-sass');
+const shell = require('gulp-shell');
+const notify = require('gulp-notify');
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
 
 sass.compiler = require('node-sass');
 
-var browserSyncConfig = {
+const browserSyncConfig = {
     proxy: test_site_name,
     browser: '/Applications/Firefox Developer Edition.app',
     notify: false
@@ -41,13 +41,14 @@ function sass2css() {
     return gulp.src(sassSources)
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer({ overrideBrowserslist: ['last 2 versions'] }))
+        .pipe(autoprefixer())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./styles'));
 }
 
 function drushPHP(done) {
     shell.task(["drush " + test_site_alias + " cr"],  { ignoreErrors: true });
+    notify({message: "Cache rebuild complete", sound: true}).write('');
     done();
 }
 
