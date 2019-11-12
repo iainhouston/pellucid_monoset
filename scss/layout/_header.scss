@@ -74,7 +74,7 @@
 .form-type-search input[type="search"] {
   appearance: none;
   font-family: $fontInput;
-  font-size:115%;
+  font-size: 1rem;
   color: $grey-600;
   border-radius: 5px;
   height: 30px;
@@ -100,7 +100,7 @@ div.offcanvas.pushy.pushy-left div.region-search {
     @include font-size(14px);
     font-weight: $medium;
     text-transform: uppercase;
-    color: $grey-500;
+    color: $grey-900;
     &:hover {
       color: $blue;
     }
