@@ -29,14 +29,14 @@
     vertical-align: top;
     text-align: center;
     margin: 0 0 1rem 0;
-    @include font-size(18px);
-    font-weight: $light;
+    // @include font-size(18px);
+    // font-weight: $light;
     @include breakpoint(md) {
       margin: 0 0 2rem 0;
       text-align: left;
       float: left;
       width: 33.3333%;
-      @include font-size(17px);
+      // @include font-size(17px);
     }
 
     &:hover .checkbox {
