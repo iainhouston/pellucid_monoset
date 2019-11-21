@@ -24,16 +24,12 @@
     // &:last-child {
     //   border: none;
     // }
-    .next-section, .next-section a, .view-header {
-      color: $grey-400;
+  .view-header {
+      color: $grey-600;
     }
     .views-field-title {
       padding-top: 0.5rem;
     }
-    .cta-button {
-      border: 2px solid $grey-400;
-    }
-
 
     &:before {
       content: '';
