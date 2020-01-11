@@ -7,14 +7,14 @@
     vertical-align: top;
     padding: 8px 12px 8px 25px;
     border-radius: 40px;
-    background: $grey-100;
+    background: $button_background;
     color: $black;
     font-weight: $light;
     text-shadow: none;
     font-family: $fontDefault;
-    @include breakpoint(md) {
-      border: solid $black 1px;
-    }
+//     @include breakpoint(md) {
+//       border: solid $black 1px;
+//     }
 
     &:hover {
       background: $grey-400;

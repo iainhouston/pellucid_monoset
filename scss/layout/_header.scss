@@ -5,16 +5,15 @@
 **/
 
 .header-main {
-  position: relative;
   height: 3.8rem;
-  border-bottom: solid 1px $grey-200;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  padding: 1rem 0;
   @include breakpoint(md) {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    width: 100%;
-    padding: 1rem 0;
-    background: $white;
+    border-bottom: solid 1px $grey-200;
+    background-color: $button_background;
   }
 
   // Front Page Header Tweaks

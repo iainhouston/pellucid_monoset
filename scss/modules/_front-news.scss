@@ -19,6 +19,7 @@ section.news {
   }
   .block-views-blockfrontpage-news-items-block-1 h2 {
     margin-top: 0;
+    border-top: 0;
   }
   .block-simplenews {
     widows: 90%;
@@ -40,8 +41,9 @@ section.news {
     }
     div.views-row {
       width: 300px;
+      font-family: $fontInput;
       h2 {
-        font-size: 1.25rem;
+        @include font-size(16px);
         line-height: 1;
         text-align: center;
         padding-top: 1.25rem;
@@ -57,7 +59,7 @@ section.news {
           display: none;
         }
         .node__content {
-          @include font-size(16px);
+          @include font-size(14px);
           line-height: 1.25;
           height: 210px ;
           .field__item {
