@@ -40,54 +40,52 @@ function pellucid_monoset_preprocess_simplenews_newsletter_body__councillors__em
   // alter static var
   $v_summons = 'You are summoned to the '.$variables['node']->getTitle();
   $variables['summons_text']  = $v_summons;
-  $v_newsletter = &myvariable_function('newsletter_type');
-  $v_newsletter = 'simplenews_newsletter_email';
   // Councillors don't unsubscribe from Meeting summonses
   $v_bundle = &myvariable_function('bundle');
   $v_bundle = $variables['node']->getType();
   $variables['bundle'] = $v_bundle;
   $variables['simplenews_newsletter_email']  = TRUE;
 }
-
-function pellucid_monoset_preprocess_simplenews_newsletter_body__email_html(&$variables) {
-  // get reference to static var
-  $var = &myvariable_function('newsletter_type');
-  // alter static var
-  $var = 'simplenews_newsletter_email';
-}
-
-function pellucid_monoset_preprocess_field(&$variables, $hook) {
-  $newsletter_type = myvariable_function('newsletter_type');
-  if ($newsletter_type == 'simplenews_newsletter_email') {
-    $variables['simplenews_newsletter_email'] = TRUE;
-    $summons = &myvariable_function('summons_text');
-    $summons_text = ($summons != 'initial_value') ? $summons : '';
-    $variables['summons_text'] = $summons_text;
-    if (isset($variables['label']) and $variables['label'] == 'Meeting details') {
-      $variables['items']['0']['content']['#url']->setAbsolute();
-    }
-  } else {
-    $variables['simplenews_newsletter_email'] = FALSE;
-  }
-}
-
-function pellucid_monoset_preprocess_field__node__field_agenda__meeting(&$variables, $hook) {
-  $newsletter_type = myvariable_function('newsletter_type');
-  if ($newsletter_type == 'simplenews_newsletter_email') {
-    $variables['simplenews_newsletter_email'] = TRUE;
-    if (isset($variables['items']['0']['content']['#title'])) {
-      $title = $variables['items']['0']['content']['#title'];
-      $variables['agenda_title'] = $title;
-    }
-    if (isset($variables['items']['0']['content']['#url']) && $variables['items']['0']['content']['#url']) {
-      $url = $variables['items']['0']['content']['#url']->toString();
-      $variables['url'] = $url;
-    }
-  } else {
-    $variables['simplenews_newsletter_email'] = FALSE;
-  }
-}
-
+//
+// function pellucid_monoset_preprocess_simplenews_newsletter_body__email_html(&$variables) {
+//   // get reference to static var
+//   $var = &myvariable_function('newsletter_type');
+//   // alter static var
+//   $var = 'simplenews_newsletter_email';
+// }
+//
+// function pellucid_monoset_preprocess_field(&$variables, $hook) {
+//   $newsletter_type = myvariable_function('newsletter_type');
+//   if ($newsletter_type == 'simplenews_newsletter_email') {
+//     $variables['simplenews_newsletter_email'] = TRUE;
+//     $summons = &myvariable_function('summons_text');
+//     $summons_text = ($summons != 'initial_value') ? $summons : '';
+//     $variables['summons_text'] = $summons_text;
+//     if (isset($variables['label']) and $variables['label'] == 'Meeting details') {
+//       $variables['items']['0']['content']['#url']->setAbsolute();
+//     }
+//   } else {
+//     $variables['simplenews_newsletter_email'] = FALSE;
+//   }
+// }
+//
+// function pellucid_monoset_preprocess_field__node__field_agenda__meeting(&$variables, $hook) {
+//   $newsletter_type = myvariable_function('newsletter_type');
+//   if ($newsletter_type == 'simplenews_newsletter_email') {
+//     $variables['simplenews_newsletter_email'] = TRUE;
+//     if (isset($variables['items']['0']['content']['#title'])) {
+//       $title = $variables['items']['0']['content']['#title'];
+//       $variables['agenda_title'] = $title;
+//     }
+//     if (isset($variables['items']['0']['content']['#url']) && $variables['items']['0']['content']['#url']) {
+//       $url = $variables['items']['0']['content']['#url']->toString();
+//       $variables['url'] = $url;
+//     }
+//   } else {
+//     $variables['simplenews_newsletter_email'] = FALSE;
+//   }
+// }
+//
 function pellucid_monoset_preprocess_swiftmailer(&$variables) {
   $bundle = myvariable_function('bundle');
   $variables['bundle'] = $bundle;

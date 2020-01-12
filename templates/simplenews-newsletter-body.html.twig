@@ -40,18 +40,17 @@
 #}
 
 {# body #}
-{% if simplenews_newsletter_email %}
+
+<tr class="field">
+    <td class="head_field"><h2 class="big_head">{{ title }}</h2></td>
+</tr>
+
+{% if bundle == "meeting" %}
     <tr class="field">
-        <td class="head_field"><h2 class="big_head">{{ title }}</h2></td>
+        <td class="field_item">{{ summons_text }}</td>
     </tr>
-    {% if bundle == "meeting" %}
-        <tr class="field">
-            <td class="field_item">{{ summons_text }}</td>
-        </tr>
-    {% endif %}
-{% else %}
-    <h2 class="title">{{ title }}</h2>
 {% endif %}
+
 {{ build }}
 
 
