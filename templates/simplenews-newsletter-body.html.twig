@@ -39,48 +39,43 @@
  */
 #}
 
-{# body #}
-
-<tr class="field">
-    <td class="head_field"><h2 class="big_head">{{ title }}</h2></td>
-</tr>
+<h2 style="margin:10 0; text-align:center; font:24px Arial, sans-serif;">{{ title }}</h2>
 
 {% if bundle == "meeting" %}
-    <tr class="field">
-        <td class="field_item">{{ summons_text }}</td>
-    </tr>
+  <p style="text-align: center;">
+   {{ summons_text }}
+  </p>
 {% endif %}
-
 {{ build }}
 
-
-{# footer #}
-<tr class="newsletter-footer field">
-  <td class="field_item">
-  <p class="newsletter-legal first-para">
-    This email and any documents sent with it are intended solely for the named recipient and may be legally privileged and/or confidential.
-  </p>
-  <p class="newsletter-legal"> If you have received this email in error please destroy it and contact the sender <a href="mailto:webmaster@bradford-abbas.uk">here</a>.
+<div style="margin:10 0; color: #696969; font:12px Arial, sans-serif; clear:both"><!-- Footer stuff -->
+<p style="padding-top: 12px; border-top: 2px solid #eeeeee;">
+  This email and any documents sent with it are intended solely for the named recipient and may be legally privileged and/or confidential.
+</p>
+<p style="padding: 2 0; margin: 0;"> If you have received this email in error please destroy it and contact the sender <a href="mailto:webmaster@bradford-abbas.uk">here</a>.
   {% if bundle != "meeting" %}
   {#  Councillors' summonses don't offer unsubscribe #}
-  </p>
-  <p class="newsletter-legal">
-    If you wish:
-    <a class="newsletter-unsubscribe" href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a>
+</p>
+<p style="padding: 2 0; margin: 0;">
+  If you wish:
+  <a class="newsletter-unsubscribe" href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a>
   {% endif %}
-  </p>
-  <p class="newsletter-legal">
-    You should not copy, or use the contents, attachments or information in
-    any way or pass them to a third party without prior permission from the
-    author. Any unauthorised use or disclosure may be unlawful. The Parish Council cannot guarantee the accuracy or completeness of this
-    email after it is sent from the originator over the Internet and accepts
-    no responsibility for changes made after it was sent.
-  </p>
-  </td>
-</tr>
+</p>
+<p style="padding: 2 0; margin: 0;">
+  You should not copy, or use the contents, attachments or information in
+  any way or pass them to a third party without prior permission from the
+  author. Any unauthorised use or disclosure may be unlawful. The Parish Council cannot guarantee the accuracy or completeness of this
+  email after it is sent from the originator over the Internet and accepts
+  no responsibility for changes made after it was sent.
+</p>
+
+{% if not opt_out_hidden %}
+    {% if format != 'html' %}
+        -- {{ unsubscribe_text }} : [simplenews-subscriber:unsubscribe-url]
+    {% endif %}
+{% endif %}
+</div><!-- Footer stuff -->
 
 {% if key == 'test' %}
-    <tr class="newsletter-footer field">
-        <td class="field_item">- - - {{ test_message }} - - -</td>
-    </tr>
+  - - - {{ test_message }} - - -
 {% endif %}

@@ -46,29 +46,47 @@ function pellucid_monoset_preprocess_simplenews_newsletter_body__councillors__em
   $variables['bundle'] = $v_bundle;
   $variables['simplenews_newsletter_email']  = TRUE;
 }
-//
-// function pellucid_monoset_preprocess_simplenews_newsletter_body__email_html(&$variables) {
-//   // get reference to static var
-//   $var = &myvariable_function('newsletter_type');
-//   // alter static var
-//   $var = 'simplenews_newsletter_email';
-// }
-//
-// function pellucid_monoset_preprocess_field(&$variables, $hook) {
-//   $newsletter_type = myvariable_function('newsletter_type');
-//   if ($newsletter_type == 'simplenews_newsletter_email') {
-//     $variables['simplenews_newsletter_email'] = TRUE;
-//     $summons = &myvariable_function('summons_text');
-//     $summons_text = ($summons != 'initial_value') ? $summons : '';
-//     $variables['summons_text'] = $summons_text;
-//     if (isset($variables['label']) and $variables['label'] == 'Meeting details') {
-//       $variables['items']['0']['content']['#url']->setAbsolute();
-//     }
-//   } else {
-//     $variables['simplenews_newsletter_email'] = FALSE;
-//   }
-// }
-//
+
+/*
+  To indicate context to contained twig templates:
+  e.g. Embedded  media (embedded in CKEditor) aren't aware of
+  whether they're being displayed in a web page or an email html.
+  If its an email html, then we need to keep markup as simple as possible
+*/
+function pellucid_monoset_preprocess_simplenews_newsletter_body__email_html(&$variables) {
+  // get reference to static var
+  $var = &myvariable_function('newsletter_type');
+  // alter static var
+  $var = 'simplenews_newsletter_email';
+  $variables['simplenews_newsletter_email']  = TRUE;
+}
+
+function pellucid_monoset_preprocess_media(&$variables, $hook) {
+  $newsletter_type = myvariable_function('newsletter_type');
+  if ($newsletter_type == 'simplenews_newsletter_email') {
+    $variables['simplenews_newsletter_email'] = TRUE;
+  } else {
+    $variables['simplenews_newsletter_email'] = FALSE;
+  }
+}
+
+function pellucid_monoset_preprocess_field(&$variables, $hook) {
+  $newsletter_type = myvariable_function('newsletter_type');
+  if ($newsletter_type == 'simplenews_newsletter_email') {
+    $variables['simplenews_newsletter_email'] = TRUE;
+  } else {
+    $variables['simplenews_newsletter_email'] = FALSE;
+  }
+}
+function pellucid_monoset_preprocess_filter_caption(&$variables, $hook) {
+  $newsletter_type = myvariable_function('newsletter_type');
+  if ($newsletter_type == 'simplenews_newsletter_email') {
+    $variables['simplenews_newsletter_email'] = TRUE;
+  } else {
+    $variables['simplenews_newsletter_email'] = FALSE;
+  }
+}
+
 // function pellucid_monoset_preprocess_field__node__field_agenda__meeting(&$variables, $hook) {
 //   $newsletter_type = myvariable_function('newsletter_type');
 //   if ($newsletter_type == 'simplenews_newsletter_email') {
@@ -91,6 +109,7 @@ function pellucid_monoset_preprocess_swiftmailer(&$variables) {
   $variables['bundle'] = $bundle;
 }
 
+// Way of remembering and setting render-array-global variables
 function &myvariable_function($item = 'default') {
   $var = &drupal_static(__FUNCTION__);
   if (!isset($var)) {

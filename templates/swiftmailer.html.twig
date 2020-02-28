@@ -30,258 +30,62 @@
  * @ingroup themeable
  */
 #}
-<html>
+<!DOCTYPE html>
+<html lang="en" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
-    <style type="text/css">
-        /*////// RESET STYLES //////*/
-        p {
-            margin: 1em 0;
-            font-size: 16px;
-        }
+  <!-- Styles will not apply to all mail clients :-( -->
+  <style>
+    .align-right  {
+      display: block;
+      padding 0;
+      margin: 0 0 0 5px;;
+      float: right;
+    }
 
-        a {
-            word-wrap: break-word;
-        }
+    .align-left  {
+      display: block;
+      padding 0;
+      margin: 0 15px 0 0;
+      float: left;
+    }
 
-        table {
-            border-collapse: collapse;
-        }
+    .align-center {
+      display: block;
+      margin: 0 auto;
+      padding: 0 5px;
+      float:none;
+    }
 
-        h1, h2, h3, h4, h5, h6 {
-            display: block;
-            margin: 0;
-            padding: 0;
-        }
+    img {
+      max-width: 100%;
+      border: 0;
+      height: auto;
+      outline: none;
+      box-shadow: 3px 3px 5px 3px #A9A9A9;
+    }
 
-        img, a img {
-          max-width: 100%;
-          border: 0;
-          height: auto;
-          outline: none;
-          text-decoration: none
-          box-shadow: 3px 3px 5px 3px #A9A9A9;
-        }
-
-        body, #bodyTable, #bodyCell {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-        }
-
-        /*////// CLIENT-SPECIFIC STYLES //////*/
-        #outlook a {
-            padding: 0;
-        }
-
-        /* Force Outlook 2007 and up to provide a "view in browser" message. */
-        img {
-            -ms-interpolation-mode: bicubic;
-        }
-
-        /* Force IE to smoothly render resized images. */
-        table {
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
-        }
-
-        /* Remove spacing between tables in Outlook Desktop. */
-        .ReadMsgBody {
-            width: 100%;
-        }
-
-        .ExternalClass {
-            width: 100%;
-        }
-
-        /* Force Outlook.com to display emails at full width. */
-        p, a, li, td, blockquote {
-            mso-line-height-rule: exactly;
-        }
-
-        /* Force Outlook Desktop to render line heights as they're originally set. */
-        a[href^="tel"], a[href^="sms"] {
-            color: inherit;
-            cursor: default;
-            text-decoration: none;
-        }
-
-        /* Force mobile devices to inherit declared link styles. */
-        p, a, li, td, body, table, blockquote {
-            -ms-text-size-adjust: 100%;
-            -webkit-text-size-adjust: 100%;
-        }
-
-        /* Prevent Windows- and Webkit-based mobile platforms from changing declared text sizes. */
-        .ExternalClass, .ExternalClass p, .ExternalClass td, .ExternalClass div, .ExternalClass span, .ExternalClass font {
-            line-height: 100%;
-        }
-
-        /* Force Outlook.com to display line heights normally. */
-        a[x-apple-data-detectors] {
-            color: inherit !important;
-            text-decoration: none !important;
-            font-size: inherit !important;
-            font-family: inherit !important;
-            font-weight: inherit !important;
-            line-height: inherit !important;
-        }
-
-        /* Force iOS devices to heed link styles set in CSS. */
-        /*////// STRUCTURAL STYLES //////*/
-
-        .flexibleContainer {
-            max-width: 650px;
-            width: 100%;
-        }
-        div.centred_box,
-        span.centred_box {
-          margin-left: auto;
-          margin-right: auto;
-          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-        }
-
-        table {
-            border-spacing: 5px;
-            border-collapse: separate;
-            table-layout: fixed;
-            width: 95%;
-            cellpadding: 0;
-            cellspacing: 0;
-        }
-
-        table tr td {
-            font-size: 18px;
-            line-height: 22px;
-            text-align: left;
-            padding-top: 5px;
-            padding-right: 10px;
-            padding-bottom: 5px;
-            padding-left: 10px;
-        }
-
-        table tr td.field_item, table tr td.field_item p {
-            /* font-family: Georgia, 'Times New Roman', Times, serif; */
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-
-        ol {
-            counter-reset: item;
-        }
-        ol li {
-            display: block;
-            position: relative;
-            /*left: 1em;*/
-        }
-        ol li:before {
-            content: counters(item, ".")".";
-            counter-increment: item;
-            position: absolute;
-            margin-right: 100%;
-            right: 1em; /* space between number and text */
-        }
-
-        table tr td ol li,
-        table tr td ul li   {
-            font-size: 16px;
-            line-height: 18px;
-        }
-
-        table tr td.field_item h2 a {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 24px;
-        }
-
-
-        table tr td.field_item {
-            padding-bottom: 15px;
-        }
-
-
-        table tr td.field_item img {
-          display: block;
-          margin: 0 auto;
-          padding:0;
-          box-shadow: 3px 3px 5px 3px #A9A9A9;
-        }
-
-      table tr td.field_item figure.align-right  {
-          display: block;
-          padding 0;
-          margin: 0 0 0 5px;;
-          float: right;
-        }
-
-        table tr td.field_item figure.align-left  {
-          display: block;
-          padding 0;
-          margin: 0 15px 0 0;
-          float: left;
-        }
-
-        table tr td.field_item figure.align-center, {
-          display: block;
-          margin: 0 auto;
-          padding: 0 5px;
-          float:none;
-        }
-
-
-        table tr td.field_item figcaption {
-          padding-top: 5px;
-          text-align: center;
-          font-size: 70%;
-        }
-
-        table tr td h2,
-        table tr td.field_item h2,
-        table tr td.field_label,
-        table tr.field td.head_field h2.big_head {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-weight: 400;
-            font-size: 28px;
-            line-height: 30px;
-        }
-        table tr td h2.title {
-          text-align: center;
-          font-size: 30px;
-          line-height: 34px;
-          font-weight: 600;
-        }
-        p.newsletter-legal {
-          max-width: 95%;
-          display: block;
-          margin: 0  auto;
-          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-weight: 200;
-          font-size: 12px;
-          line-height: 18px;
-          padding-bottom: 5px;
-        }
-        p.newsletter-legal.first-para {
-          padding-top: 12px;
-          border-top: 1px solid #eeeeee;
-        }
-        p.newsletter-legal a {
-          text-decoration: none;
-          color:  #2ba9e0;
-        }
-    </style>
+    a {
+      text-decoration: none;
+      color: #008080;
+    }
+  </style>
+  <!--[if mso]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
 </head>
 <body>
-<div class="flexibleContainer centred_box">
-  <table class="centred_box">
-  <tr>
-    <td>
-      <div class="centred_box">
-        {{ body }}
-      </div>
-    </td>
-  </tr>
-</table>
+<!--[if mso]>
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin:0 auto; width:600px;"><tr><td>
+<![endif]-->
+<div style="margin:0; font-family:Arial, sans-serif; width:600px; max-width="100%">
+  {{ body }}
 </div>
+<!--[if mso]>
+</td></tr></table>
+<![endif]-->
 </body>
 </html>
