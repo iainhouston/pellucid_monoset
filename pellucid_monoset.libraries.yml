@@ -28,3 +28,8 @@ front-page:
   version: 1.1
   js:
     scripts/front.js: { scope: footer, weight: -4 }
+
+swiftmailer:
+  css:
+    theme:
+      styles/swiftmail.css: {}
