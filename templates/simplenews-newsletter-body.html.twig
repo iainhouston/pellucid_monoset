@@ -48,20 +48,21 @@
 {% endif %}
 {{ build }}
 
-<div style="margin:10 0; color: #696969; font:12px Arial, sans-serif; clear:both"><!-- Footer stuff -->
-<p style="padding-top: 12px; border-top: 2px solid #eeeeee;">
+<div class="simplenews-footer"><!-- Footer stuff -->
+<p class="simplenews-para first-para">
   This email and any documents sent with it are intended solely for the named recipient and may be legally privileged and/or confidential.
 </p>
-<p style="padding: 2 0; margin: 0;"> If you have received this email in error please destroy it and contact the sender <a href="mailto:webmaster@bradford-abbas.uk">here</a>.
+<p class="simplenews-para">
+  If you have received this email in error please destroy it and contact the sender <a href="mailto:webmaster@bradford-abbas.uk">here</a>.
   {% if bundle != "meeting" %}
   {#  Councillors' summonses don't offer unsubscribe #}
-</p>
-<p style="padding: 2 0; margin: 0;">
+  </p>
+  <p class="simplenews-para">
   If you wish:
   <a class="newsletter-unsubscribe" href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a>
   {% endif %}
 </p>
-<p style="padding: 2 0; margin: 0;">
+<p class="simplenews-para">
   You should not copy, or use the contents, attachments or information in
   any way or pass them to a third party without prior permission from the
   author. Any unauthorised use or disclosure may be unlawful. The Parish Council cannot guarantee the accuracy or completeness of this
