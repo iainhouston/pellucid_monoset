@@ -59,12 +59,15 @@ p {
 }
 
 blockquote {
-  color: #606060;
-  font-style: italic;
-  font-size: 16px !important;
   border-left: 2px solid #A0A0A0;
   padding-left: 15px;
   display: table-cell;
+}
+
+blockquote p {
+  color: #606060;
+  font-style: italic;
+  font-size: 16px !important;
 }
 
 figcaption {
@@ -94,4 +97,5 @@ p.simplenews-para.first-para {
 
 div.simplenews-footer a {
   font-size:12px;
+  color: #d95d33;
 }
