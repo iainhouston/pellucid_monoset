@@ -53,7 +53,7 @@ div.body-wrapper {
   max-width: 100%;
 }
 
-p {
+p, li {
   font-size: 18px;
   margin: 10px 0;
 }
