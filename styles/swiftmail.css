@@ -1,13 +1,13 @@
 .align-right  {
   display: block;
-  padding 0;
+  padding: 0;
   margin: 0 0 0 5px;;
   float: right;
 }
 
 .align-left  {
   display: block;
-  padding 0;
+  padding: 0;
   margin: 0 15px 0 0;
   float: left;
 }
@@ -26,10 +26,11 @@
   text-align: center !important;
 }
 
+h2.webform-section-title,
 .field__label {
   margin: 15px 0;
-  font-size: 24px;
-  text-align:center;
+  font-size: 24px !important; 
+  text-align: left !important;
 }
 
 img {
@@ -92,7 +93,7 @@ p.simplenews-para {
 p.simplenews-para.first-para {
   margin-top: 15px;
   padding-top: 15px;
-  border-top: 2px solid #eeeeee;"
+  border-top: 2px solid #eeeeee;
 }
 
 div.simplenews-footer a {
