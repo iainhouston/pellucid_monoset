@@ -21,6 +21,13 @@ section.news {
     margin-top: 0;
     border-top: 0;
   }
+  div.more-link {
+    display: block;
+    margin: 30px auto;
+    width: 200px;
+    text-align: center;
+    @include font-size(35px)
+  }
   .block-simplenews {
     widows: 90%;
     max-width: 30rem;
