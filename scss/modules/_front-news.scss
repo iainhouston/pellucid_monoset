@@ -21,19 +21,29 @@ section.news {
     margin-top: 0;
     border-top: 0;
   }
+  form {
+    width: 50%;
+    min-width: 300px;
+    display: block;
+    margin: 30px auto;
+    padding: 1rem;
+  }
   div.more-link {
     display: block;
     margin: 30px auto;
     padding: 1rem;
-    border: $red solid 2px;
+    border: 1px solid $red;
+    background: $grey-200;
     min-width: 300px;
     max-width: 95%;
     text-align: center;
     @include font-size(35px)
   }
   .block-simplenews {
-    widows: 90%;
-    max-width: 30rem;
+    padding: 1rem;
+    border: 1px solid $red;
+    min-width: 300px;
+    max-width: 95%;
     margin: 0 auto;
   }
   div.view-content {

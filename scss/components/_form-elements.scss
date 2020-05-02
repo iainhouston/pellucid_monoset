@@ -28,7 +28,7 @@ input[type="password"],
 textarea {
   display: block;
   background: none;
-  border: 1px solid $grey-300;
+  border: 1px solid $red;
   margin-bottom: 0.5rem;
   background-color: $white;
   width: 100%;
@@ -54,9 +54,8 @@ input[type="submit"] {
   padding: 1rem;
   margin: 0 0 1rem;
   cursor: pointer;
-  color: $grey-900;
+  color: $red;
   @include font-size(14px);
-  font-weight: $thin;
   letter-spacing: 1px;
   transition: all 0.3s;
   &:hover {
