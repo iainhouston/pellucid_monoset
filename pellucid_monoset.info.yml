@@ -1,9 +1,10 @@
 name: Pellucid Monoset
 type: theme
 base theme: classy
-description: Drupal 8 Theme for pellucid_build
-version: 1.1.18
+description: Drupal 8 || 9 Theme for pellucid_build
+version: 1.1.26
 core: 8.x
+core_version_requirement: ^8 || ^9
 screenshot: images/screenshot.png
 libraries:
  - pellucid_monoset/global
