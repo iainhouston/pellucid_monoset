@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,100,300,500);
 @import url(https://fonts.googleapis.com/css?family=Special+Elite);
 
 // Fonts
@@ -197,8 +197,9 @@ em {
     }
   }
 
+  button.link,
   blockquote {
-    color: $grey-400;
+    color: $grey-500;
   }
 
   img {

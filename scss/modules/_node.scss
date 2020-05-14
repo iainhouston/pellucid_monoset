@@ -15,7 +15,6 @@
 
 /* View mode teaser styles. */
 .node--view-mode-teaser {
-  border-bottom: 1px solid #d3d7d9;
   margin-bottom: 30px;
   padding-bottom: 15px;
 }
@@ -115,7 +114,6 @@ article.node--type-agenda,
 article.node--type-minutes,
 article.node--type-village-plan-page,
 article.node--type-history-society-event {
-  font-weight: $light;
   color: $grey-900;
   //p {
   //  margin: 0 0 0.25rem 0;
@@ -402,6 +400,9 @@ article.node--type-history-society-event {
   article.node--type-meeting,
   body.node--type-article p,
   body.node--type-article .field,
+  // article.node--type-article.node--view-mode-teaser div.node__content,
+  div.view-taxonomy-term article.node--type-article.node--view-mode-teaser div.node__content,
+  div.newspage article.node--type-article,
   article.node--type-document,
   article.node--type-agenda,
   article.node--type-minutes,

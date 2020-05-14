@@ -60,7 +60,7 @@
       background: url(../icons/loupe.svg) no-repeat center;
       cursor: pointer;
       height: 30px;
-      margin: 10px 0 0 0;
+      margin: 12px 0 0 0;
       overflow: hidden;
       padding: 0;
       text-indent: -9999px;
@@ -82,7 +82,7 @@
 }
 
   @media (prefers-color-scheme: dark) {
-    // html.no-touchevents.details.js body.path-node.node--type-page div.dialog-off-canvas-main-canvas header.header-main 
+    // html.no-touchevents.details.js body.path-node.node--type-page div.dialog-off-canvas-main-canvas header.header-main
     div.contain div.region.region-search div#block-pellucid-monoset-search.search-block-form.block.block-search.container-inline div form#search-block-form div#edit-actions.form-actions.js-form-wrapper.form-wrapper input#edit-submit.search-form__submit.button.js-form-submit.form-submit {
       background-color: $grey-200;
       border-radius: 10px;

@@ -114,3 +114,14 @@ body.path-node.node--type-photo-gallery {
     font-size: 1.25rem;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+
+  .view-id-councillors {
+    table, th, tr, td  {
+    background-color: $grey-900;
+    color: $grey-50;
+
+  }
+  }
+}

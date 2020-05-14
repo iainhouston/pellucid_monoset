@@ -41,18 +41,20 @@
   }
   td, th {
     border: none;
-    font-size: 85%;
+    font-size: 75%;
+    font-weight: 200;
   }
   th:nth-child(1) {
     width:15%;
   }
   th:nth-child(2),
   th:nth-child(3),
-  th:nth-child(4) {
-    width: 10%;
+  th:nth-child(4),
+  th:nth-child(5) {
+    width: 7%;
   }
-  th:nth-child(5),
-  th:nth-child(6) {
+  th:nth-child(6),
+  th:nth-child(7) {
     width: 20%;
   }
 
@@ -63,6 +65,9 @@
         padding: 5px;
         margin: 0 auto;
         display: block;
+        img {
+          border-radius: 10px;
+        }
       }
     }
   }
@@ -81,4 +86,28 @@
       width: 20%;
     }
   }
+}
+@media (prefers-color-scheme: dark) {
+
+  article.node--type-page,
+  article.node--type-meeting,
+  body.node--type-article p,
+  body.node--type-article .field,
+  // article.node--type-article.node--view-mode-teaser div.node__content,
+  div.view-taxonomy-term article.node--type-article.node--view-mode-teaser div.node__content,
+  article.node--type-document,
+  article.node--type-agenda,
+  article.node--type-minutes,
+  article.node--type-village-plan-page,
+  article.node--type-history-society-event {
+    background-color: $grey-900;
+    color: $grey-50;
+  }
+  .view-supporting-documents {
+      table, thead, th, tr, td {
+          background-color: $grey-900;
+          color: $grey-50;
+      }
+}
+
 }
