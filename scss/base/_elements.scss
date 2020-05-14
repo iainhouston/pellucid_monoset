@@ -47,3 +47,23 @@ ul ul {
   padding: 0 0 0.25em 1em; /* LTR */
 }
 
+@media (prefers-color-scheme: dark) {
+
+  a,
+  a.link {
+    color: #FFAE00;
+  }
+  a:hover,
+  a:active,
+  a:focus,
+  .link:hover,
+  .link:active,
+  .link:focus,
+  ul.menu a.is-active {
+    color: #FFAE00;
+  }
+
+  section.news h2 {
+    color: $grey-900;
+  }
+}

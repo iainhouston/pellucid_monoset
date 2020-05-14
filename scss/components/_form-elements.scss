@@ -7,7 +7,7 @@
   min-width: 150px;
   -moz-appearance: none;
   -webkit-appearance: none;
-  border-radius: 0;
+  border-radius: 10px;
 }
 .form-actions .dropbutton-wrapper {
   float: none;
@@ -35,7 +35,7 @@ textarea {
   padding: 1rem;
   appearance: none;
   box-shadow: none;
-  border-radius: none;
+  border-radius: 10px;
   transition: border 0.3s;
   font-family: $fontInput;
   color: $grey-600;

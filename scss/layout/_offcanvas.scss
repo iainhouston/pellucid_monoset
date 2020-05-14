@@ -306,3 +306,9 @@ $menu_width: 250px;
 .toolbar .toolbar-tray-horizontal .toolbar-toggle-orientation {
   display: none !important;
 }
+
+@media (prefers-color-scheme: dark) {
+  .menu-btn:before {
+    color: $grey-400;
+  }
+}

@@ -6,6 +6,11 @@
 .node__content {
   font-size: 1.071em;
   margin-top: 10px;
+
+  .field--name-field-expires,
+  .field--name-field-tags {
+      @include font-size(15px);
+  }
 }
 
 /* View mode teaser styles. */
@@ -20,9 +25,6 @@
   padding-top: 0.5em;
 }
 
-//.node--view-mode-teaser h2 a {
-//  color: #181818;
-//}
 .node--view-mode-teaser.node--sticky {
   background: #f9f9f9;
   background: rgba(0, 0, 0, 0.024);
@@ -392,4 +394,21 @@ article.node--type-history-society-event {
     font-size: 70%;
     text-align: center;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  article.node--type-page,
+  article.node--type-meeting,
+  body.node--type-article p,
+  body.node--type-article .field,
+  article.node--type-document,
+  article.node--type-agenda,
+  article.node--type-minutes,
+  article.node--type-village-plan-page,
+  article.node--type-history-society-event {
+    background-color: $grey-900;
+    color: $grey-50;
+  }
+
 }

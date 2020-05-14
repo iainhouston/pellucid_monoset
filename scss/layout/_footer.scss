@@ -35,3 +35,9 @@
     fill: $grey-700;
   }
 }
+@media (prefers-color-scheme: dark) {
+  footer.footer-main {
+    background-color: $grey-900;
+    color: $grey-50;
+  }
+}

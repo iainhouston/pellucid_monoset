@@ -39,6 +39,10 @@
     float: left;
     margin-left: 1rem;
 }
+.region-search {
+  position: relative;
+  bottom: 4px;
+}
 
 .logo {
   display: none;
@@ -67,7 +71,13 @@
     display: block;
     margin: 3px 0 0 0;
     float: right;
+    bottom: 10px;
+    position: relative;
   }
+}
+#block-pellucid-monoset-main-menu {
+  position: relative;
+  bottom: -10px;
 }
 .header-main #search-block-form input[type="search"],
 .form-type-search input[type="search"] {
