@@ -7,7 +7,7 @@
 .footer-main {
   padding: 1rem 0;
   background: $grey-100;
-  border-top: 1px solid $grey-200;
+  border-top: 1px solid $grey-600;
   @include font-size(14px);
   z-index: 100;
   text-align: center;
@@ -15,29 +15,28 @@
     margin: 5px 0 0 0;
     float: left;
   }
-  .twitter {
+  .github,  {
     position: absolute;
     left: 49%;
-    fill: $grey-500;
     transition: all .3s;
-    &:hover {
+    & > svg {
       fill: $blue;
     }
   }
   .top-link {
     display: block;
     float: right;
-  }
-  .arrow-up {
-    margin: 0 0 -7px 0;
-    width: 32px;
-    height: 32px;
-    fill: $grey-700;
+    & > svg {
+      margin: 0 0 -7px 0;
+      width: 32px;
+      height: 32px;
+      fill: $blue;
+    }
   }
 }
 @media (prefers-color-scheme: dark) {
   footer.footer-main {
-    background-color: $grey-900;
+    background-color: $grey-800;
     color: $grey-50;
   }
 }
